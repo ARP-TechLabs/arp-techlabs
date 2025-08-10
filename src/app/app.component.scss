@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100vh;
+  width: 100vw;
+  background-color: #f7f9fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .loader-screen {
+    text-align: center;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    color: #1f1f1f;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .bars-loader {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      align-items: flex-end;
+      height: 60px;
+      margin-bottom: 2rem;
+
+      span {
+        width: 8px;
+        height: 20px;
+        background-color: #0078d7;
+        animation: bounce 1s infinite ease-in-out;
+        border-radius: 4px;
+
+        &:nth-child(2) {
+          animation-delay: 0.1s;
+        }
+        &:nth-child(3) {
+          animation-delay: 0.2s;
+        }
+        &:nth-child(4) {
+          animation-delay: 0.3s;
+        }
+        &:nth-child(5) {
+          animation-delay: 0.4s;
+        }
+      }
+    }
+
+    .brand {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: 1px;
+      margin-bottom: 0.3rem;
+    }
+
+    .sub {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #4a4a4a;
+      margin-bottom: 2rem;
+    }
+
+    .opt {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .opt i {
+      font-size: 48px;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #777;
+      animation: fadeIn 2.5s ease-in-out infinite alternate;
+    }
+  }
+}
+
+// Bounce animation for bars
+@keyframes bounce {
+  0%,
+  100% {
+    height: 20px;
+  }
+  50% {
+    height: 50px;
+  }
+}
+
+// Fade animation for note
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Custom interactive cursor
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: 2px solid #0078d7;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.15s ease, background-color 0.3s ease;
+  mix-blend-mode: difference;
+  box-shadow: 0 0 6px #0078d7aa;
+}
+
+// Optional JavaScript for cursor tracking (if not already in your component)

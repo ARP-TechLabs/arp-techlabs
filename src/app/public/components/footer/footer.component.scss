@@ -1,0 +1,66 @@
+.footer {
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  /* Base theme styles */
+.bg-footer {
+    background-color: #f8f9fa; /* light gray */
+  }
+  
+  .text-footer {
+    color: #2c2c2c;
+  }
+  
+  .text-accent {
+    color: #0d6efd; /* Bootstrap blue */
+  }
+  
+  .btn-outline-accent {
+    border-color: #0d6efd;
+    color: #0d6efd;
+  }
+  
+  .btn-outline-accent:hover {
+    background-color: #0d6efd;
+    color: #fff;
+  }
+  
+  .btn-accent {
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-accent:hover {
+    background-color: #0b5ed7;
+  }
+  
+  .footer-link {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #495057;
+    text-decoration: none;
+  }
+  
+  .footer-link:hover {
+    color: #0d6efd;
+  }
+  
+  /* Dark mode support */
+  body.dark-mode .bg-footer {
+    background-color: #1b1b1b;
+  }
+  
+  body.dark-mode .text-footer {
+    color: #ccc;
+  }
+  
+  body.dark-mode .footer-link {
+    color: #bbb;
+  }
+  
+  body.dark-mode .footer-link:hover {
+    color: #0d6efd;
+  }
+  

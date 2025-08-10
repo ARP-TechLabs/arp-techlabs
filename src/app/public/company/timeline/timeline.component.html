@@ -1,0 +1,209 @@
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5 bg-gradient-primary">
+    <div class="container text-center py-5">
+        <div class="header-content">
+            <h1 class="display-2 text-white mb-4 animated slideInDown">Company Timeline</h1>
+            <p class="lead text-white-50 mb-4 animated slideInUp">Our Journey of Innovation and Growth</p>
+            <div class="header-decoration">
+                <div class="decoration-line"></div>
+                <div class="decoration-dot"></div>
+                <div class="decoration-line"></div>
+            </div>
+        </div>
+    </div>
+    <div class="header-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Timeline Hero Section -->
+<section class="timeline-hero py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <div class="hero-content">
+                    <h2 class="display-4 fw-bold mb-4 gradient-text">Our Milestones, Your Future</h2>
+                    <p class="lead text-muted mb-5">Explore the key moments that shaped ARP TechLabs into a leader in digital transformation and AI innovation.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Digital Transformations</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">25+</span>
+                            <span class="stat-label">Industries Served</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Success Rate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-background">
+        <div class="floating-element fe-1"></div>
+        <div class="floating-element fe-2"></div>
+        <div class="floating-element fe-3"></div>
+    </div>
+</section>
+
+<!-- Timeline Slider Section -->
+<section class="timeline-slider-section py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h3 class="display-5 fw-bold mb-4 gradient-text">Our Journey Through Time</h3>
+                <p class="lead text-muted">A chronological look at the pivotal moments and achievements that define our legacy.</p>
+            </div>
+        </div>
+
+        <!-- Timeline Navigation -->
+        <div class="timeline-navigation">
+            <button class="nav-btn" (click)="previousSlide()" [disabled]="currentSlide === 0">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="timeline-indicators">
+                <div class="indicator" *ngFor="let milestone of milestones; let i = index" (click)="goToSlide(i)" [class.active]="i === currentSlide">
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-year">{{ milestone.year }}</div>
+                </div>
+            </div>
+            <button class="nav-btn" (click)="nextSlide()" [disabled]="currentSlide === milestones.length - 1">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Timeline Slider Container -->
+        <div class="timeline-slider-container">
+            <div class="timeline-slider" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+                <div class="timeline-slide" *ngFor="let milestone of milestones; let i = index">
+                    <div class="slide-content">
+                        <div class="milestone-header">
+                            <div class="milestone-icon">
+                                <div class="icon-background">
+                                    <i [class]="milestone.icon"></i>
+                                </div>
+                                <div class="icon-particles">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <h4 class="milestone-title">{{ milestone.title }}</h4>
+                            <span class="milestone-year">{{ milestone.year }}</span>
+                        </div>
+                        <div class="milestone-content">
+                            <p class="milestone-description">{{ milestone.description }}</p>
+                            <div class="milestone-highlights">
+                                <div class="highlight" *ngFor="let highlight of milestone.highlights">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>{{ highlight }}</span>
+                                </div>
+                            </div>
+                            <div class="milestone-achievements">
+                                <h4>Key Achievements:</h4>
+                                <ul>
+                                    <li *ngFor="let achievement of milestone.achievements">{{ achievement }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline Stats Section -->
+<section class="timeline-stats py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h3 class="display-5 fw-bold mb-4 gradient-text">Our Growth in Numbers</h3>
+                <p class="lead text-muted">Quantifying our success and impact over the years.</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">500</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">98</span>%
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">15</span>+
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">25</span>+
+                        <span class="stat-label">Countries Reached</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="timeline-cta py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="cta-content">
+                    <h2 class="mb-4">Ready to Innovate with Us?</h2>
+                    <p class="lead mb-4">Join the ranks of businesses that have transformed their future with ARP TechLabs' cutting-edge AI and engineering solutions.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-handshake me-2"></i>Partner With Us
+                        </a>
+                        <a href="#" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-phone me-2"></i>Contact Sales
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cta-background">
+        <div class="floating-element fe-1"></div>
+        <div class="floating-element fe-2"></div>
+        <div class="floating-element fe-3"></div>
+    </div>
+</section>
+
+<!-- Include Components -->
+<app-back-top></app-back-top>

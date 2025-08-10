@@ -1,0 +1,60 @@
+<section class="ai-agent-section py-5">
+  <div class="container d-flex justify-content-center">
+    <div class="chat-container p-4 shadow rounded w-100">
+      <h2 class="fw-bold text-center mb-2">
+        Queries about <span class="text-accent">ARP?</span>
+      </h2>
+      <p class="text-center mb-4">
+        Our <span class="text-accent">AI</span> answer engine can help
+      </p>
+
+      <div class="chat-box p-3 rounded bg-light-subtle dark:bg-dark">
+        <div class="chat-messages" #scrollMe>
+          <div *ngFor="let msg of messages" [ngClass]="msg.sender">
+            <span [innerHTML]="msg.text"></span>
+          </div>
+          <div *ngIf="isTyping" class="agent typing">
+            Thinking<span class="typing-dots">...</span>
+          </div>
+        </div>
+
+        <form (submit)="sendMessage(); $event.preventDefault();" class="d-flex mt-3">
+          <input
+            type="text"
+            class="form-control me-2"
+            [(ngModel)]="userMessage"
+            name="message"
+            placeholder="Ask something..."
+            required
+          />
+          <button
+            type="submit"
+            class="btn btn-accent d-flex align-items-center"
+            [disabled]="isTyping"
+            *ngIf="!isTyping"
+          >
+            <i class="bi bi-send"></i>
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            *ngIf="isTyping"
+            (click)="stopResponse()"
+          >
+            <i class="bi bi-pause-fill"></i>
+          </button>
+        </form>
+
+        <div class="suggestions mt-3 d-flex flex-wrap gap-2">
+          <button
+            *ngFor="let suggestion of suggestions"
+            (click)="useSuggestion(suggestion)"
+            class="btn btn-outline-secondary btn-sm"
+          >
+            {{ suggestion }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

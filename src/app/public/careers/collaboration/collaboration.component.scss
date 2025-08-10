@@ -1,0 +1,241 @@
+// COLOR VARIABLES
+$blue-main: #0d6efd;
+$light-green: #81ecec;
+$almost-white: #f9f9f9;
+$section-title-size: 2rem;
+
+// HEADER HERO
+.collab-header {
+  background: #fff;
+  padding: 100px 0 60px 0;
+  position: relative;
+  .display-4,
+  h1 {
+    color: $blue-main;
+    font-weight: 700;
+  }
+  .lead {
+    color: #6c757d;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .cta-btn {
+    background: $blue-main;
+    color: #fff;
+    border: 2px solid $light-green;
+    border-radius: 30px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background .2s, color .2s;
+    &:hover {
+      background: $light-green;
+      color: $blue-main;
+      border: 2px solid $blue-main;
+    }
+  }
+}
+
+// VISION SPLIT
+.collab-split {
+  background: $almost-white;
+  .vision-img {
+    border-radius: 18px;
+    border: 3px solid $light-green;
+  }
+  .fw-bold {
+    color: $blue-main;
+    font-size: 1.75rem;
+  }
+  .green-bar {
+    width: 38px;
+    height: 5px;
+    border-radius: 3px;
+    background: $light-green;
+    margin-bottom: 12px;
+  }
+}
+
+// SECTION TITLES
+.section-title {
+  color: $blue-main;
+  font-size: $section-title-size;
+  font-weight: bold;
+}
+
+// WHY COLLABORATE CARD
+.feature-card {
+  background: #fff;
+  border: 1.5px solid $blue-main;
+  border-radius: 16px;
+  transition: box-shadow 0.3s;
+  box-shadow: 0 2px 10px 0 rgba(#0d6efd,0.04);
+  h5 {
+    color: $blue-main;
+    font-size: 1.2rem;
+    margin-top: 18px;
+    font-weight: 600;
+  }
+  p {
+    color: #222;
+    margin-top: 10px;
+  }
+  .icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    background: #e6fbfb;
+    margin: 0 auto 10px auto;
+    i {
+      font-size: 2.1rem;
+      color: $blue-main;
+    }
+  }
+  &:hover {
+    box-shadow: 0 8px 28px 0 rgba(13,110,253,0.10);
+    transform: translateY(-4px) scale(1.03);
+  }
+}
+
+// AREAS OF COLLABORATION
+.collab-list {
+  .list-group-item {
+    background: #fff !important;
+    border-left: 5px solid $blue-main;
+    color: #232323;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    font-size: 1.04rem;
+    font-weight: 400;
+    strong {
+      color: $blue-main;
+    }
+    .green-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: $light-green;
+      display: inline-block;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// FEATURED PROJECTS
+.project-card {
+  background: #fff;
+  border-left: 5px solid $blue-main;
+  border-radius: 12px;
+  box-shadow: 0 4px 22px #e6fbfb;
+  transition: box-shadow 0.2s, transform 0.2s;
+  h5 {
+    color: $blue-main;
+    font-size: 1.13rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .project-btn {
+    background: $blue-main;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 22px;
+    font-size: 0.99rem;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: border 0.2s, background 0.2s, color 0.2s;
+    &:hover {
+      border: 2px solid $light-green;
+      background: #fff;
+      color: $blue-main;
+    }
+  }
+  &:hover {
+    box-shadow: 0 8px 34px 0 rgba($light-green, 0.19);
+    transform: translateY(-7px) scale(1.02);
+  }
+}
+
+// HOW TO JOIN STEPS
+.join-section {
+  background: #fff;
+}
+.step-box {
+  background: #fff;
+  color: #222;
+  border-left: 5px solid $blue-main;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px #e6fbfb;
+  position: relative;
+  padding-left: 35px !important;
+  margin-bottom: 22px;
+  h5 {
+    color: $blue-main;
+    margin-bottom: 9px;
+  }
+  .step-badge {
+    position: absolute;
+    left: -22px;
+    top: 28px;
+    background: $light-green;
+    color: $blue-main;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 1.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 2px solid $blue-main;
+    box-shadow: 0 5px 15px #e6fbfb;
+  }
+}
+
+// FINAL CTA
+.join-cta {
+  background: linear-gradient(90deg, $blue-main 86%, $light-green 100%);
+  color: #fff;
+  h3 {
+    font-size: 2.05rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+  p {
+    font-size: 1.17rem;
+  }
+  .join-btn {
+    background: #fff;
+    color: $blue-main;
+    border: 2px solid $light-green;
+    padding: 14px 30px;
+    font-weight: 600;
+    border-radius: 32px;
+    font-size: 1.12rem;
+    transition: background .2s, color .2s, border .2s;
+    &:hover {
+      background: $blue-main;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+  }
+}
+
+// RESPONSIVE ADJUSTMENTS
+@media (max-width: 768px) {
+  .collab-header {
+    padding: 60px 0 30px 0;
+  }
+  .section-title { font-size: 1.45rem; }
+  .project-card, .feature-card, .step-box { padding: 18px !important; }
+  .vision-img { width: 100%; }
+}
+
+// OPTIONAL: DARK MODE (add 'dark-mode' class to body or container)
+// .dark-mode { ... }

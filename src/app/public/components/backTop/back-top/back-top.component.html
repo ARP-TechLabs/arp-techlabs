@@ -1,0 +1,16 @@
+<!-- Back to Top Button -->
+<a
+  href="javascript:void(0);"
+  *ngIf="isBackToTopVisible"
+  (click)="scrollToTop()"
+  class="btn btn-hot-pink btn-square rounded-circle back-to-top"
+  style="
+    background-color: #0d6efd;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+  "
+>
+  <i class="fa fa-arrow-up text-white"></i>
+</a>

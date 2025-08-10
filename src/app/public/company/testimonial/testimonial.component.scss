@@ -1,0 +1,397 @@
+// Color Variables
+$primary-blue: #007bff;
+$light-green: #28a745;
+$white: #ffffff;
+$light-gray: #f8f9fa;
+$dark-gray: #6c757d;
+$text-dark: #2c3e50;
+
+// Gradient Background for Header
+.bg-gradient-primary {
+  background: linear-gradient(
+    135deg,
+    $primary-blue 0%,
+    darken($primary-blue, 10%) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+// Header Enhancements
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.header-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  .decoration-line {
+    width: 60px;
+    height: 2px;
+    background: rgba($white, 0.3);
+    border-radius: 1px;
+  }
+
+  .decoration-dot {
+    width: 8px;
+    height: 8px;
+    background: $light-green;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+}
+
+.header-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba($white, 0.1);
+    animation: float 6s ease-in-out infinite;
+
+    &.shape-1 {
+      width: 100px;
+      height: 100px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    &.shape-2 {
+      width: 150px;
+      height: 150px;
+      top: 60%;
+      right: 15%;
+      animation-delay: 2s;
+    }
+
+    &.shape-3 {
+      width: 80px;
+      height: 80px;
+      bottom: 20%;
+      left: 20%;
+      animation-delay: 4s;
+    }
+  }
+}
+
+// Culture Hero Section
+.culture-hero {
+  background: $white;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23f0f0f0" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    pointer-events: none;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    $primary-blue 0%,
+    darken($primary-blue, 10%) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 3rem;
+
+  .stat-item {
+    text-align: center;
+
+    .stat-number {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $primary-blue;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: $dark-gray;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+  }
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+
+  .floating-element {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(
+      135deg,
+      rgba($primary-blue, 0.1) 0%,
+      rgba($light-green, 0.1) 100%
+    );
+    animation: float 8s ease-in-out infinite;
+
+    &.fe-1 {
+      width: 120px;
+      height: 120px;
+      top: 10%;
+      right: 10%;
+      animation-delay: 0s;
+    }
+
+    &.fe-2 {
+      width: 80px;
+      height: 80px;
+      bottom: 20%;
+      left: 15%;
+      animation-delay: 3s;
+    }
+
+    &.fe-3 {
+      width: 100px;
+      height: 100px;
+      top: 50%;
+      left: 5%;
+      animation-delay: 6s;
+    }
+  }
+}
+
+// Values Masonry Grid
+.values-masonry {
+  background: $light-gray;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="%23ffffff" stroke-width="1" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    pointer-events: none;
+  }
+}
+
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+}
+
+.background-circles {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.08); // subtle white tint
+      animation: floatCircle 10s ease-in-out infinite alternate;
+  
+      &.circle-1 {
+        width: 120px;
+        height: 120px;
+        top: 10%;
+        left: 5%;
+        animation-delay: 0s;
+      }
+  
+      &.circle-2 {
+        width: 180px;
+        height: 180px;
+        top: 60%;
+        right: 10%;
+        animation-delay: 2s;
+      }
+  
+      &.circle-3 {
+        width: 90px;
+        height: 90px;
+        bottom: 20%;
+        left: 30%;
+        animation-delay: 4s;
+      }
+    }
+  }
+  
+  @keyframes floatCircle {
+    0%   { transform: translateY(0) scale(1); }
+    50%  { transform: translateY(-10px) scale(1.05); }
+    100% { transform: translateY(0) scale(1); }
+  }
+  
+
+// ===== Testimonial Wrapper =====
+.testimonial-wrapper {
+  position: relative;
+  background: linear-gradient(120deg, var(--brand-white) 70%, var(--brand-blue) 100%);
+  padding: 4rem 1rem;
+}
+
+// ===== Header Section =====
+.testimonial-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fadeDown 1.1s ease;
+
+  h1 {
+    color: var(--brand-blue);
+    font-size: 2.7rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    letter-spacing: 1px;
+  }
+
+  p {
+    color: var(--brand-green);
+    font-size: 1.2rem;
+  }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// ===== Grid Layout =====
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+// ===== Testimonial Cards =====
+.testimonial-card {
+  background: var(--brand-white);
+  border-left: 6px solid var(--brand-blue);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 2rem 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  animation: scaleIn 0.7s cubic-bezier(.43, .41, .22, 1.08) both;
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 50px rgba(13, 110, 253, 0.18);
+    border-color: var(--brand-green);
+    transform: translateY(-6px) scale(1.025);
+  }
+}
+
+.testimonial-card:nth-child(1) { animation-delay: 0.2s; }
+.testimonial-card:nth-child(2) { animation-delay: 0.35s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.5s; }
+
+@keyframes scaleIn {
+  0%   { opacity: 0; transform: scale(0.88) translateY(25px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+// ===== Icon/Emoji =====
+.testimonial-emoji {
+  font-size: 2.2rem;
+  color: var(--brand-blue);
+  margin-bottom: 0.8rem;
+}
+
+// ===== Testimonial Content =====
+.testimonial-content {
+  color: var(--text-main);
+  font-size: 1.14rem;
+  font-style: italic;
+  margin-bottom: 1.7rem;
+  min-height: 84px;
+}
+
+// ===== Author Info =====
+.testimonial-person {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+
+  img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--brand-green);
+    box-shadow: 0 1.5px 12px rgba(35, 228, 155, 0.11);
+  }
+
+  .person-name {
+    font-weight: 700;
+    color: var(--brand-blue);
+    font-size: 1.09rem;
+  }
+
+  .person-title {
+    color: var(--brand-green);
+    font-size: 0.98rem;
+  }
+}
+
+// ===== Responsive Adjustments =====
+@media (max-width: 720px) {
+  .testimonial-header h1 {
+    font-size: 2rem;
+  }
+
+  .testimonial-card {
+    padding: 1.2rem 1rem 1rem;
+  }
+
+  .testimonial-content {
+    min-height: unset;
+    font-size: 1rem;
+  }
+}

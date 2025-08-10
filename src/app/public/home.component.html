@@ -1,0 +1,108 @@
+<app-ai-agent></app-ai-agent>
+
+<!-- Services Start -->
+<div class="container py-5 bg-footer text-footer">
+  <div class="text-center mb-5">
+    <h5 class="text-accent">Our Services</h5>
+    <h2 class="fw-bold">Services Built Specifically For Your Business</h2>
+  </div>
+  <div class="row g-4">
+    <ng-container *ngFor="let service of services">
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-white text-footer h-100 text-center p-4 shadow-sm border-0">
+          <i [class]="service.icon + ' fa-3x mb-3 text-accent'"></i>
+          <h4>{{ service.title }}</h4>
+          <p>{{ service.description }}</p>
+          <a routerLink="" class="btn btn-accent mt-auto">Read More</a>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<!-- Services End -->
+
+<!-- Blog Start -->
+<div class="container py-5 bg-footer text-footer">
+  <div class="text-center mb-5">
+    <h5 class="text-accent">Our Blog</h5>
+    <h2 class="fw-bold">Latest Blog & News</h2>
+  </div>
+  <div class="row g-4">
+    <ng-container *ngFor="let blog of blogs">
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-white text-footer h-100 shadow-sm border-0">
+          <img [src]="blog.img" class="card-img-top rounded-top" alt="" />
+          <div class="card-body">
+            <span class="badge bg-accent mb-2">{{ blog.category }}</span>
+            <h5 class="card-title">By {{ blog.author }}</h5>
+            <p class="text-muted small">{{ blog.date }}</p>
+            <p class="card-text">{{ blog.description }}</p>
+          </div>
+          <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
+            <span><i class="fas fa-share text-accent"></i> {{ blog.shares }} Shares</span>
+            <span><i class="fa fa-comments text-accent"></i> {{ blog.comments }} Comments</span>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<!-- Blog End -->
+
+<!-- Team Start -->
+<div class="container py-5 bg-footer text-footer">
+  <div class="text-center mb-5">
+    <h5 class="text-accent">Our Team</h5>
+    <h2 class="fw-bold">Meet Our Expert Team</h2>
+  </div>
+  <div class="row g-4">
+    <ng-container *ngFor="let member of teamMembers">
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-white text-center text-footer h-100 shadow-sm border-0">
+          <img [src]="member.img" class="rounded-circle mx-auto mt-4" width="100" height="100" alt="" />
+          <div class="card-body">
+            <h5 class="card-title">{{ member.name }}</h5>
+            <p class="card-text text-muted">{{ member.designation }}</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <a *ngIf="member.social.facebook" [href]="member.social.facebook" class="text-accent me-2"><i class="fab fa-facebook-f"></i></a>
+            <a *ngIf="member.social.twitter" [href]="member.social.twitter" class="text-accent me-2"><i class="fab fa-twitter"></i></a>
+            <a *ngIf="member.social.instagram" [href]="member.social.instagram" class="text-accent me-2"><i class="fab fa-instagram"></i></a>
+            <a *ngIf="member.social.linkedin" [href]="member.social.linkedin" class="text-accent"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<!-- Team End -->
+
+<!-- Testimonial Start -->
+<div class="container py-5 bg-footer text-footer">
+  <div class="text-center mb-5">
+    <h5 class="text-accent">Our Testimonial</h5>
+    <h2 class="fw-bold">Our Clients Say!</h2>
+  </div>
+  <div class="row g-4">
+    <ng-container *ngFor="let testimonial of testimonials">
+      <div class="col-md-6 col-lg-3">
+        <div class="card bg-white text-footer h-100 p-3 shadow-sm border-0">
+          <div class="d-flex align-items-center mb-3">
+            <img [src]="testimonial.img" class="rounded-circle me-3" width="60" height="60" alt="" />
+            <div>
+              <h5 class="mb-0">{{ testimonial.name }}</h5>
+              <small class="text-muted">{{ testimonial.profession }}</small>
+            </div>
+          </div>
+          <p class="card-text">{{ testimonial.review }}</p>
+          <div class="text-accent">
+            <i *ngFor="let star of [].constructor(testimonial.stars)" class="fas fa-star me-1"></i>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<!-- Testimonial End -->
+
+<app-contact-form></app-contact-form>

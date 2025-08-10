@@ -1,0 +1,230 @@
+// Colors & Variables
+$blue-main: #0d6efd;
+$light-green: #81ecec;
+$bg-light: #f9f9f9;
+$text-dark: #222;
+$text-muted: #555;
+
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+
+// HEADER
+.arp-header {
+  background: linear-gradient(120deg, $blue-main 85%, $light-green 100%);
+  min-height: 280px;
+  padding: 80px 0 50px;
+  color: #fff;
+  text-align: center;
+
+  h1 {
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .breadcrumb {
+    background: none;
+
+    li a,
+    li.active {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// SECTION TITLE
+.section-title {
+  color: $blue-main;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+// ROADMAP
+.learning-roadmap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 1.5rem;
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .roadmap-step {
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px 16px;
+    box-shadow: 0 2px 10px rgba(13, 110, 253, 0.1);
+    flex: 1;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    max-width: 220px;
+
+    &.completed {
+      background: #eaf6ff;
+      border-left: 5px solid $blue-main;
+      .step-icon {
+        background-color: $light-green;
+        color: $blue-main;
+        border: 2px solid $blue-main;
+      }
+    }
+
+    &.active {
+      background-color: #d0e7ff;
+      border-left: 5px solid $blue-main;
+      box-shadow: 0 6px 16px rgba(13, 110, 253, 0.25);
+      transform: translateY(-6px);
+      .step-icon {
+        background: $blue-main;
+        color: #fff;
+        box-shadow: 0 0 10px rgba(13, 110, 253, 0.4);
+      }
+    }
+
+    &.upcoming {
+      background-color: $bg-light;
+      border-left: 5px solid #ccc;
+      color: $text-muted;
+      .step-icon {
+        background-color: transparent;
+        color: $text-muted;
+        border: 2px solid $text-muted;
+      }
+    }
+
+    .step-icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-bottom: 12px;
+      transition: all 0.3s;
+    }
+
+    h5 {
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+  }
+}
+
+// COURSES SECTION
+.bg-light {
+  background: $bg-light;
+}
+
+.course-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 10px rgba(13, 110, 253, 0.1);
+  border: 1px solid transparent;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: $blue-main;
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.15);
+  }
+
+  .course-icon {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+    display: block;
+    color: $blue-main;
+  }
+
+  h6 {
+    color: $blue-main;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $text-dark;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    min-height: 52px;
+  }
+}
+
+// FINAL CTA
+.join-cta {
+  background: linear-gradient(90deg, $blue-main 88%, $light-green 100%);
+  color: #fff;
+  padding: 60px 20px;
+
+  h3 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto 20px;
+  }
+
+  .join-btn {
+    background: #fff;
+    color: $blue-main;
+    border: 2px solid $light-green;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 30px;
+    transition: 0.3s;
+
+    &:hover {
+      background: $blue-main;
+      color: #fff;
+      border-color: #fff;
+    }
+  }
+}
+
+// RESPONSIVE
+@media (max-width: $breakpoint-sm) {
+  .learning-roadmap .roadmap-step {
+    max-width: 100%;
+  }
+
+  .course-card {
+    padding: 22px 16px;
+  }
+}

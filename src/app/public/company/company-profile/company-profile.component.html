@@ -1,0 +1,170 @@
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5 bg-gradient-primary">
+    <div class="container text-center py-5">
+      <div class="header-content">
+        <h1 class="display-2 text-white mb-4 animated slideInDown">
+            About ARP TechLabs
+        </h1>
+        <p class="lead text-white-50 mb-4 animated slideInUp">
+            Shaping Tomorrow Through Intelligent Solutions
+        </p>
+        <div class="header-decoration">
+          <div class="decoration-line"></div>
+          <div class="decoration-dot"></div>
+          <div class="decoration-line"></div>
+        </div>
+      </div>
+    </div>
+    <div class="header-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+  </div>
+  <!-- Page Header End -->
+
+<!-- Fact Start -->
+<div class="container-fluid bg-secondary py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 wow fadeIn" data-wow-delay=".1s">
+                <div class="d-flex counter">
+                    <h1 class="me-3 text-primary counter-value">99%</h1>
+                    <h5 class="text-white mt-1">Client Satisfaction Rate</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 wow fadeIn" data-wow-delay=".3s">
+                <div class="d-flex counter">
+                    <h1 class="me-3 text-primary counter-value">25+</h1>
+                    <h5 class="text-white mt-1">Industries Empowered with AI</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 wow fadeIn" data-wow-delay=".5s">
+                <div class="d-flex counter">
+                    <h1 class="me-3 text-primary counter-value">120+</h1>
+                    <h5 class="text-white mt-1">Enterprise Clients Worldwide</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 wow fadeIn" data-wow-delay=".7s">
+                <div class="d-flex counter">
+                    <h1 class="me-3 text-primary counter-value">5★</h1>
+                    <h5 class="text-white mt-1">Average Customer Review</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fact End -->
+
+<!-- About Start -->
+<div class="container-fluid py-5 my-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                <div class="h-100 position-relative">
+                    <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/56bd2d76-0155-4eb0-b350-6ea1b937b96a.png" class="img-fluid w-75 rounded" alt="Team ARP" style="margin-bottom: 25%;">
+                    <div class="position-absolute w-75" style="top: 25%; left: 25%;">
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/56bd2d76-0155-4eb0-b350-6ea1b937b96a.png" class="img-fluid w-100 rounded" alt="Office">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                <h5 class="text-primary">About Us</h5>
+                <h1 class="mb-4">Empowering Innovation Through Software & Generative AI</h1>
+                <p><strong>ARP TechLabs</strong> is a cutting-edge technology firm dedicated to developing intelligent software solutions powered by Generative AI. Our mission is to help businesses automate, scale, and innovate by integrating advanced AI models into real-world systems.</p>
+                <p>Founded by a group of engineers and AI specialists, we bring deep expertise in cloud-native architectures, enterprise applications, and AI-driven automation. Our solutions serve industries like healthcare, logistics, fintech, and digital content creation.</p>
+                <h5 class="mt-4">Core Focus Areas:</h5>
+                <ul>
+                    <li>⚙️ Custom Software Development</li>
+                    <li>🤖 Generative AI for Text, Image, and Audio</li>
+                    <li>☁️ Cloud Infrastructure & Automation</li>
+                    <li>🔐 AI Ethics & Data Security Frameworks</li>
+                    <li>📈 AI Integration for Business Intelligence</li>
+                </ul>
+                <a href="#" class="btn btn-secondary rounded-pill px-5 py-3 text-white mt-3">Explore Solutions</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+<!-- Team Section Start -->
+<section class="team-section py-5">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h6 class="text-primary text-uppercase fw-bold mb-3">Our Leadership Team</h6>
+                <h2 class="display-5 fw-bold mb-4">Meet the Visionaries Behind ARP TechLabs</h2>
+                <p class="lead text-muted">Our exceptional team of innovators, engineers, and strategists are dedicated to transforming businesses through cutting-edge AI solutions.</p>
+            </div>
+        </div>
+
+        <!-- Team Members Grid -->
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" *ngFor="let member of teamMembers; let i = index">
+                <div class="team-card">
+                    <div class="team-card-inner">
+                        <!-- Team Member Image -->
+                        <div class="team-image-wrapper">
+                            <div class="team-image">
+                                <img [src]="member.image" [alt]="member.name" class="img-fluid">
+                            </div>
+                            <div class="team-overlay">
+                                <div class="social-links">
+                                    <a [href]="member.linkedin" target="_blank" class="social-link linkedin">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="social-link twitter">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-link email">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team Member Info -->
+                        <div class="team-info">
+                            <h4 class="team-name">{{ member.name }}</h4>
+                            <p class="team-role">{{ member.role }}</p>
+                            <div class="team-description">
+                                <p>Passionate about leveraging AI to solve complex business challenges and drive innovation across industries.</p>
+                            </div>
+                            
+                            <!-- Skills/Tags -->
+                            <div class="team-skills">
+                                <span class="skill-tag">AI/ML</span>
+                                <span class="skill-tag">Leadership</span>
+                                <span class="skill-tag">Innovation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-8 text-center">
+                <div class="cta-section">
+                    <h4 class="mb-3">Ready to Join Our Team?</h4>
+                    <p class="text-muted mb-4">We're always looking for talented individuals who are passionate about AI and innovation.</p>
+                    <a href="#" class="btn btn-primary btn-lg rounded-pill me-3">
+                        <i class="fas fa-users me-2"></i>Join Our Team
+                    </a>
+                    <a href="#" class="btn btn-outline-primary btn-lg rounded-pill">
+                        <i class="fas fa-handshake me-2"></i>Partner With Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Team Section End -->
+
+<!-- Include Header and Footer Components -->
+<app-back-top></app-back-top>
+<!-- <app-footer></app-footer> -->
+  

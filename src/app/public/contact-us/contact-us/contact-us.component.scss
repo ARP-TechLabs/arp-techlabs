@@ -1,0 +1,28 @@
+.map-responsive {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.map-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+.form-dark {
+  background-color: #1f1b2e;
+  color: #fff;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-dark:focus {
+  outline: none;
+  // box-shadow: 0 0 0 0.25rem rgba(230, 14, 126, 0.25);
+  box-shadow: 0 0 0 0.25rem orangered;
+  border: 1px solid #ff2e9a;
+}

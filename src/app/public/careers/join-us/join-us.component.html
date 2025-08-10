@@ -1,0 +1,84 @@
+<!-- Header -->
+<div class="container-fluid page-header py-5 bg-primary text-white">
+    <div class="container text-center py-5">
+      <h2 class="display-4 mb-3 inspireHeader">Explore Opportunities at ARP TechLabs</h2>
+      <p class="inspire">Join a culture of innovation, integrity, and impact. Shape the future with us.</p>
+    </div>
+  </div>
+  
+  <!-- Search + Roles -->
+  <div class="container py-5 join-us-wrapper" [ngClass]="{ 'dark-mode': isDarkMode }">
+    <div class="text-center mb-5">
+      <input
+        type="text"
+        [(ngModel)]="searchText"
+        class="form-control search-box"
+        placeholder="Search roles..."
+      />
+    </div>
+  
+    <!-- Role Cards -->
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let role of filteredRoles()">
+        <div class="role-card p-4 h-100 d-flex flex-column justify-content-between shadow-sm">
+          <div>
+            <h5 class="mb-2">{{ role.title }}</h5>
+            <div class="mb-2">
+              <span class="badge rounded-pill bg-secondary me-2">{{ role.experience }}</span>
+              <span class="badge rounded-pill" [ngClass]="{ 'bg-success': role.location === 'Remote', 'bg-info': role.location !== 'Remote' }">
+                {{ role.location }}
+              </span>
+            </div>
+            <div class="mb-2 tech-chips">
+              <span class="badge bg-light text-dark border me-1 mb-1" *ngFor="let tech of role.techStack">{{ tech }}</span>
+            </div>
+            <p class="text-muted mt-2 small">{{ role.descriptionPoints[0] | slice: 0:100 }}...</p>
+          </div>
+          <div class="text-end">
+            <button class="btn btn-outline-primary btn-sm" (click)="openModal(role)">View & Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal-backdrop" *ngIf="isModalOpen" (click)="closeModal()"></div>
+  <div
+    class="modal-custom"
+    role="dialog"
+    [ngClass]="{ show: isModalOpen }"
+    [style.display]="isModalOpen ? 'block' : 'none'"
+  >
+    <div class="modal-content p-4" [ngClass]="{ 'bg-dark text-white': isDarkMode }">
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title">{{ selectedRole?.title }}</h5>
+        <button type="button" class="btn-close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Experience:</strong> {{ selectedRole?.experience }}</p>
+        <p><strong>Location:</strong> {{ selectedRole?.location }}</p>
+  
+        <p><strong>Job Description:</strong></p>
+        <ul>
+          <li *ngFor="let point of selectedRole?.descriptionPoints">{{ point }}</li>
+        </ul>
+  
+        <p><strong>Required Tech Stack:</strong></p>
+        <div class="mb-3">
+          <span class="badge bg-info text-dark me-1 mb-1" *ngFor="let tech of selectedRole?.techStack">{{ tech }}</span>
+        </div>
+  
+        <div class="mt-3">
+          <label for="resumeUpload"><strong>Upload your Resume</strong></label>
+          <input type="file" id="resumeUpload" class="form-control mt-2" />
+        </div>
+      </div>
+  
+      <div class="modal-footer d-flex justify-content-end">
+        <button class="btn btn-secondary me-2" (click)="closeModal()">Close</button>
+        <button class="btn btn-success" (click)="applyForRole()">Apply</button>
+      </div>
+    </div>
+  </div>
+  

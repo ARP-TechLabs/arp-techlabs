@@ -1,0 +1,311 @@
+// === Variables ===
+$accent-color: #0d6efd;
+$light-bg: #fff;
+$light-text: #444;
+$dark-bg: #2c2c2e;
+$dark-text: #ccc;
+$transition-fast: 0.3s ease;
+
+// === Sticky Navbar ===
+.navbar-outer {
+  position: sticky;
+  top: 1rem;
+  z-index: 100;
+  padding: 0 1rem;
+  transition: top $transition-fast;
+}
+
+.custom-navbar {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(7px);
+  border: 1px solid #d1d1d1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 3rem;
+  transition: all $transition-fast;
+  color: $accent-color;
+
+  .nav-link {
+    font-weight: 500;
+    padding: 0.6rem 1rem;
+    color: $accent-color;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+// === Dropdown: Small ===
+.dropdown-small .dropdown-menu {
+  padding: 0.8rem 1rem;
+  min-width: 250px;
+  border-radius: 12px;
+  background-color: $light-bg;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+// === Dropdown: Mega (Solutions) ===
+.dropdown-mega .dropdown-menu {
+  padding: 2rem;
+  min-width: 800px;
+  border-radius: 16px;
+  background-color: $light-bg;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .col-md-4 {
+    min-width: 220px;
+
+    h6 {
+      color: $accent-color;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .dropdown-item {
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: background-color $transition-fast;
+      font-size: 0.95rem;
+      color: $light-text;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        color: $accent-color;
+      }
+    }
+  }
+}
+
+// === Dropdown: Descriptive (Careers) ===
+.dropdown-careers .dropdown-menu {
+  padding: 2rem;
+  min-width: 800px;
+  border-radius: 16px;
+  background-color: $light-bg;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+  .career-section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $accent-color;
+    margin-bottom: 1rem;
+  }
+
+  .career-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .career-block {
+      flex: 1 1 45%;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+
+      .icon {
+        font-size: 2rem;
+        color: $accent-color;
+      }
+
+      .content {
+        h6 {
+          font-weight: 600;
+          margin: 0 0 0.25rem;
+          color: #222;
+        }
+
+        p {
+          font-size: 0.85rem;
+          color: $light-text;
+        }
+
+        a {
+          font-size: 0.85rem;
+          font-weight: 500;
+          color: $accent-color;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+// === Dropdown: Contact Overview ===
+.contact-dropdown {
+  position: relative;
+
+  .dropdown-menu.contact-overview {
+    min-width: 250px;
+    max-width: 300px;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: none;
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    transition: all 0.2s ease;
+
+    a {
+      color: var(--bs-primary);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .btn-outline-primary {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+    }
+  }
+
+  &:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 991.98px) {
+    .dropdown-menu.contact-overview {
+      position: static;
+      display: block;
+      margin-top: 0;
+    }
+  }
+}
+
+// === Dark Mode ===
+body[data-theme='dark'] {
+  .custom-navbar {
+    background-color: rgba(27, 27, 27, 0.95);
+    color: $dark-text;
+
+    .nav-link {
+      color: $dark-text;
+
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    background-color: $dark-bg;
+
+    h6 {
+      color: $accent-color;
+    }
+
+    .dropdown-item {
+      color: $dark-text;
+
+      &:hover {
+        background-color: #333;
+        color: $accent-color;
+      }
+    }
+
+    p {
+      color: #aaa;
+    }
+  }
+
+  .dropdown-mega .dropdown-menu,
+  .dropdown-careers .dropdown-menu {
+    background-color: $dark-bg;
+  }
+
+  .dropdown-careers .career-section-title {
+    color: $accent-color;
+  }
+
+  .dropdown-careers .career-block {
+    .icon {
+      color: $accent-color;
+    }
+
+    .content {
+      h6 {
+        color: $dark-text;
+      }
+
+      p {
+        color: #aaa;
+      }
+
+      a {
+        color: $accent-color;
+      }
+    }
+  }
+
+  .contact-dropdown .contact-overview {
+    background-color: $light-bg; // This ensures white background in light mode
+    color: $light-text;
+  
+    a {
+      color: $accent-color;
+    }
+  
+    .btn-outline-primary {
+      color: $accent-color;
+      border-color: $accent-color;
+  
+      &:hover {
+        background-color: $accent-color;
+        color: #fff;
+      }
+    }
+  }
+  
+}
+
+// === Responsive ===
+@media (max-width: 991.98px) {
+  .custom-navbar {
+    border-radius: 15px !important;
+    align-items: stretch;
+    padding: 0.2rem !important;
+  }
+
+  .navbar-brand {
+    flex-shrink: 0;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .navbar-collapse {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .dropdown-mega .dropdown-menu,
+  .dropdown-careers .dropdown-menu {
+    width: 100%;
+    position: static;
+    transform: none;
+    min-width: auto;
+    padding: 1.5rem;
+  }
+}

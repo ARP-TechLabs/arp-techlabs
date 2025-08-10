@@ -1,0 +1,72 @@
+.inspireHeader,
+.inspire {
+  color: white;
+}
+
+.join-us-wrapper {
+  background-color: #ffffff;
+
+  &.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+
+    .role-card {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+  }
+}
+
+.search-box {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 10px 15px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+}
+
+.role-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  border-left: 5px solid #00b894;
+
+  &:hover {
+    box-shadow: 0 6px 18px rgba(0, 123, 255, 0.15);
+  }
+
+  .tech-chips .badge {
+    font-size: 0.75rem;
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+}
+
+.modal-custom {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  z-index: 1050;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+  &.show {
+    display: block;
+  }
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: inherit;
+}

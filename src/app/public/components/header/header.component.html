@@ -1,0 +1,320 @@
+<div class="navbar-outer" [ngClass]="{ sticky: isSticky }">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg rounded-pill px-3 py-2 px-lg-4 custom-navbar" [ngClass]="{ shadow: isSticky }">
+      <!-- Brand -->
+      <a routerLink="/" class="navbar-brand fw-bold d-flex align-items-center gap-2 text-light-emphasis">
+        <img src="../../../../assets/icons/ARP_LOGO-removebg-landscape.png" width="190" />
+      </a>
+
+      <!-- Mobile Toggle Buttons -->
+      <div class="d-flex align-items-center ms-auto d-lg-none">
+        <button class="btn btn-icon toggle-theme" (click)="toggleDarkMode()">
+          <span [innerHTML]="isDarkMode ? '☀️' : '🌙'"></span>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="
+            background: transparent;
+            border: none !important;
+            outline: none !important;
+          ">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+        <ul class="navbar-nav mx-auto text-center gap-lg-2">
+          <!-- 1. Company -->
+          <li class="nav-item dropdown dropdown-careers">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Company</a>
+            <div class="dropdown-menu">
+              <div class="career-section-title">About Our Company</div>
+              <div class="career-grid">
+                <div class="career-block">
+                  <div class="icon">🏢</div>
+                  <div class="content">
+                    <h6><a routerLink="/about-arp">About ARP TechLabs</a></h6>
+                    <p>Our story, purpose, and global impact.</p>
+                    <a routerLink="/about-arp">Learn More →</a>
+                  </div>
+                </div>
+                <div class="career-block">
+                  <div class="icon">💡</div>
+                  <div class="content">
+                    <h6><a routerLink="/why-arp">Why ARP TechLabs?</a></h6>
+                    <p>What sets us apart in tech innovation.</p>
+                    <a routerLink="/why-arp">Why Choose Us →</a>
+                  </div>
+                </div>
+                <div class="career-block">
+                  <div class="icon">❤️</div>
+                  <div class="content">
+                    <h6>
+                      <a routerLink="/culture-values">Culture & Values</a>
+                    </h6>
+                    <p>Driven by collaboration, ethics, and growth.</p>
+                    <a routerLink="/culture-values">Explore Culture →</a>
+                  </div>
+                </div>
+                <div class="career-block">
+                  <div class="icon">🎯</div>
+                  <div class="content">
+                    <h6>
+                      <a routerLink="/mission-vision">Mission & Vision</a>
+                    </h6>
+                    <p>Our long-term tech vision and goals.</p>
+                    <a routerLink="/mission-vision">See Mission →</a>
+                  </div>
+                </div>
+                <div class="career-block">
+                  <div class="icon">🗓️</div>
+                  <div class="content">
+                    <h6><a routerLink="/timeline">Our Journey</a></h6>
+                    <p>Milestones, achievements, and growth timeline.</p>
+                    <a routerLink="/timeline">View Timeline →</a>
+                  </div>
+                </div>
+                <div class="career-block">
+                  <div class="icon">🌟</div>
+                  <div class="content">
+                    <h6><a routerLink="/testimonial">Testimonial</a></h6>
+                    <p>Hear from our clients and partners.</p>
+                    <a routerLink="/testimonial">See Testimonials →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. Solutions -->
+          <li class="nav-item dropdown dropdown-careers">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+            <div class="dropdown-menu p-4 solutions-dropdown">
+              <div class="career-section-title">
+                Solutions Tailored for your Needs
+              </div>
+              <div class="career-grid">
+                <!-- === AI-Based Solutions === -->
+                <div class="career-category">
+                  <div class="career-section-title">AI-Based Solutions</div>
+                  <div class="d-flex flex-wrap gap-3 mt-2">
+                    <div class="career-block-sm">
+                      <div class="content">
+                        <h6><a routerLink="/ai">🧠 AI Agents</a></h6>
+                        <p>Automate with intelligent agents.</p>
+                      </div>
+                    </div>
+                    <div class="career-block-sm">
+                      <div class="content">
+                        <h6><a routerLink="/gen-ai">🎨 Generative AI</a></h6>
+                        <p>Build creative AI tools.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- === Development Solutions === -->
+                <div class="career-category">
+                  <div class="career-section-title">Development Solutions</div>
+                  <div class="d-flex flex-wrap gap-3 mt-2">
+                    <div class="career-block-sm">
+                      <div class="content">
+                        <h6><a routerLink="/web">🌐 Web Development</a></h6>
+                        <p>Scalable modern websites.</p>
+                      </div>
+                    </div>
+                    <div class="career-block-sm">
+                      <div class="content">
+                        <h6>
+                          <a routerLink="/software">💻 Software Development</a>
+                        </h6>
+                        <p>Custom software for any need.</p>
+                      </div>
+                    </div>
+                    <div class="career-block-sm">
+                      <div class="content">
+                        <h6>
+                          <a routerLink="/paas">🚀 Product Development</a>
+                        </h6>
+                        <p>From MVP to full-scale systems.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- === Data Solutions === -->
+                <div class="career-category">
+                  <div class="career-section-title">Data Solutions</div>
+                  <div class="d-flex flex-wrap gap-3 mt-2">
+                    <div class="career-block-sm">
+                      <div class="content">
+                        <h6>
+                          <a routerLink="/data-science">📊 Data Science</a>
+                        </h6>
+                        <p>ML-powered business insights.</p>
+                      </div>
+                    </div>
+                    <div class="career-block-sm">
+                      <div class="content">
+                        <h6>
+                          <a routerLink="/data-analytics">📈 Data Analytics</a>
+                        </h6>
+                        <p>Analyze and act on your data.</p>
+                      </div>
+                    </div>
+                    <div class="career-block-sm">
+                      <div class="content">
+                        <h6>
+                          <a routerLink="/db-services">🗄️ Database Services</a>
+                        </h6>
+                        <p>Reliable, scalable DB solutions.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 3. Careers -->
+          <li class="nav-item dropdown dropdown-careers">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Careers</a>
+            <div class="dropdown-menu">
+              <div class="career-section-title">
+                Explore Careers - ARP TechLabs
+              </div>
+              <div class="career-grid">
+                <div class="career-block">
+                  <div class="icon">🚀</div>
+                  <div class="content">
+                    <h6><a routerLink="/join-us">Join Us</a></h6>
+                    <p>We’re hiring innovators.</p>
+                    <a routerLink="/join-us">See Open Roles →</a>
+                  </div>
+                </div>
+                <div class="career-block">
+                  <div class="icon">🤝</div>
+                  <div class="content">
+                    <h6><a routerLink="/collaboration">Collaborate</a></h6>
+                    <p>Partner with ARP TechLabs.</p>
+                    <a routerLink="/collaboration">Start Now →</a>
+                  </div>
+                </div>
+                <div class="career-block">
+                  <div class="icon">🎤</div>
+                  <div class="content">
+                    <h6><a routerLink="/book-seminar">Seminars</a></h6>
+                    <p>Book our experts for events.</p>
+                    <a routerLink="/book-seminar">Book Now →</a>
+                  </div>
+                </div>
+                <div class="career-block">
+                  <div class="icon">📘</div>
+                  <div class="content">
+                    <h6><a routerLink="/arp-learning">ARP for Learning</a></h6>
+                    <p>Courses, mentorship & growth.</p>
+                    <a routerLink="/arp-learning">Start Learning →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Contact -->
+          <li class="nav-item dropdown dropdown-careers">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Contact Us</a>
+            <div class="dropdown-menu">
+              <div class="career-section-title">Connect with ARP TechLabs</div>
+              <div class="career-grid">
+                <div class="career-block">
+                  <div class="icon">📧</div>
+                  <div class="content">
+                    <h6>
+                      <a href="mailto:connect@arptechlabs.com">Email Us</a>
+                    </h6>
+                    <p>We respond within 24 hours.</p>
+                    <a href="mailto:connect@arptechlabs.com">Send Email →</a>
+                  </div>
+                </div>
+                <div class="career-block">
+                  <div class="icon">📞</div>
+                  <div class="content">
+                    <h6>Call Us</h6>
+                    <p>Mon–Fri, 10 AM – 6 PM IST.</p>
+                    <a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a>
+                  </div>
+                </div>
+                <div class="career-block">
+                  <div class="icon">📍</div>
+                  <div class="content">
+                    <h6>
+                      <a href="https://maps.app.goo.gl/xzxcgMgBa2fh4uJTA" target="_blank">Visit Us</a>
+                    </h6>
+                    <p>We'd love to meet in person.</p>
+                    <a href="https://maps.app.goo.gl/xzxcgMgBa2fh4uJTA" target="_blank">Get Directions →</a>
+                  </div>
+                </div>
+                <div class="career-block">
+                  <div class="icon">💬</div>
+                  <div class="content">
+                    <h6><a routerLink="/contact-us">Online Inquiry</a></h6>
+                    <p>Reach out via our contact form.</p>
+                    <a routerLink="/contact-us">Contact Form →</a>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="career-section-title">Legal & Policies</div>
+              <div class="career-grid">
+
+                <div class="career-block">
+                  <div class="icon">⚖️</div>
+                  <div class="content">
+                    <h6><a routerLink="/disclaimer">Disclaimer</a></h6>
+                    <p>Important notices outlining service use limitations.</p>
+                    <a routerLink="/disclaimer">Read Disclaimer →</a>
+                  </div>
+                </div>
+
+                <div class="career-block">
+                  <div class="icon">📜</div>
+                  <div class="content">
+                    <h6><a routerLink="/terms-conditions">Terms & Conditions</a></h6>
+                    <p>Our official rules and guidelines for using our services.</p>
+                    <a routerLink="/terms-conditions">View Terms & Conditions →</a>
+                  </div>
+                </div>
+
+                <div class="career-block">
+                  <div class="icon">🔒</div>
+                  <div class="content">
+                    <h6><a routerLink="/privacy-policy">Privacy Policy</a></h6>
+                    <p>How we handle, store, and protect your personal data.</p>
+                    <a routerLink="/privacy-policy">View Privacy Policy →</a>
+                  </div>
+                </div>
+
+                <div class="career-block">
+                  <div class="icon">🍪</div>
+                  <div class="content">
+                    <h6><a routerLink="/cookie-policy">Cookie Policy</a></h6>
+                    <p>Details on how we use cookies for analytics & functionality.</p>
+                    <a routerLink="/cookie-policy">View Cookie Policy →</a>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </li>
+        </ul>
+
+        <!-- Desktop Theme Toggle -->
+        <div class="d-none d-lg-flex align-items-center ms-auto">
+          <button (click)="toggleDarkMode()" class="btn btn-icon toggle-theme">
+            <span [innerHTML]="isDarkMode ? '☀️' : '🌙'"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

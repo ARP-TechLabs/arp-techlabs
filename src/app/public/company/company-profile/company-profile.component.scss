@@ -1,0 +1,759 @@
+// Color Variables
+$primary-blue: #007bff;
+$light-green: #28a745;
+$white: #ffffff;
+$light-gray: #f8f9fa;
+$dark-gray: #6c757d;
+$text-dark: #2c3e50;
+
+// Gradient Background for Header
+.bg-gradient-primary {
+  background: linear-gradient(
+    135deg,
+    $primary-blue 0%,
+    darken($primary-blue, 10%) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+// Header Enhancements
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.header-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  .decoration-line {
+    width: 60px;
+    height: 2px;
+    background: rgba($white, 0.3);
+    border-radius: 1px;
+  }
+
+  .decoration-dot {
+    width: 8px;
+    height: 8px;
+    background: $light-green;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+}
+
+.header-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba($white, 0.1);
+    animation: float 6s ease-in-out infinite;
+
+    &.shape-1 {
+      width: 100px;
+      height: 100px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    &.shape-2 {
+      width: 150px;
+      height: 150px;
+      top: 60%;
+      right: 15%;
+      animation-delay: 2s;
+    }
+
+    &.shape-3 {
+      width: 80px;
+      height: 80px;
+      bottom: 20%;
+      left: 20%;
+      animation-delay: 4s;
+    }
+  }
+}
+
+// Culture Hero Section
+.culture-hero {
+  background: $white;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23f0f0f0" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    pointer-events: none;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    $primary-blue 0%,
+    darken($primary-blue, 10%) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 3rem;
+
+  .stat-item {
+    text-align: center;
+
+    .stat-number {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $primary-blue;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: $dark-gray;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+  }
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+
+  .floating-element {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(
+      135deg,
+      rgba($primary-blue, 0.1) 0%,
+      rgba($light-green, 0.1) 100%
+    );
+    animation: float 8s ease-in-out infinite;
+
+    &.fe-1 {
+      width: 120px;
+      height: 120px;
+      top: 10%;
+      right: 10%;
+      animation-delay: 0s;
+    }
+
+    &.fe-2 {
+      width: 80px;
+      height: 80px;
+      bottom: 20%;
+      left: 15%;
+      animation-delay: 3s;
+    }
+
+    &.fe-3 {
+      width: 100px;
+      height: 100px;
+      top: 50%;
+      left: 5%;
+      animation-delay: 6s;
+    }
+  }
+}
+
+// Values Masonry Grid
+.values-masonry {
+  background: $light-gray;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="%23ffffff" stroke-width="1" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    pointer-events: none;
+  }
+}
+
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+}
+
+// Value Cards
+.value-card {
+  background: $white;
+  border-radius: 25px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  height: fit-content;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(
+      135deg,
+      $primary-blue 0%,
+      darken($primary-blue, 10%) 100%
+    );
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+
+    &::before {
+      transform: scaleX(1);
+    }
+
+    .card-glow {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .value-icon {
+      transform: scale(1.1) rotate(5deg);
+
+      .icon-background {
+        background: linear-gradient(
+          135deg,
+          $primary-blue 0%,
+          darken($primary-blue, 10%) 100%
+        );
+
+        i {
+          color: $white;
+        }
+      }
+
+      .icon-particles span {
+        animation: particleFloat 2s ease-in-out infinite;
+      }
+    }
+  }
+}
+// Team Section Styles
+.team-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+  }
+}
+
+// Team Card Styles
+.team-card {
+  position: relative;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  &:hover {
+    transform: translateY(-10px);
+
+    .team-card-inner {
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .team-overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .team-image img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.team-card-inner {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+// Team Image Styles
+.team-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 280px;
+}
+
+.team-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+}
+
+// Team Overlay Styles
+.team-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 123, 255, 0.9) 0%,
+    rgba(0, 86, 179, 0.9) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    color: white;
+    text-decoration: none;
+  }
+
+  i {
+    font-size: 18px;
+  }
+
+  &.linkedin:hover {
+    background: #0077b5;
+    border-color: #0077b5;
+  }
+
+  &.twitter:hover {
+    background: #1da1f2;
+    border-color: #1da1f2;
+  }
+
+  &.email:hover {
+    background: #ea4335;
+    border-color: #ea4335;
+  }
+}
+
+// Team Info Styles
+.team-info {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.team-role {
+  font-size: 1rem;
+  color: #007bff;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.team-description {
+  margin-bottom: 20px;
+
+  p {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+// Skills/Tags Styles
+.team-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.skill-tag {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  color: #1976d2;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid #e3f2fd;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, #bbdefb 0%, #90caf9 100%);
+    transform: translateY(-2px);
+  }
+}
+
+// CTA Section Styles
+.cta-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 123, 255, 0.1);
+
+  h4 {
+    color: #2c3e50;
+    font-weight: 700;
+  }
+
+  .btn {
+    padding: 12px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+    }
+  }
+}
+
+// // Responsive Design
+// @media (max-width: 768px) {
+//   .team-section {
+//     padding: 3rem 0;
+//   }
+
+//   .team-image-wrapper {
+//     height: 220px;
+//   }
+
+//   .team-info {
+//     padding: 20px;
+//   }
+
+//   .team-name {
+//     font-size: 1.3rem;
+//   }
+
+//   .social-links {
+//     gap: 10px;
+//   }
+
+//   .social-link {
+//     width: 40px;
+//     height: 40px;
+
+//     i {
+//       font-size: 16px;
+//     }
+//   }
+
+//   .cta-section {
+//     padding: 30px 20px;
+
+//     .btn {
+//       display: block;
+//       width: 100%;
+//       margin-bottom: 15px;
+
+//       &:last-child {
+//         margin-bottom: 0;
+//       }
+//     }
+//   }
+// }
+
+@media (max-width: 576px) {
+  .team-card {
+    margin-bottom: 30px;
+  }
+
+  .team-image-wrapper {
+    height: 200px;
+  }
+
+  .team-info {
+    padding: 15px;
+  }
+
+  .team-name {
+    font-size: 1.2rem;
+  }
+
+  .team-role {
+    font-size: 0.9rem;
+  }
+}
+/* Extra Responsive Tweaks */
+
+/* Medium devices (tablets, ≤992px) */
+@media (max-width: 992px) {
+  .team-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .team-info {
+    padding: 20px;
+  }
+
+  .team-name {
+    font-size: 1.3rem;
+  }
+}
+
+/* Small devices (phones, ≤768px) */
+@media (max-width: 768px) {
+  .team-section {
+    padding: 2rem 0.8rem;
+  }
+
+  .team-image-wrapper {
+    height: auto;
+    min-height: 200px;
+  }
+
+  .team-info {
+    padding: 15px;
+  }
+
+  .team-name {
+    font-size: 1.2rem;
+  }
+
+  .team-role {
+    font-size: 0.85rem;
+  }
+
+  .skill-tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+
+  /* Make social icons smaller */
+  .social-link {
+    width: 38px;
+    height: 38px;
+
+    i {
+      font-size: 15px;
+    }
+  }
+}
+
+/* Extra small devices (narrow phones, ≤480px) */
+@media (max-width: 480px) {
+  .team-section {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .team-name {
+    font-size: 1.1rem;
+  }
+
+  .team-role {
+    font-size: 0.8rem;
+  }
+
+  .team-description p {
+    font-size: 0.85rem;
+  }
+
+  .team-card-inner {
+    border-radius: 12px;
+  }
+
+  .cta-section {
+    padding: 20px 15px;
+
+    .btn {
+      font-size: 0.85rem;
+      padding: 10px 18px;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+/* Very small devices (≤360px) */
+@media (max-width: 360px) {
+  .team-name {
+    font-size: 1rem;
+  }
+
+  .team-role {
+    font-size: 0.75rem;
+  }
+
+  .skill-tag {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  .social-link {
+    width: 34px;
+    height: 34px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+}
+
+// Additional Component Styles
+.counter {
+  .counter-value {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+}
+
+.wow {
+  visibility: hidden;
+}
+
+// Animation classes for wow.js
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInDown {
+  animation-name: slideInDown;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+// Stagger animation for team cards
+.team-card {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

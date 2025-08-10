@@ -1,0 +1,54 @@
+.bg-footer {
+  // background-color: #f8f9fa;
+}
+
+.text-footer {
+  color: #2c2c2c;
+}
+
+.text-accent {
+  color: #0d6efd;
+}
+
+.btn-accent {
+  background-color: #0d6efd;
+  color: #fff;
+  border: none;
+}
+
+.btn-accent:hover {
+  background-color: #0b5ed7;
+}
+
+.bg-accent {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.card {
+  border-radius: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+body.dark-mode {
+  .bg-footer {
+    background-color: #1b1b1b;
+  }
+
+  .text-footer {
+    color: #ccc;
+  }
+
+  .card {
+    background-color: #2c2c2c;
+    color: #ccc;
+  }
+
+  .text-accent {
+    color: #0d6efd;
+  }
+}
