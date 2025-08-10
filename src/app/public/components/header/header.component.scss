@@ -4,8 +4,11 @@ $light-text: #444;
 $dark-bg: #2c2c2e;
 $dark-text: #ccc;
 $transition-fast: 0.3s ease;
+$border-radius: 16px;
+$shadow-light: 0 6px 20px rgba(0, 0, 0, 0.08);
+$shadow-strong: 0 8px 25px rgba(0, 0, 0, 0.15);
 
-// Sticky Navbar
+// Base Sticky Navbar
 .navbar-outer {
   position: sticky;
   top: 1rem;
@@ -27,75 +30,289 @@ $transition-fast: 0.3s ease;
     font-weight: 500;
     padding: 0.6rem 1rem;
     color: $accent-color;
+    transition: all $transition-fast;
 
     &:hover {
       color: $accent-color;
+      background-color: rgba(13, 110, 253, 0.1);
+      border-radius: 8px;
+    }
+
+    .icon {
+      margin-right: 0.5rem;
     }
   }
 }
 
-// Ensure navbar-collapse is visible on desktop (lg and above)
-@media (min-width: 992px) {
+// Ensure navbar-collapse is visible on desktop (900px and above)
+@media (min-width: 900px) {
   #navbarCollapse.collapse {
     display: flex !important;
     justify-content: center;
   }
 }
 
-// Dropdown: Careers & Solutions styling (add your existing styles here)
-.dropdown-careers .dropdown-menu,
-.solutions-dropdown {
-  padding: 2rem;
-  min-width: 800px;
-  border-radius: 16px;
-  background-color: $light-bg;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+// Desktop Mega Menu Styles (900px and above)
+@media (min-width: 900px) {
+  .dropdown-mega {
+    position: static;
 
-  .career-section-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: $accent-color;
-    margin-bottom: 1rem;
-  }
+    .dropdown-menu.mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 800px;
+      max-width: 1000px;
+      padding: 0;
+      border: none;
+      border-radius: $border-radius;
+      background-color: $light-bg;
+      box-shadow: $shadow-strong;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
 
-  .career-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+      &.show {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
 
-    .career-block {
-      flex: 1 1 45%;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
+    &:hover .dropdown-menu.mega-menu {
+      opacity: 1;
+      visibility: visible;
+    }
 
-      .icon {
-        font-size: 2rem;
+    .mega-menu-content {
+      padding: 2rem;
+    }
+
+    .mega-menu-header {
+      margin-bottom: 2rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 1.5rem;
+
+      .mega-title {
+        font-size: 1.5rem;
+        font-weight: 700;
         color: $accent-color;
+        margin-bottom: 0.5rem;
       }
 
-      .content {
-        h6 {
-          font-weight: 600;
-          margin: 0 0 0.25rem;
-          color: #222;
+      .mega-subtitle {
+        color: $light-text;
+        margin: 0;
+        font-size: 0.9rem;
+      }
+    }
+
+    // Standard grid layout for Company and Careers
+    .mega-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      .mega-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 12px;
+        transition: all $transition-fast;
+
+        &:hover {
+          background-color: rgba(13, 110, 253, 0.05);
+          transform: translateY(-2px);
         }
 
-        p {
-          font-size: 0.85rem;
-          color: $light-text;
-        }
-
-        a {
-          font-size: 0.85rem;
-          font-weight: 500;
+        .icon {
+          font-size: 2rem;
           color: $accent-color;
-          text-decoration: none;
+          flex-shrink: 0;
+        }
+
+        .content {
+          h6 {
+            font-weight: 600;
+            margin: 0 0 0.5rem;
+            
+            a {
+              color: #222;
+              text-decoration: none;
+              transition: color $transition-fast;
+              
+              &:hover {
+                color: $accent-color;
+              }
+            }
+          }
+
+          p {
+            font-size: 0.9rem;
+            color: $light-text;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+          }
+
+          .cta-link {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: $accent-color;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: all $transition-fast;
+
+            &:hover {
+              text-decoration: underline;
+              gap: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    // Solutions specific layout
+    &.solutions-mega .mega-menu {
+      min-width: 900px;
+
+      .solutions-categories {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .solution-category {
+        .category-header {
+          margin-bottom: 1.5rem;
+          padding-bottom: 1rem;
+          border-bottom: 2px solid rgba(13, 110, 253, 0.1);
+
+          h6 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: $accent-color;
+            margin-bottom: 0.5rem;
+          }
+
+          p {
+            font-size: 0.85rem;
+            color: $light-text;
+            margin: 0;
+          }
+        }
+
+        .category-items {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .solution-item {
+          padding: 1rem;
+          border-radius: 10px;
+          background-color: rgba(13, 110, 253, 0.03);
+          transition: all $transition-fast;
 
           &:hover {
-            text-decoration: underline;
+            background-color: rgba(13, 110, 253, 0.08);
+            transform: translateX(5px);
+          }
+
+          .content {
+            h7 {
+              font-size: 0.95rem;
+              font-weight: 600;
+              
+              a {
+                color: #222;
+                text-decoration: none;
+                
+                &:hover {
+                  color: $accent-color;
+                }
+              }
+            }
+
+            p {
+              font-size: 0.8rem;
+              color: $light-text;
+              margin: 0.25rem 0 0;
+              line-height: 1.3;
+            }
+          }
+        }
+      }
+    }
+
+    // Contact specific layout
+    &.contact-mega .mega-menu {
+      min-width: 700px;
+
+      .contact-sections {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .contact-section {
+        h6 {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: $accent-color;
+          margin-bottom: 1.5rem;
+          padding-bottom: 0.75rem;
+          border-bottom: 2px solid rgba(13, 110, 253, 0.1);
+        }
+
+        .contact-items {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .contact-item {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 0.75rem;
+          border-radius: 8px;
+          transition: all $transition-fast;
+
+          &:hover {
+            background-color: rgba(13, 110, 253, 0.05);
+          }
+
+          .icon {
+            font-size: 1.5rem;
+            color: $accent-color;
+            flex-shrink: 0;
+          }
+
+          .content {
+            h7 {
+              font-size: 0.9rem;
+              font-weight: 600;
+              
+              a {
+                color: #222;
+                text-decoration: none;
+                
+                &:hover {
+                  color: $accent-color;
+                }
+              }
+            }
+
+            p {
+              font-size: 0.8rem;
+              color: $light-text;
+              margin: 0.25rem 0 0;
+            }
           }
         }
       }
@@ -103,116 +320,8 @@ $transition-fast: 0.3s ease;
   }
 }
 
-// Mobile submenu styling
-.mobile-submenu {
-  padding-left: 1rem;
-  border-radius: 0.25rem;
-  background-color: $light-bg;
-  margin-top: 0.25rem;
-
-  ul {
-    list-style: none;
-    padding-left: 0;
-
-    li {
-      margin-bottom: 0.5rem;
-
-      a {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: $accent-color;
-        text-decoration: none;
-        font-weight: 500;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-
-      strong {
-        font-weight: 700;
-        margin-top: 1rem;
-        display: block;
-        color: $accent-color;
-      }
-
-      ul {
-        padding-left: 1rem;
-        margin-top: 0.25rem;
-
-        li {
-          margin-bottom: 0.25rem;
-          font-weight: 400;
-        }
-      }
-    }
-  }
-}
-
-// Dark mode styles (optional, as per your existing code)
-body[data-theme="dark"] {
-  .custom-navbar {
-    background-color: rgba(27, 27, 27, 0.95);
-    color: $dark-text;
-
-    .nav-link {
-      color: $dark-text;
-
-      &:hover {
-        color: $accent-color;
-      }
-    }
-  }
-
-  .dropdown-menu {
-    background-color: $dark-bg;
-
-    h6 {
-      color: $accent-color;
-    }
-
-    p {
-      color: #aaa;
-    }
-
-    .dropdown-item {
-      color: $dark-text;
-
-      &:hover {
-        background-color: #333;
-        color: $accent-color;
-      }
-    }
-  }
-
-  .dropdown-careers .career-section-title {
-    color: $accent-color;
-  }
-
-  .dropdown-careers .career-block {
-    .icon {
-      color: $accent-color;
-    }
-
-    .content {
-      h6 {
-        color: $dark-text;
-      }
-
-      p {
-        color: #aaa;
-      }
-
-      a {
-        color: $accent-color;
-      }
-    }
-  }
-}
-
-// Responsive adjustments for smaller screens
-@media (max-width: 991.98px) {
+// Mobile Accordion Styles (below 900px)
+@media (max-width: 899px) {
   .custom-navbar {
     border-radius: 15px !important;
     align-items: stretch;
@@ -236,71 +345,330 @@ body[data-theme="dark"] {
     cursor: pointer;
   }
 
-  .dropdown-menu {
-    width: 100% !important;
-    position: static !important;
-    transform: none !important;
-    min-width: auto !important;
-    padding: 1.5rem !important;
+  // Mobile submenu accordion styling
+  .mobile-submenu {
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    background-color: rgba(13, 110, 253, 0.05);
+    margin: 0.5rem 0;
+    border-left: 3px solid $accent-color;
+    animation: slideDown 0.3s ease-out;
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.75rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          color: $accent-color;
+          text-decoration: none;
+          font-weight: 500;
+          padding: 0.5rem 0;
+          transition: all $transition-fast;
+          border-radius: 6px;
+
+          &:hover {
+            color: darken($accent-color, 10%);
+            background-color: rgba(13, 110, 253, 0.1);
+            padding-left: 0.5rem;
+          }
+
+          .icon {
+            font-size: 1.1rem;
+          }
+        }
+
+        strong {
+          font-weight: 700;
+          margin: 1.5rem 0 0.75rem;
+          display: block;
+          color: $accent-color;
+          font-size: 1rem;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+
+        ul {
+          padding-left: 1.5rem;
+          margin-top: 0.5rem;
+          border-left: 2px solid rgba(13, 110, 253, 0.2);
+
+          li {
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+
+            a {
+              font-weight: 400;
+              font-size: 0.9rem;
+              padding: 0.25rem 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Mobile nav link styling
+  .nav-link.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    border: 1px solid rgba(13, 110, 253, 0.2);
+    transition: all $transition-fast;
+
+    &:hover {
+      background-color: rgba(13, 110, 253, 0.1);
+      border-color: $accent-color;
+    }
+
+    .icon {
+      font-size: 1.2rem;
+    }
   }
 }
 
-@media (max-width: 991.98px) {
-  .dropdown-mega .dropdown-menu {
-    padding: 1rem !important;
-    min-width: auto;
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: none;
-    background-color: $light-bg;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem; // Space between categories
+// Slide down animation for mobile accordion
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
   }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
 
-  .dropdown-mega .career-category {
-    width: 100%;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-    padding-bottom: 1rem;
+// Dark mode styles
+body[data-theme="dark"] {
+  .custom-navbar {
+    background-color: rgba(27, 27, 27, 0.95);
+    color: $dark-text;
 
-    &:last-child {
-      border-bottom: none;
-    }
+    .nav-link {
+      color: $dark-text;
 
-    .career-section-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      color: $accent-color;
-    }
-
-    .d-flex {
-      flex-direction: column; // Stack items instead of row
-      gap: 0.8rem;
-    }
-
-    .career-block-sm {
-      background: rgba(13, 110, 253, 0.05);
-      padding: 0.75rem;
-      border-radius: 8px;
-
-      h6 {
-        margin: 0 0 0.25rem;
-      }
-
-      p {
-        margin: 0;
-        font-size: 0.85rem;
+      &:hover {
+        color: $accent-color;
+        background-color: rgba(13, 110, 253, 0.15);
       }
     }
   }
 
-  // Dark mode adjustments
-  body[data-theme='dark'] .dropdown-mega .dropdown-menu {
-    background-color: $dark-bg;
+  // Dark mode mega menu styles
+  @media (min-width: 900px) {
+    .dropdown-mega {
+      .dropdown-menu.mega-menu {
+        background-color: $dark-bg;
+        border: 1px solid rgba(255, 255, 255, 0.1);
 
-    .career-block-sm {
-      background: rgba(13, 110, 253, 0.1);
+        .mega-menu-header {
+          border-bottom-color: rgba(255, 255, 255, 0.1);
+
+          .mega-title {
+            color: $accent-color;
+          }
+
+          .mega-subtitle {
+            color: #aaa;
+          }
+        }
+
+        .mega-item {
+          &:hover {
+            background-color: rgba(13, 110, 253, 0.1);
+          }
+
+          .content {
+            h6 a {
+              color: $dark-text;
+              
+              &:hover {
+                color: $accent-color;
+              }
+            }
+
+            p {
+              color: #aaa;
+            }
+
+            .cta-link {
+              color: $accent-color;
+            }
+          }
+        }
+
+        // Solutions dark mode
+        .solution-category {
+          .category-header {
+            border-bottom-color: rgba(13, 110, 253, 0.2);
+
+            h6 {
+              color: $accent-color;
+            }
+
+            p {
+              color: #aaa;
+            }
+          }
+
+          .solution-item {
+            background-color: rgba(13, 110, 253, 0.08);
+
+            &:hover {
+              background-color: rgba(13, 110, 253, 0.15);
+            }
+
+            .content {
+              h7 a {
+                color: $dark-text;
+                
+                &:hover {
+                  color: $accent-color;
+                }
+              }
+
+              p {
+                color: #aaa;
+              }
+            }
+          }
+        }
+
+        // Contact dark mode
+        .contact-section {
+          h6 {
+            color: $accent-color;
+            border-bottom-color: rgba(13, 110, 253, 0.2);
+          }
+
+          .contact-item {
+            &:hover {
+              background-color: rgba(13, 110, 253, 0.1);
+            }
+
+            .content {
+              h7 a {
+                color: $dark-text;
+                
+                &:hover {
+                  color: $accent-color;
+                }
+              }
+
+              p {
+                color: #aaa;
+              }
+            }
+          }
+        }
+      }
     }
+  }
+
+  // Dark mode mobile styles
+  @media (max-width: 899px) {
+    .mobile-submenu {
+      background-color: rgba(13, 110, 253, 0.1);
+      border-left-color: $accent-color;
+
+      ul li {
+        a {
+          color: $dark-text;
+
+          &:hover {
+            color: $accent-color;
+            background-color: rgba(13, 110, 253, 0.15);
+          }
+        }
+
+        strong {
+          color: $accent-color;
+        }
+
+        ul {
+          border-left-color: rgba(13, 110, 253, 0.3);
+        }
+      }
+    }
+
+    .nav-link.dropdown-toggle {
+      background-color: rgba(44, 44, 46, 0.9);
+      border-color: rgba(13, 110, 253, 0.3);
+      color: $dark-text;
+
+      &:hover {
+        background-color: rgba(13, 110, 253, 0.15);
+        border-color: $accent-color;
+      }
+    }
+  }
+}
+
+// Additional responsive adjustments
+@media (max-width: 576px) {
+  .navbar-outer {
+    padding: 0 0.5rem;
+  }
+
+  .custom-navbar {
+    border-radius: 12px !important;
+  }
+
+  .navbar-brand img {
+    width: 150px;
+  }
+
+  .mobile-submenu {
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 0;
+
+    ul li a {
+      padding: 0.4rem 0;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Smooth transitions and performance optimizations
+.dropdown-mega .dropdown-menu.mega-menu {
+  will-change: opacity, visibility, transform;
+}
+
+.mobile-submenu {
+  will-change: max-height, opacity, transform;
+}
+
+// Focus states for accessibility
+.nav-link:focus,
+.mobile-submenu a:focus,
+.mega-item .content a:focus {
+  outline: 2px solid $accent-color;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+// Print styles
+@media print {
+  .navbar-outer {
+    display: none;
   }
 }
