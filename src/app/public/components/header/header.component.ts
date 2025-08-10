@@ -20,6 +20,9 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
   isDarkMode = false;
   isSticky = false;
   contactEmail = 'connect@arptechlabs.com';
+
+  isMobileMenuOpen: { [key: string]: boolean } = {};
+
   private scrollListener: any;
   private clickListener: any;
 
@@ -73,6 +76,10 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
       document.documentElement.setAttribute('data-theme', theme);
       localStorage.setItem('theme', theme);
     }
+  }
+
+  toggleMobileMenu(menuKey: string): void {
+    this.isMobileMenuOpen[menuKey] = !this.isMobileMenuOpen[menuKey];
   }
 
   ngOnDestroy(): void {

@@ -1,9 +1,18 @@
 <div class="navbar-outer" [ngClass]="{ sticky: isSticky }">
   <div class="container">
-    <nav class="navbar navbar-expand-lg rounded-pill px-3 py-2 px-lg-4 custom-navbar" [ngClass]="{ shadow: isSticky }">
+    <nav
+      class="navbar navbar-expand-lg rounded-pill px-3 py-2 px-lg-4 custom-navbar"
+      [ngClass]="{ shadow: isSticky }"
+    >
       <!-- Brand -->
-      <a routerLink="/" class="navbar-brand fw-bold d-flex align-items-center gap-2 text-light-emphasis">
-        <img src="../../../../assets/icons/ARP_LOGO-removebg-landscape.png" width="190" />
+      <a
+        routerLink="/"
+        class="navbar-brand fw-bold d-flex align-items-center gap-2 text-light-emphasis"
+      >
+        <img
+          src="../../../../assets/icons/ARP_LOGO-removebg-landscape.png"
+          width="190"
+        />
       </a>
 
       <!-- Mobile Toggle Buttons -->
@@ -11,22 +20,82 @@
         <button class="btn btn-icon toggle-theme" (click)="toggleDarkMode()">
           <span [innerHTML]="isDarkMode ? '☀️' : '🌙'"></span>
         </button>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          style="
             background: transparent;
             border: none !important;
             outline: none !important;
-          ">
+          "
+        >
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
 
       <!-- Menu -->
-      <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+      <div
+        class="collapse navbar-collapse justify-content-center"
+        id="navbarCollapse"
+      >
         <ul class="navbar-nav mx-auto text-center gap-lg-2">
           <!-- 1. Company -->
           <li class="nav-item dropdown dropdown-careers">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Company</a>
-            <div class="dropdown-menu">
+            <!-- Mobile toggle -->
+            <a
+              class="nav-link dropdown-toggle d-lg-none"
+              href="#"
+              (click)="toggleMobileMenu('company'); $event.preventDefault()"
+            >
+              <span class="icon">🏢</span> Company
+              <span class="ms-1">{{
+                isMobileMenuOpen["company"] ? "▴" : "▾"
+              }}</span>
+            </a>
+
+            <!-- Mobile submenu -->
+            <div
+              class="mobile-submenu d-lg-none"
+              *ngIf="isMobileMenuOpen['company']"
+            >
+              <ul>
+                <li>
+                  <a routerLink="/about-arp"
+                    ><span class="icon">🏢</span> About ARP TechLabs</a
+                  >
+                </li>
+                <li>
+                  <a routerLink="/why-arp"
+                    ><span class="icon">💡</span> Why ARP TechLabs?</a
+                  >
+                </li>
+                <li>
+                  <a routerLink="/culture-values"
+                    ><span class="icon">❤️</span> Culture & Values</a
+                  >
+                </li>
+                <li>
+                  <a routerLink="/mission-vision"
+                    ><span class="icon">🎯</span> Mission & Vision</a
+                  >
+                </li>
+                <li>
+                  <a routerLink="/timeline"
+                    ><span class="icon">🗓️</span> Our Journey</a
+                  >
+                </li>
+                <li>
+                  <a routerLink="/testimonial"
+                    ><span class="icon">🌟</span> Testimonial</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Desktop dropdown -->
+            <div class="dropdown-menu d-none d-lg-block">
               <div class="career-section-title">About Our Company</div>
               <div class="career-grid">
                 <div class="career-block">
@@ -87,13 +156,62 @@
 
           <!-- 2. Solutions -->
           <li class="nav-item dropdown dropdown-careers">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
-            <div class="dropdown-menu p-4 solutions-dropdown">
+            <!-- Mobile toggle -->
+            <a
+              class="nav-link dropdown-toggle d-lg-none"
+              href="#"
+              (click)="toggleMobileMenu('solutions'); $event.preventDefault()"
+            >
+              <span class="icon">⚙️</span> Solutions
+              <span class="ms-1">{{
+                isMobileMenuOpen["solutions"] ? "▴" : "▾"
+              }}</span>
+            </a>
+
+            <!-- Mobile submenu -->
+            <div
+              class="mobile-submenu d-lg-none"
+              *ngIf="isMobileMenuOpen['solutions']"
+            >
+              <ul>
+                <li>
+                  <strong>AI-Based Solutions</strong>
+                  <ul>
+                    <li><a routerLink="/ai">🧠 AI Agents</a></li>
+                    <li><a routerLink="/gen-ai">🎨 Generative AI</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Development Solutions</strong>
+                  <ul>
+                    <li><a routerLink="/web">🌐 Web Development</a></li>
+                    <li>
+                      <a routerLink="/software">💻 Software Development</a>
+                    </li>
+                    <li><a routerLink="/paas">🚀 Product Development</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Data Solutions</strong>
+                  <ul>
+                    <li><a routerLink="/data-science">📊 Data Science</a></li>
+                    <li>
+                      <a routerLink="/data-analytics">📈 Data Analytics</a>
+                    </li>
+                    <li>
+                      <a routerLink="/db-services">🗄️ Database Services</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Desktop dropdown -->
+            <div class="dropdown-menu p-4 solutions-dropdown d-none d-lg-block">
               <div class="career-section-title">
                 Solutions Tailored for your Needs
               </div>
               <div class="career-grid">
-                <!-- === AI-Based Solutions === -->
                 <div class="career-category">
                   <div class="career-section-title">AI-Based Solutions</div>
                   <div class="d-flex flex-wrap gap-3 mt-2">
@@ -112,7 +230,6 @@
                   </div>
                 </div>
 
-                <!-- === Development Solutions === -->
                 <div class="career-category">
                   <div class="career-section-title">Development Solutions</div>
                   <div class="d-flex flex-wrap gap-3 mt-2">
@@ -141,7 +258,6 @@
                   </div>
                 </div>
 
-                <!-- === Data Solutions === -->
                 <div class="career-category">
                   <div class="career-section-title">Data Solutions</div>
                   <div class="d-flex flex-wrap gap-3 mt-2">
@@ -177,133 +293,95 @@
 
           <!-- 3. Careers -->
           <li class="nav-item dropdown dropdown-careers">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Careers</a>
-            <div class="dropdown-menu">
-              <div class="career-section-title">
-                Explore Careers - ARP TechLabs
-              </div>
-              <div class="career-grid">
-                <div class="career-block">
-                  <div class="icon">🚀</div>
-                  <div class="content">
-                    <h6><a routerLink="/join-us">Join Us</a></h6>
-                    <p>We’re hiring innovators.</p>
-                    <a routerLink="/join-us">See Open Roles →</a>
-                  </div>
-                </div>
-                <div class="career-block">
-                  <div class="icon">🤝</div>
-                  <div class="content">
-                    <h6><a routerLink="/collaboration">Collaborate</a></h6>
-                    <p>Partner with ARP TechLabs.</p>
-                    <a routerLink="/collaboration">Start Now →</a>
-                  </div>
-                </div>
-                <div class="career-block">
-                  <div class="icon">🎤</div>
-                  <div class="content">
-                    <h6><a routerLink="/book-seminar">Seminars</a></h6>
-                    <p>Book our experts for events.</p>
-                    <a routerLink="/book-seminar">Book Now →</a>
-                  </div>
-                </div>
-                <div class="career-block">
-                  <div class="icon">📘</div>
-                  <div class="content">
-                    <h6><a routerLink="/arp-learning">ARP for Learning</a></h6>
-                    <p>Courses, mentorship & growth.</p>
-                    <a routerLink="/arp-learning">Start Learning →</a>
-                  </div>
-                </div>
-              </div>
+            <!-- Mobile toggle -->
+            <a
+              class="nav-link dropdown-toggle d-lg-none"
+              href="#"
+              (click)="toggleMobileMenu('careers'); $event.preventDefault()"
+            >
+              <span class="icon">🚀</span> Careers
+              <span class="ms-1">{{
+                isMobileMenuOpen["careers"] ? "▴" : "▾"
+              }}</span>
+            </a>
+
+            <!-- Mobile submenu -->
+            <div
+              class="mobile-submenu d-lg-none"
+              *ngIf="isMobileMenuOpen['careers']"
+            >
+              <ul>
+                <li><a routerLink="/join-us">🚀 Join Us</a></li>
+                <li><a routerLink="/book-seminar">🎤 Seminars</a></li>
+                <li><a routerLink="/collaboration">🤝 Collaborate</a></li>
+                <li><a routerLink="/arp-learning">📘 ARP for Learning</a></li>
+              </ul>
+            </div>
+
+            <!-- Desktop dropdown -->
+            <div class="dropdown-menu d-none d-lg-block">
+              <!-- Add desktop menu content here if needed -->
             </div>
           </li>
 
-          <!-- Contact -->
+          <!-- 4. Contact Us -->
           <li class="nav-item dropdown dropdown-careers">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Contact Us</a>
-            <div class="dropdown-menu">
-              <div class="career-section-title">Connect with ARP TechLabs</div>
-              <div class="career-grid">
-                <div class="career-block">
-                  <div class="icon">📧</div>
-                  <div class="content">
-                    <h6>
-                      <a href="mailto:connect@arptechlabs.com">Email Us</a>
-                    </h6>
-                    <p>We respond within 24 hours.</p>
-                    <a href="mailto:connect@arptechlabs.com">Send Email →</a>
-                  </div>
-                </div>
-                <div class="career-block">
-                  <div class="icon">📞</div>
-                  <div class="content">
-                    <h6>Call Us</h6>
-                    <p>Mon–Fri, 10 AM – 6 PM IST.</p>
-                    <a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a>
-                  </div>
-                </div>
-                <div class="career-block">
-                  <div class="icon">📍</div>
-                  <div class="content">
-                    <h6>
-                      <a href="https://maps.app.goo.gl/xzxcgMgBa2fh4uJTA" target="_blank">Visit Us</a>
-                    </h6>
-                    <p>We'd love to meet in person.</p>
-                    <a href="https://maps.app.goo.gl/xzxcgMgBa2fh4uJTA" target="_blank">Get Directions →</a>
-                  </div>
-                </div>
-                <div class="career-block">
-                  <div class="icon">💬</div>
-                  <div class="content">
-                    <h6><a routerLink="/contact-us">Online Inquiry</a></h6>
-                    <p>Reach out via our contact form.</p>
-                    <a routerLink="/contact-us">Contact Form →</a>
-                  </div>
-                </div>
-              </div>
-              <br />
-              <div class="career-section-title">Legal & Policies</div>
-              <div class="career-grid">
+            <!-- Mobile toggle -->
+            <a
+              class="nav-link dropdown-toggle d-lg-none"
+              href="#"
+              (click)="toggleMobileMenu('contact'); $event.preventDefault()"
+            >
+              <span class="icon">📞</span> Contact Us
+              <span class="ms-1">{{
+                isMobileMenuOpen["contact"] ? "▴" : "▾"
+              }}</span>
+            </a>
 
-                <div class="career-block">
-                  <div class="icon">⚖️</div>
-                  <div class="content">
-                    <h6><a routerLink="/disclaimer">Disclaimer</a></h6>
-                    <p>Important notices outlining service use limitations.</p>
-                    <a routerLink="/disclaimer">Read Disclaimer →</a>
-                  </div>
-                </div>
+            <!-- Mobile submenu -->
+            <div
+              class="mobile-submenu d-lg-none"
+              *ngIf="isMobileMenuOpen['contact']"
+            >
+              <ul>
+                <li>
+                  <strong>Connect with ARP TechLabs</strong>
+                  <ul>
+                    <li>
+                      <a href="mailto:connect@arptechlabs.com">📧 Email Us</a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://maps.app.goo.gl/xzxcgMgBa2fh4uJTA"
+                        target="_blank"
+                        >📍 Visit Us</a
+                      >
+                    </li>
+                    <li><a href="tel:+91XXXXXXXXXX">📞 Call Us</a></li>
+                    <li><a routerLink="/contact-us">💬 Online Inquiry</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Legal & Policies</strong>
+                  <ul>
+                    <li><a routerLink="/disclaimer">⚖️ Disclaimer</a></li>
+                    <li>
+                      <a routerLink="/privacy-policy">🔒 Privacy Policy</a>
+                    </li>
+                    <li>
+                      <a routerLink="/terms-conditions"
+                        >📜 Terms & Conditions</a
+                      >
+                    </li>
+                    <li><a routerLink="/cookie-policy">🍪 Cookie Policy</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
 
-                <div class="career-block">
-                  <div class="icon">📜</div>
-                  <div class="content">
-                    <h6><a routerLink="/terms-conditions">Terms & Conditions</a></h6>
-                    <p>Our official rules and guidelines for using our services.</p>
-                    <a routerLink="/terms-conditions">View Terms & Conditions →</a>
-                  </div>
-                </div>
-
-                <div class="career-block">
-                  <div class="icon">🔒</div>
-                  <div class="content">
-                    <h6><a routerLink="/privacy-policy">Privacy Policy</a></h6>
-                    <p>How we handle, store, and protect your personal data.</p>
-                    <a routerLink="/privacy-policy">View Privacy Policy →</a>
-                  </div>
-                </div>
-
-                <div class="career-block">
-                  <div class="icon">🍪</div>
-                  <div class="content">
-                    <h6><a routerLink="/cookie-policy">Cookie Policy</a></h6>
-                    <p>Details on how we use cookies for analytics & functionality.</p>
-                    <a routerLink="/cookie-policy">View Cookie Policy →</a>
-                  </div>
-                </div>
-
-              </div>
-
+            <!-- Desktop dropdown -->
+            <div class="dropdown-menu d-none d-lg-block">
+              <!-- Add desktop menu content here if needed -->
             </div>
           </li>
         </ul>
