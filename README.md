@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://your-domain.com/banner-image.png" alt="ARP TechLabs Banner" width="100%">
+  <img src="https://arp-techlabs.vercel.app/assets/icons/ARP_LOGO-removebg-landscape.png" alt="ARP TechLabs Banner" width="100%">
 </p>
 
 # ​ARP TechLabs
