@@ -1,10 +1,6 @@
-<table align="center" width="100%" bgcolor="white">
-  <tr>
-    <td align="center">
-      <img src="https://arp-techlabs.vercel.app/assets/icons/ARP_LOGO-removebg-landscape.png" alt="ARP TechLabs Banner" width="100%">
-    </td>
-  </tr>
-</table>
+<p align="center" style="background:white">
+  <img src="https://arp-techlabs.vercel.app/assets/icons/ARP LOGO Landscape.png" alt="ARP TechLabs Banner" width="100%">
+</p>
 
 # ​ARP TechLabs
 
