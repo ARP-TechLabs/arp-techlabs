@@ -1,4 +1,4 @@
-<p align="center">
+<p align="center" style="background:"white">
   <img src="https://arp-techlabs.vercel.app/assets/icons/ARP_LOGO-removebg-landscape.png" alt="ARP TechLabs Banner" width="100%">
 </p>
 
