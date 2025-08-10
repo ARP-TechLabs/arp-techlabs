@@ -5,8 +5,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-ai-solutions',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './ai-solutions.component.html',
-  styleUrl: './ai-solutions.component.scss'
+  templateUrl: './aiml-solutions.component.html',
+  styleUrl: './aiml-solutions.component.scss'
 })
 export class AiSolutionsComponent {
 

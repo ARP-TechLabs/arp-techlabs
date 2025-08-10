@@ -106,8 +106,8 @@ export class AiAgentComponent implements OnInit {
         response: `Hear directly from our clients and partners about their experiences working with ARP TechLabs. <a href="/testimonial" target="_blank">Read testimonials</a>.`,
       },
       {
-        keywords: ['ai agent', 'ai solution', 'chatbot'],
-        response: `We design AI solutions including chatbots and generative models that align with business goals. <a href="/ai" target="_blank">Explore our AI offerings</a>.`,
+        keywords: ['ai agent', 'ai solution','aiml','ml','machine learning','artificial learning', 'chatbot'],
+        response: `We design AI solutions including chatbots and generative models that align with business goals. <a href="/aiml" target="_blank">Explore our AI offerings</a>.`,
       },
       {
         keywords: ['genai', 'generative ai'],

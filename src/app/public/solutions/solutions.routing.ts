@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AiSolutionsComponent } from './ai-solutions/ai-solutions.component';
+import { AiSolutionsComponent } from './aiml-solutions/aiml-solutions.component';
 import { GenAiComponent } from './gen-ai/gen-ai.component';
 import { WebDevelopmentComponent } from './web-development/web-development.component';
 import { SoftwareDevelopmentComponent } from './software-development/software-development.component';
@@ -11,7 +11,7 @@ import { DatabaseServicesComponent } from './database/database-services.componen
 
 
 const routes: Routes = [
-  { path: 'ai', component: AiSolutionsComponent ,data: { title: 'AI Solutions | Solutions' }},
+  { path: 'aiml', component: AiSolutionsComponent ,data: { title: 'AIML Solutions | Solutions' }},
   { path: 'gen-ai', component: GenAiComponent ,data: { title: 'GenAI | Solutions' }},
   { path: 'web', component: WebDevelopmentComponent ,data: { title: 'Web | Solutions' }},
   { path: 'software', component: SoftwareDevelopmentComponent ,data: { title: 'Software | Solutions' }},

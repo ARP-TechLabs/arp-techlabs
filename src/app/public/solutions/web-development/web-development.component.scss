@@ -1,365 +1,232 @@
-.website-dev {
-  padding: 4rem 1rem;
-  background: #f9f9f9;
-  font-family: 'Inter', sans-serif;
+ section {
+          transition: all 0.3s ease-in-out;
+        }
+        
+        .bg-primary {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        }
+        
+        .text-primary {
+          color: #667eea !important;
+        }
+        
+        .text-success {
+          color: #28a745 !important;
+        }
+        
+        .bg-light {
+          background-color: #f8f9fa !important;
+        }
+        
+        .bg-light-green {
+          background: linear-gradient(135deg, #a8e6cf 0%, #dcedc8 100%);
+        }
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+        /* Enhanced Service Cards */
+        .service-card {
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          border: none;
+          border-radius: 20px;
+          overflow: hidden;
+          position: relative;
+          background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
 
-  .section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-    color: #222;
-  }
+        .service-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
 
-  /* === Custom Tabs Styling === */
-  .custom-tabs {
-    display: flex;
-    justify-content: center;
-    border-bottom: none;
-    margin-bottom: -1px;
-    gap: 1rem;
+        .service-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+        }
 
-    .nav-link {
-      font-weight: 600;
-      font-size: 1rem;
-      color: #555;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-bottom: none;
-      border-radius: 8px 8px 0 0;
-      padding: 0.75rem 1.5rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+        .service-card:hover::before {
+          opacity: 1;
+        }
 
-      &:hover {
-        color: #0070f3;
-        border-color: #0070f3;
-        transform: translateY(-2px);
-      }
-
-      &.active {
-        color: #fff;
-        background: linear-gradient(135deg, #0070f3, #495aff);
-        border-color: #0070f3;
-        box-shadow: 0 -1px 0 #fff, 0 5px 15px rgba(0, 112, 243, 0.2);
-        position: relative;
-        z-index: 2;
-      }
-    }
-  }
-
-  /* === Tab Content === */
-  .tab-content {
-    .plan-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 0 0 12px 12px;
-      padding: 2.5rem;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-      margin-bottom: 2rem;
-    }
-  }
-
-  /* === Enhanced Plan Card Styling === */
-  .plan-card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    overflow: hidden;
-    position: relative;
-    border: 1px solid rgba(0, 112, 243, 0.1);
-
-    // Subtle gradient overlay
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #0070f3, #495aff, #00d4aa);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    &:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(0, 112, 243, 0.15);
-      border-color: rgba(0, 112, 243, 0.3);
-
-      &::before {
-        opacity: 1;
-      }
-
-      .plan-title {
-        background: linear-gradient(135deg, #0056b3, #3a4ed1);
-      }
-    }
-
-    .plan-title {
-      background: linear-gradient(135deg, #0070f3, #495aff);
-      color: #fff;
-      padding: 1.5rem 1rem;
-      font-size: 1.4rem;
-      font-weight: 700;
-      text-align: center;
-      margin: 0;
-      letter-spacing: -0.5px;
-      position: relative;
-      transition: all 0.3s ease;
-
-      // Subtle shine effect
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent
-        );
-        transition: left 0.5s ease;
-      }
-    }
-
-    &:hover .plan-title::after {
-      left: 100%;
-    }
-
-    .plan-price {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #0070f3;
-      padding: 1.5rem 0;
-      background: linear-gradient(135deg, #f8fbff, #fff);
-      margin: 0;
-      position: relative;
-      
-      // Add currency styling
-      &::before {
-        content: '';
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        background: #0070f3;
-        border-radius: 50%;
-        margin-right: 8px;
-        vertical-align: middle;
-      }
-    }
-
-    .plan-features {
-      list-style: none;
-      padding: 2rem;
-      margin: 0;
-
-      li {
-        display: flex;
-        align-items: center;
-        font-size: 1rem;
-        color: #444;
-        padding: 0.75rem 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        transition: all 0.2s ease;
-
-        &::before {
-          content: "✓";
+        /* Service Icons */
+        .service-icon {
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 24px;
-          height: 24px;
-          background: linear-gradient(135deg, #4caf50, #66bb6a);
-          color: #fff;
-          font-weight: bold;
-          font-size: 0.8rem;
-          border-radius: 50%;
-          margin-right: 12px;
-          flex-shrink: 0;
-          transition: all 0.2s ease;
+          margin: 0 auto 1rem;
+          color: white;
+          font-size: 1.8rem;
+          transition: all 0.3s ease;
         }
 
-        &:hover {
-          color: #0070f3;
-          padding-left: 4px;
+        .service-card:hover .service-icon {
+          transform: rotate(5deg) scale(1.05);
+        }
+
+        .bi-icon { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .etl-icon { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .cloud-icon { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .viz-icon { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+        .ml-icon { background: linear-gradient(135deg, #fa709a, #fee140); }
+        .realtime-icon { background: linear-gradient(135deg, #a8edea, #fed6e3); }
+
+        /* Tech Badges */
+        .tech-badge {
+          display: inline-block;
+          padding: 0.3rem 0.7rem;
+          margin: 0.2rem;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: 600;
+          color: white;
+          transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .tableau { background: linear-gradient(135deg, #e97627, #f49030); }
+        .powerbi { background: linear-gradient(135deg, #f2c811, #f4d03f); }
+        .python { background: linear-gradient(135deg, #3776ab, #4b8bbe); }
+        .sql { background: linear-gradient(135deg, #336791, #4f8bb7); }
+        .aws { background: linear-gradient(135deg, #ff9900, #ffb84d); }
+        .azure { background: linear-gradient(135deg, #0078d4, #40a8d8); }
+
+        /* Pricing Cards */
+        .pricing-card {
+          background: white;
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+          transition: all 0.4s ease;
+          position: relative;
+          overflow: hidden;
+          border: 2px solid transparent;
+        }
+
+        .pricing-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .pricing-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+          border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        /* Featured pricing card */
+        .pricing-card.featured {
+          border-color: #667eea;
+          transform: scale(1.05);
           
           &::before {
-            background: linear-gradient(135deg, #0070f3, #495aff);
-            transform: scale(1.1);
+            height: 5px;
           }
         }
 
-        &:last-child {
-          border-bottom: none;
-          padding-bottom: 0;
+        .pricing-card.featured:hover {
+          transform: translateY(-8px) scale(1.08);
         }
-      }
-    }
 
-    // Special styling for middle card (featured/popular)
-    &:nth-child(2) {
-      transform: scale(1.05);
-      border: 2px solid #0070f3;
-      z-index: 1;
+        /* Stats */
+        .stat-number {
+          font-size: 3.5rem;
+          font-weight: 800;
+          background: linear-gradient(135deg, #667eea, #764ba2);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
 
-      .plan-title {
-        background: linear-gradient(135deg, #ff6b35, #f7931e);
-        position: relative;
-
-        &::before {
-          content: "POPULAR";
-          position: absolute;
-          top: -10px;
-          right: 20px;
-          background: #ff4444;
-          color: #fff;
-          font-size: 0.7rem;
+        /* Buttons */
+        .btn-gradient {
+          background: linear-gradient(135deg, #667eea, #764ba2);
+          border: none;
+          color: white;
+          transition: all 0.3s ease;
+          border-radius: 15px;
           font-weight: 600;
-          padding: 4px 12px;
-          border-radius: 12px;
-          box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+          padding: 0.75rem 2rem;
+          box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
         }
-      }
 
-      .plan-price {
-        color: #ff6b35;
-
-        &::before {
-          background: #ff6b35;
+        .btn-gradient:hover {
+          background: linear-gradient(135deg, #5a67d8, #6b46c1);
+          transform: translateY(-2px);
+          box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+          color: white;
         }
-      }
 
-      &:hover {
-        transform: translateY(-8px) scale(1.08);
-        
-        .plan-title {
-          background: linear-gradient(135deg, #e55a2b, #e8851a);
+        .feature-check {
+          color: #28a745;
+          font-weight: bold;
+          margin-right: 8px;
         }
-      }
-    }
-  }
 
-  /* === Contact Section === */
-  .text-center {
-    text-align: center;
-    margin: 2rem 0;
-    font-size: 1rem;
+        /* Floating animation */
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+          .pricing-card.featured {
+            transform: none;
+          }
+          
+          .pricing-card.featured:hover {
+            transform: translateY(-5px) scale(1.02);
+          }
+        }
+        .custom-tabs {
+  border-bottom: none; // Remove default border
+
+  .nav-link {
+    border: none;
+    border-radius: 30px;
+    padding: 0.6rem 1.5rem;
+    margin: 0 0.25rem;
+    font-weight: 600;
+    background-color: transparent;
     color: #555;
+    transition: all 0.3s ease;
 
-    p {
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
+    &:hover {
+      background-color: rgba(0, 123, 255, 0.08);
+      color: #007bff;
     }
 
-    .btn-primary {
-      display: inline-block;
-      background: linear-gradient(135deg, #0070f3, #495aff);
+    &.active {
+      background-color: #007bff; // Filled background
       color: #fff;
-      text-decoration: none;
-      padding: 1rem 2rem;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 112, 243, 0.3);
-      border: none;
-      cursor: pointer;
-
-      &:hover {
-        background: linear-gradient(135deg, #005ad1, #2f3de1);
-        box-shadow: 0 10px 25px rgba(0, 112, 243, 0.4);
-        transform: translateY(-2px);
-      }
-
-      &:active {
-        transform: translateY(0);
-      }
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
     }
   }
-
-  /* === Responsive Design === */
-  @media (max-width: 992px) {
-    .plan-grid {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-    
-    .plan-card:nth-child(2) {
-      transform: none;
-      
-      &:hover {
-        transform: translateY(-8px) scale(1.02);
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    padding: 2rem 1rem;
-
-    .section-title {
-      font-size: 2rem;
-    }
-
-    .custom-tabs {
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-
-      .nav-link {
-        width: 100%;
-        max-width: 300px;
-        text-align: center;
-      }
-    }
-
-    .plan-grid {
-      grid-template-columns: 1fr;
-      padding: 1.5rem;
-      gap: 1.5rem;
-    }
-
-    .plan-card {
-      .plan-title {
-        font-size: 1.2rem;
-        padding: 1.2rem 1rem;
-      }
-
-      .plan-price {
-        font-size: 1.6rem;
-        padding: 1rem 0;
-      }
-
-      .plan-features {
-        padding: 1.5rem;
-
-        li {
-          font-size: 0.9rem;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 480px) {
-    .custom-tabs .nav-link {
-      font-size: 0.9rem;
-      padding: 0.6rem 1.2rem;
-    }
-
-    .plan-card .plan-features {
-      padding: 1rem;
-    }
-  }
+}
+.btn-primary{
+  background-color: #0078d4;
+  padding: 12px;
+  border-radius: 12px;
+  color: white;
 }

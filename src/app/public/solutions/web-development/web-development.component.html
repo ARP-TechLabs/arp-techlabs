@@ -63,13 +63,15 @@
     <!-- Nav Tabs -->
     <ul class="nav nav-tabs justify-content-center custom-tabs" id="webDevTabs" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="wordpress-tab" data-bs-toggle="tab" data-bs-target="#wordpress" type="button" role="tab" aria-controls="wordpress" aria-selected="true">
-          WordPress Development
+        <button class="nav-link" id="custom-tab" data-bs-toggle="tab" data-bs-target="#custom" type="button" role="tab"
+          aria-controls="custom" aria-selected="true">
+          Custom Web Development
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="custom-tab" data-bs-toggle="tab" data-bs-target="#custom" type="button" role="tab" aria-controls="custom" aria-selected="false">
-          Custom Web Development
+        <button class="nav-link active" id="wordpress-tab" data-bs-toggle="tab" data-bs-target="#wordpress"
+          type="button" role="tab" aria-controls="wordpress" aria-selected="false">
+          WordPress Development
         </button>
       </li>
     </ul>
@@ -77,86 +79,184 @@
     <!-- Tab Content -->
     <div class="tab-content mt-4" id="webDevTabsContent">
 
-      <!-- WordPress Development -->
-      <div class="tab-pane fade show active" id="wordpress" role="tabpanel" aria-labelledby="wordpress-tab">
-        <div class="plan-grid">
-          <article class="plan-card">
-            <h4 class="plan-title">Basic Web</h4>
-            <p class="plan-price">₹15k</p>
-            <ul class="plan-features">
-              <li>1–5 Pages</li>
-              <li>Responsive Design</li>
-              <li>Basic Theme Setup</li>
-              <li>Contact Form</li>
-            </ul>
-          </article>
-          <article class="plan-card">
-            <h4 class="plan-title">Dynamic Web</h4>
-            <p class="plan-price">₹30k</p>
-            <ul class="plan-features">
-              <li>5–10 Pages</li>
-              <li>Blog Integration</li>
-              <li>Plugin Setup</li>
-              <li>SEO Optimization</li>
-            </ul>
-          </article>
-          <article class="plan-card">
-            <h4 class="plan-title">Enterprise Web</h4>
-            <p class="plan-price">₹60k+</p>
-            <ul class="plan-features">
-              <li>10+ Pages</li>
-              <li>Custom Theme</li>
-              <li>E-commerce Integration</li>
-              <li>Security Setup</li>
-            </ul>
-          </article>
-        </div>
-        <div class="text-center mt-3">
-          <p>For more details or any doubts, please contact us.</p>
-          <a href="#contact" class="btn-primary">Contact Us</a>
-        </div>
-      </div>
-
       <!-- Custom Web Development -->
       <div class="tab-pane fade" id="custom" role="tabpanel" aria-labelledby="custom-tab">
-        <div class="plan-grid">
-          <article class="plan-card">
-            <h4 class="plan-title">Basic Web</h4>
-            <p class="plan-price">₹25k</p>
-            <ul class="plan-features">
-              <li>Custom Static Design</li>
-              <li>HTML/CSS/JS</li>
-              <li>Responsive Layout</li>
-              <li>Contact Form</li>
-            </ul>
-          </article>
-          <article class="plan-card">
-            <h4 class="plan-title">Dynamic Web</h4>
-            <p class="plan-price">₹45k</p>
-            <ul class="plan-features">
-              <li>CMS or Framework Based</li>
-              <li>Database Support</li>
-              <li>Admin Panel</li>
-              <li>Modern UI</li>
-            </ul>
-          </article>
-          <article class="plan-card">
-            <h4 class="plan-title">Enterprise Web</h4>
-            <p class="plan-price">₹80k+</p>
-            <ul class="plan-features">
-              <li>Fully Custom Architecture</li>
-              <li>API Integration</li>
-              <li>Scalable Backend</li>
-              <li>Security & Maintenance</li>
-            </ul>
-          </article>
-        </div>
+        <!-- Service Packages -->
+        <section class="py-5 bg-white">
+          <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Custom Web Development Service Packages</h2>
+            <div class="row g-4 justify-content-center">
+
+              <!-- Starter -->
+              <div class="col-lg-4 col-md-6">
+                <div class="pricing-card p-4 h-100">
+                  <h4 class="text-primary fw-bold text-center mb-3">Web Development Starter</h4>
+                  <div class="text-center mb-4">
+                    <span class="stat-number" style="font-size: 2.5rem;">₹1.5L</span>
+                    <p class="text-muted mb-0">Launch your first custom website</p>
+                  </div>
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><span class="feature-check">✓</span>Requirement Gathering & Planning</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Custom UI/UX Design</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Responsive Frontend Development</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Basic Backend & Database Setup</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Essential API Integrations</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>1 Month Post-launch Support</li>
+                  </ul>
+                  <div class="text-center mt-4">
+                    <button class="btn btn-gradient px-4 py-2" routerLink="/contact-us">Get Started</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Professional -->
+              <div class="col-lg-4 col-md-6">
+                <div class="pricing-card featured p-4 h-100">
+                  <div class="text-center mb-2">
+                    <span class="badge bg-primary">Most Popular</span>
+                  </div>
+                  <h4 class="text-primary fw-bold text-center mb-3">Professional Web Development</h4>
+                  <div class="text-center mb-4">
+                    <span class="stat-number" style="font-size: 2.5rem;">₹4L</span>
+                    <p class="text-muted mb-0">Full-featured, scalable web solutions</p>
+                  </div>
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><span class="feature-check">✓</span>Custom Web Architecture & Design</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Full-stack Development (Frontend + Backend)
+                    </li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Advanced API & Third-party Integrations</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>SEO Optimization & Performance Tuning</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Cloud Hosting & Deployment</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Analytics & Conversion Tracking</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>6 Months Maintenance & Support</li>
+                  </ul>
+                  <div class="text-center mt-4">
+                    <button class="btn btn-gradient px-4 py-2" routerLink="/contact-us">Choose Plan</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Enterprise -->
+              <div class="col-lg-4 col-md-6">
+                <div class="pricing-card p-4 h-100">
+                  <h4 class="text-primary fw-bold text-center mb-3">Enterprise Web Development</h4>
+                  <div class="text-center mb-4">
+                    <span class="stat-number" style="font-size: 2.5rem;">₹10L+</span>
+                    <p class="text-muted mb-0">Custom, large-scale enterprise websites</p>
+                  </div>
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><span class="feature-check">✓</span>Enterprise-grade Architecture & Design</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Multi-platform Web Application Development</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Custom API & Middleware Solutions</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>High Availability & Scalability Setup</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Advanced Security & Compliance</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Dedicated Development & QA Teams</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>12 Months Premium Support</li>
+                  </ul>
+                  <div class="text-center mt-4">
+                    <button class="btn btn-gradient px-4 py-2" routerLink="/contact-us">Contact Sales</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
         <div class="text-center mt-3">
           <p>For more details or any doubts, please contact us.</p>
           <a href="#contact" class="btn-primary">Contact Us</a>
         </div>
       </div>
 
+      <!-- WordPress Development -->
+      <div class="tab-pane fade show active" id="wordpress" role="tabpanel" aria-labelledby="wordpress-tab">
+        <!-- Service Packages -->
+        <section class="py-5 bg-white">
+          <div class="container">
+            <h2 class="text-center mb-5 fw-bold">WordPress Development Service Packages</h2>
+            <div class="row g-4 justify-content-center">
+
+              <!-- Starter -->
+              <div class="col-lg-4 col-md-6">
+                <div class="pricing-card p-4 h-100">
+                  <h4 class="text-primary fw-bold text-center mb-3">WordPress Starter</h4>
+                  <div class="text-center mb-4">
+                    <span class="stat-number" style="font-size: 2.5rem;">₹50K</span>
+                    <p class="text-muted mb-0">Perfect for small business websites</p>
+                  </div>
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><span class="feature-check">✓</span>Custom WordPress Theme Setup</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Responsive Design</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Basic Plugin Installation</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>5 Standard Pages</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Basic SEO Setup</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>1 Month Support</li>
+                  </ul>
+                  <div class="text-center mt-4">
+                    <button class="btn btn-gradient px-4 py-2" routerLink="/contact-us">Get Started</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Professional -->
+              <div class="col-lg-4 col-md-6">
+                <div class="pricing-card featured p-4 h-100">
+                  <div class="text-center mb-2">
+                    <span class="badge bg-primary">Most Popular</span>
+                  </div>
+                  <h4 class="text-primary fw-bold text-center mb-3">Professional WordPress</h4>
+                  <div class="text-center mb-4">
+                    <span class="stat-number" style="font-size: 2.5rem;">₹1.5L</span>
+                    <p class="text-muted mb-0">Advanced features for growing businesses</p>
+                  </div>
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><span class="feature-check">✓</span>Custom Theme Design & Development</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>WooCommerce Integration</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Advanced Plugin Customization</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Speed & Performance Optimization</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>SEO Optimization</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Security & Backup Setup</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>6 Months Support</li>
+                  </ul>
+                  <div class="text-center mt-4">
+                    <button class="btn btn-gradient px-4 py-2" routerLink="/contact-us">Choose Plan</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Enterprise -->
+              <div class="col-lg-4 col-md-6">
+                <div class="pricing-card p-4 h-100">
+                  <h4 class="text-primary fw-bold text-center mb-3">Enterprise WordPress</h4>
+                  <div class="text-center mb-4">
+                    <span class="stat-number" style="font-size: 2.5rem;">₹5L+</span>
+                    <p class="text-muted mb-0">High-performance enterprise-level WordPress</p>
+                  </div>
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><span class="feature-check">✓</span>Fully Custom WordPress Solutions</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Multi-site & Multi-language Setup</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Headless WordPress (REST API/Gutenberg)</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>High Availability & Scalability</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Enterprise-level Security & Compliance</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>Dedicated Development & QA Teams</li>
+                    <li class="mb-2"><span class="feature-check">✓</span>12 Months Premium Support</li>
+                  </ul>
+                  <div class="text-center mt-4">
+                    <button class="btn btn-gradient px-4 py-2" routerLink="/contact-us">Contact Sales</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <div class="text-center mt-3">
+          <p>For Customised Plan or any doubts, please contact us.</p>
+          <a href="#contact" class="btn-primary">Contact Us</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

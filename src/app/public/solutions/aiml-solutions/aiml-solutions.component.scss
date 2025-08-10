@@ -1,28 +1,22 @@
- section {
+section {
           transition: all 0.3s ease-in-out;
         }
-        
         .bg-primary {
           background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
         }
-        
         .text-primary {
           color: #667eea !important;
         }
-        
         .text-success {
           color: #28a745 !important;
         }
-        
         .bg-light {
           background-color: #f8f9fa !important;
         }
-        
         .bg-light-green {
           background: linear-gradient(135deg, #a8e6cf 0%, #dcedc8 100%);
         }
 
-        /* Enhanced Service Cards */
         .service-card {
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
           border: none;
@@ -30,7 +24,6 @@
           overflow: hidden;
           position: relative;
           background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
-          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
 
         .service-card::before {
@@ -46,15 +39,14 @@
         }
 
         .service-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+          transform: translateY(-15px) scale(1.02);
+          box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
         }
 
         .service-card:hover::before {
           opacity: 1;
         }
 
-        /* Service Icons */
         .service-icon {
           width: 70px;
           height: 70px;
@@ -69,23 +61,61 @@
         }
 
         .service-card:hover .service-icon {
-          transform: rotate(5deg) scale(1.05);
+          transform: rotate(10deg) scale(1.1);
         }
 
-        .bi-icon { background: linear-gradient(135deg, #667eea, #764ba2); }
-        .etl-icon { background: linear-gradient(135deg, #f093fb, #f5576c); }
-        .cloud-icon { background: linear-gradient(135deg, #4facfe, #00f2fe); }
-        .viz-icon { background: linear-gradient(135deg, #43e97b, #38f9d7); }
-        .ml-icon { background: linear-gradient(135deg, #fa709a, #fee140); }
-        .realtime-icon { background: linear-gradient(135deg, #a8edea, #fed6e3); }
+        .ai-icon { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .ml-icon { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .nlp-icon { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .cv-icon { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+        .data-icon { background: linear-gradient(135deg, #fa709a, #fee140); }
+        .automation-icon { background: linear-gradient(135deg, #a8edea, #fed6e3); }
 
-        /* Tech Badges */
+        .project-card {
+          border: 2px solid #e9ecef;
+          border-radius: 20px;
+          transition: all 0.4s ease;
+          position: relative;
+          overflow: hidden;
+          background: white;
+        }
+
+        .project-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+          transition: left 0.6s ease;
+        }
+
+        .project-card:hover {
+          border-color: #667eea;
+          transform: translateY(-8px);
+          box-shadow: 0 15px 30px rgba(102, 126, 234, 0.15);
+        }
+
+        .project-card:hover::before {
+          left: 100%;
+        }
+
+        .stat-number {
+          font-size: 3.5rem;
+          font-weight: 800;
+          background: linear-gradient(135deg, #667eea, #764ba2);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
         .tech-badge {
           display: inline-block;
-          padding: 0.3rem 0.7rem;
+          padding: 0.4rem 0.8rem;
           margin: 0.2rem;
-          border-radius: 20px;
-          font-size: 0.8rem;
+          border-radius: 25px;
+          font-size: 0.85rem;
           font-weight: 600;
           color: white;
           transition: all 0.3s ease;
@@ -96,14 +126,13 @@
           box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        .tableau { background: linear-gradient(135deg, #e97627, #f49030); }
-        .powerbi { background: linear-gradient(135deg, #f2c811, #f4d03f); }
+        .tensorflow { background: linear-gradient(135deg, #ff6f00, #ff8f00); }
+        .pytorch { background: linear-gradient(135deg, #ee4c2c, #ff6b35); }
         .python { background: linear-gradient(135deg, #3776ab, #4b8bbe); }
-        .sql { background: linear-gradient(135deg, #336791, #4f8bb7); }
-        .aws { background: linear-gradient(135deg, #ff9900, #ffb84d); }
-        .azure { background: linear-gradient(135deg, #0078d4, #40a8d8); }
+        .opencv { background: linear-gradient(135deg, #5aa469, #7cb342); }
+        .pandas { background: linear-gradient(135deg, #150458, #2d1b69); }
+        .sklearn { background: linear-gradient(135deg, #f7931e, #ffb347); }
 
-        /* Pricing Cards */
         .pricing-card {
           background: white;
           border-radius: 20px;
@@ -111,7 +140,6 @@
           transition: all 0.4s ease;
           position: relative;
           overflow: hidden;
-          border: 2px solid transparent;
         }
 
         .pricing-card::before {
@@ -125,36 +153,10 @@
         }
 
         .pricing-card:hover {
-          transform: translateY(-8px);
+          transform: translateY(-10px);
           box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
-          border-color: rgba(102, 126, 234, 0.3);
         }
 
-        /* Featured pricing card */
-        .pricing-card.featured {
-          border-color: #667eea;
-          transform: scale(1.05);
-          
-          &::before {
-            height: 5px;
-          }
-        }
-
-        .pricing-card.featured:hover {
-          transform: translateY(-8px) scale(1.08);
-        }
-
-        /* Stats */
-        .stat-number {
-          font-size: 3.5rem;
-          font-weight: 800;
-          background: linear-gradient(135deg, #667eea, #764ba2);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        /* Buttons */
         .btn-gradient {
           background: linear-gradient(135deg, #667eea, #764ba2);
           border: none;
@@ -162,14 +164,12 @@
           transition: all 0.3s ease;
           border-radius: 15px;
           font-weight: 600;
-          padding: 0.75rem 2rem;
-          box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
         }
 
         .btn-gradient:hover {
           background: linear-gradient(135deg, #5a67d8, #6b46c1);
           transform: translateY(-2px);
-          box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+          box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
           color: white;
         }
 
@@ -179,7 +179,6 @@
           margin-right: 8px;
         }
 
-        /* Floating animation */
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-10px); }
@@ -187,15 +186,4 @@
 
         .floating {
           animation: float 6s ease-in-out infinite;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-          .pricing-card.featured {
-            transform: none;
-          }
-          
-          .pricing-card.featured:hover {
-            transform: translateY(-5px) scale(1.02);
-          }
         }
