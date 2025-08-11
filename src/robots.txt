@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://arp-techlabs.vercel.app/sitemap.xml
