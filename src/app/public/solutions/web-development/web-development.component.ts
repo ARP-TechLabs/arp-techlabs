@@ -6,7 +6,7 @@ import { FooterComponent } from "../../components/footer/footer.component";
 @Component({
   selector: 'app-web-development',
   standalone: true,
-  imports: [HeaderComponent, BackTopComponent, FooterComponent],
+  imports: [],
   templateUrl: './web-development.component.html',
   styleUrl: './web-development.component.scss'
 })

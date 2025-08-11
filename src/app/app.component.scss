@@ -124,5 +124,10 @@
   mix-blend-mode: difference;
   box-shadow: 0 0 6px #0078d7aa;
 }
+@media (max-width: 998px) {
+  .cursor {
+    display: none !important;
+  }
+}
 
 // Optional JavaScript for cursor tracking (if not already in your component)

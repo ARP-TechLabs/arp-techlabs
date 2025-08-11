@@ -23,7 +23,7 @@ import { filter, map, mergeMap } from 'rxjs/operators';
 import { FooterComponent } from './public/components/footer/footer.component';
 import { HeaderComponent } from './public/components/header/header.component';
 import { BackTopComponent } from './public/components/backTop/back-top/back-top.component';
-import { LoadingService } from './services/loading.service'; 
+import { LoadingService } from './services/loading.service';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 @Component({
@@ -34,7 +34,7 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
     CommonModule,
     FooterComponent,
     HeaderComponent,
-    BackTopComponent
+    BackTopComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -95,6 +95,12 @@ export class AppComponent implements OnInit, AfterViewInit {
         this.titleService.setTitle(pageTitle);
         this.title = pageTitle;
       });
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
   }
 
   ngAfterViewInit(): void {
