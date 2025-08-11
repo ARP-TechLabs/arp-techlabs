@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://arp-techlabs.vercel.app/</loc>
+    <lastmod>2025-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Company Pages -->
+  <url><loc>https://arp-techlabs.vercel.app/company/about-arp</loc><lastmod>2025-08-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/company/culture-values</loc><lastmod>2025-08-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/company/testimonial</loc><lastmod>2025-08-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/company/timeline</loc><lastmod>2025-08-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/company/why-arp</loc><lastmod>2025-08-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/company/mission-vision</loc><lastmod>2025-08-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Solutions Pages -->
+  <url><loc>https://arp-techlabs.vercel.app/solutions/aiml</loc><lastmod>2025-08-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/solutions/gen-ai</loc><lastmod>2025-08-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/solutions/web</loc><lastmod>2025-08-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/solutions/software</loc><lastmod>2025-08-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/solutions/paas</loc><lastmod>2025-08-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/solutions/data-science</loc><lastmod>2025-08-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/solutions/data-analytics</loc><lastmod>2025-08-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/solutions/db-services</loc><lastmod>2025-08-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Contact & Legal Pages -->
+  <url><loc>https://arp-techlabs.vercel.app/contact-us</loc><lastmod>2025-08-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/disclaimer</loc><lastmod>2025-08-11</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/privacy-policy</loc><lastmod>2025-08-11</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/terms-conditions</loc><lastmod>2025-08-11</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/cookie-policy</loc><lastmod>2025-08-11</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+
+  <!-- Careers Pages -->
+  <url><loc>https://arp-techlabs.vercel.app/join-us</loc><lastmod>2025-08-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/collaboration</loc><lastmod>2025-08-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/book-seminar</loc><lastmod>2025-08-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://arp-techlabs.vercel.app/arp-learning</loc><lastmod>2025-08-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+</urlset>
