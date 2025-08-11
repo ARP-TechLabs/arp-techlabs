@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BackTopComponent } from '../../components/backTop/back-top/back-top.component';
+import { SeoService } from '../../../services/SeoService.service';
 
 interface Milestone {
   year: number;
@@ -18,7 +19,16 @@ interface Milestone {
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.scss'
 })
-export class TimelineComponent {
+export class TimelineComponent implements OnInit {
+  constructor(private seo: SeoService) {}
+  ngOnInit(): void {
+    this.seo.updateSeo(
+      'Timeline | ARP TechLabs',
+      'Explore the milestones and achievements in ARP TechLabs’ journey of innovation.',
+      'https://arp-techlabs.vercel.app/timeline',
+      'ARP TechLabs Timeline, Company History, Achievements'
+    );
+  }
   currentSlide = 0;
   milestones: Milestone[] = [
     {

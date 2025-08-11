@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactFormComponent } from "../shared/pages/contact-form/contact-form.component";
 import { AiAgentComponent } from "./components/ai-agent/ai-agent.component";
+import { SeoService } from '../services/SeoService.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,16 @@ import { AiAgentComponent } from "./components/ai-agent/ai-agent.component";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  constructor(private seo: SeoService) {}
+  ngOnInit(): void {
+    this.seo.updateSeo(
+      'Home | ARP TechLabs',
+      'ARP TechLabs delivers innovative AI, software, and data-driven solutions to empower businesses worldwide.',
+      'https://arp-techlabs.vercel.app/',
+      'ARP TechLabs, AI Solutions, Software Development, Data Science'
+    );
+  }
   services = [
     {
       icon: 'fa fa-code',

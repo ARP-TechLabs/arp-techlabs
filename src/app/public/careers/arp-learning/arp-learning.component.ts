@@ -11,13 +11,12 @@ import { SeoService } from '../../../services/SeoService.service';
 })
 export class ArpLearningComponent implements OnInit {
   constructor(private seo: SeoService) {}
-
   ngOnInit(): void {
     this.seo.updateSeo(
       'ARP for Learning | ARP TechLabs',
-      'Explore ARP for Learning – innovative programs and resources to empower learners with AI, software development, and data science skills for the future.',
-      'https://arp-techlabs.vercel.app/careers/arp-learning',
-      'ARP TechLabs, ARP for Learning, AI Education, Software Development Training, Data Science Courses'
+      'Empowering learners with AI, software, and data science skills for the future.',
+      'https://arp-techlabs.vercel.app/arp-learning',
+      'ARP for Learning, AI Education, Data Science Courses'
     );
   }
 }

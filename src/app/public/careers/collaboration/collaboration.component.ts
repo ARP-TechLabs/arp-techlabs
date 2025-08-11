@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; // <-- add this
+import { SeoService } from '../../../services/SeoService.service';
 
 @Component({
   selector: 'app-collaboration',
@@ -8,7 +9,16 @@ import { CommonModule } from '@angular/common'; // <-- add this
   templateUrl: './collaboration.component.html',
   styleUrl: './collaboration.component.scss'
 })
-export class CollaborationComponent {
+export class CollaborationComponent implements OnInit {
+  constructor(private seo: SeoService) {}
+  ngOnInit(): void {
+    this.seo.updateSeo(
+      'Collaboration Opportunities | ARP TechLabs',
+      'Partner with ARP TechLabs for innovative AI and technology projects.',
+      'https://arp-techlabs.vercel.app/collaboration',
+      'Collaboration, Partnership, ARP TechLabs'
+    );
+  }
   public featuredProjects = [
     {
       title: 'GenAI Doc Assistant',

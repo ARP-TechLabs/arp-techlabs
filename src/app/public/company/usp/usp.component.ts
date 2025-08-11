@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SeoService } from '../../../services/SeoService.service';
 
 interface UspFeature {
   icon: string;
@@ -47,7 +48,16 @@ interface TechStack {
   templateUrl: './usp.component.html',
   styleUrl: './usp.component.scss'
 })
-export class UspComponent {
+export class UspComponent implements OnInit {
+  constructor(private seo: SeoService) {}
+  ngOnInit(): void {
+    this.seo.updateSeo(
+      'Why Choose Us | ARP TechLabs',
+      'Find out why organizations partner with ARP TechLabs for AI, software, and data-driven solutions.',
+      'https://arp-techlabs.vercel.app/why-arp',
+      'Why ARP TechLabs, AI Partner, Software Solutions, Data Science Partner'
+    );
+  }
   uspFeatures: UspFeature[] = [
     {
       icon: 'fas fa-lightbulb',
