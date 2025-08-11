@@ -56,27 +56,26 @@ export class AppComponent implements OnInit, AfterViewInit {
     if (isPlatformBrowser(this.platformId)) {
       document.documentElement.setAttribute('data-theme', 'light');
     }
-
+  
     // Show loader at navigation start
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
         this.isLoading = true;
         this.cdr.detectChanges();
       }
-
+  
       if (
         event instanceof NavigationEnd ||
         event instanceof NavigationCancel ||
         event instanceof NavigationError
       ) {
-        // Wait until all HTTP calls are completed
         this.loadingService.loading$.subscribe((status) => {
           this.isLoading = status;
           this.cdr.detectChanges();
         });
       }
     });
-
+  
     // Set dynamic page title
     this.router.events
       .pipe(
@@ -95,13 +94,17 @@ export class AppComponent implements OnInit, AfterViewInit {
         this.titleService.setTitle(pageTitle);
         this.title = pageTitle;
       });
-
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        window.scrollTo(0, 0);
-      }
-    });
+  
+    // Scroll to top on navigation end (browser only)
+    if (isPlatformBrowser(this.platformId)) {
+      this.router.events.subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          window.scrollTo(0, 0);
+        }
+      });
+    }
   }
+  
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
