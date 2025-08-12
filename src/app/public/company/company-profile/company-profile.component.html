@@ -81,89 +81,30 @@
                     <li>🔐 AI Ethics & Data Security Frameworks</li>
                     <li>📈 AI Integration for Business Intelligence</li>
                 </ul>
-                <a href="#" class="btn btn-secondary rounded-pill px-5 py-3 text-white mt-3">Explore Solutions</a>
             </div>
         </div>
     </div>
 </div>
-<!-- About End -->
-
-<!-- Team Section Start -->
-<section class="team-section py-5">
-    <div class="container">
-        <!-- Section Header -->
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-8 text-center">
-                <h6 class="text-primary text-uppercase fw-bold mb-3">Our Leadership Team</h6>
-                <h2 class="display-5 fw-bold mb-4">Meet the Visionaries Behind ARP TechLabs</h2>
-                <p class="lead text-muted">Our exceptional team of innovators, engineers, and strategists are dedicated to transforming businesses through cutting-edge AI solutions.</p>
-            </div>
-        </div>
-
-        <!-- Team Members Grid -->
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6" *ngFor="let member of teamMembers; let i = index">
-                <div class="team-card">
-                    <div class="team-card-inner">
-                        <!-- Team Member Image -->
-                        <div class="team-image-wrapper">
-                            <div class="team-image">
-                                <img [src]="member.image" [alt]="member.name" class="img-fluid">
-                            </div>
-                            <div class="team-overlay">
-                                <div class="social-links">
-                                    <a [href]="member.linkedin" target="_blank" class="social-link linkedin">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                    <a href="#" class="social-link twitter">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="#" class="social-link email">
-                                        <i class="fas fa-envelope"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Member Info -->
-                        <div class="team-info">
-                            <h4 class="team-name">{{ member.name }}</h4>
-                            <p class="team-role">{{ member.role }}</p>
-                            <div class="team-description">
-                                <p>Passionate about leveraging AI to solve complex business challenges and drive innovation across industries.</p>
-                            </div>
-                            
-                            <!-- Skills/Tags -->
-                            <div class="team-skills">
-                                <span class="skill-tag">AI/ML</span>
-                                <span class="skill-tag">Leadership</span>
-                                <span class="skill-tag">Innovation</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Call to Action -->
-        <div class="row justify-content-center mt-5">
-            <div class="col-lg-8 text-center">
-                <div class="cta-section">
-                    <h4 class="mb-3">Ready to Join Our Team?</h4>
-                    <p class="text-muted mb-4">We're always looking for talented individuals who are passionate about AI and innovation.</p>
-                    <a href="#" class="btn btn-primary btn-lg rounded-pill me-3">
-                        <i class="fas fa-users me-2"></i>Join Our Team
-                    </a>
-                    <a href="#" class="btn btn-outline-primary btn-lg rounded-pill">
-                        <i class="fas fa-handshake me-2"></i>Partner With Us
-                    </a>
-                </div>
-            </div>
-        </div>
+<!-- Services Start -->
+<div class="container py-5 bg-footer text-footer">
+    <div class="text-center mb-5">
+      <h5 class="text-accent">Our Services</h5>
+      <h2 class="fw-bold">Services Built Specifically For Your Business</h2>
     </div>
-</section>
-<!-- Team Section End -->
-
+    <div class="row g-4">
+      <ng-container *ngFor="let service of services">
+        <div class="col-md-6 col-lg-3">
+          <div class="card bg-white text-footer h-100 text-center p-4 shadow-sm border-0">
+            <i [class]="service.icon + ' fa-3x mb-3 text-accent'"></i>
+            <h4>{{ service.title }}</h4>
+            <p>{{ service.description }}</p>
+            <a [routerLink]="service.route" class="btn btn-accent mt-auto">Read More</a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <!-- Services End -->
 <!-- Include Header and Footer Components -->
 <app-back-top></app-back-top>
 <!-- <app-footer></app-footer> -->

@@ -8,7 +8,7 @@ import { CookiePolicyComponent } from './cookie-policy/cookie-policy.component';
 
 
 const routes: Routes = [
-  { path: 'contact-us', component: ContactUsComponent, data: { title: 'Contact Us | ARP TechLabs' } },
+  { path: 'contact', component: ContactUsComponent, data: { title: 'Contact Us | ARP TechLabs' } },
   { path: 'disclaimer', component: DisclaimerComponent, data: { title: 'Disclaimer | ARP TechLabs' } },
   { path: 'privacy-policy', component: PrivacyPolicyComponent, data: { title: 'Privacy Policy | ARP TechLabs' } },
   { path: 'terms-conditions', component: TermsConditionsComponent, data: { title: 'Terms & Conditions | ARP TechLabs' } },
