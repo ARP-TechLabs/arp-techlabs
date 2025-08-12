@@ -4,7 +4,8 @@ import { AppComponent } from './app/app.component';
 import { LoadingService } from './app/services/loading.service';
 import { injectSpeedInsights } from '@vercel/speed-insights';
  
-injectSpeedInsights();
+injectSpeedInsights({ sampleRate: 0.2 }); 
+
 bootstrapApplication(AppComponent, {
   ...appConfig,
   providers: [...(appConfig.providers || []), LoadingService],
