@@ -10,5 +10,5 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  public email='info@arptechlabs.com'
+  public email='arptechlabs@gmail.com'
 }

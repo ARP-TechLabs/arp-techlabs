@@ -2,17 +2,18 @@
   <img src="https://arp-techlabs.vercel.app/assets/icons/ARP LOGO Landscape.png" alt="ARP TechLabs Banner" width="100%">
 </p>
 
-# ​ARP TechLabs
+# ARP TechLabs
 
-**Innovating the Future, One Line of Code at a Time**  
+**Innovating the Future, One Line of Code at a Time**
 
 At **ARP TechLabs**, we design and deliver intelligent, scalable, and high-impact digital solutions—from AI-powered platforms to enterprise-grade applications—empowering businesses and communities to thrive.
 
 ---
 
-## 🌐 Visit Our Website  
-Explore our services, vision, and impact on our official web presence:  
-[**arp-techlabs.vercel.app**](https://arp-techlabs.vercel.app/)  
+## 🌐 Visit Our Website
+
+Explore our services, vision, and impact on our official web presence:
+[**arp-techlabs.vercel.app**](https://arp-techlabs.vercel.app/)
 *(Check out our story, mission, solutions, career openings, and more)*
 
 ---
@@ -20,6 +21,7 @@ Explore our services, vision, and impact on our official web presence:
 ## 💼 Our Expertise
 
 ### Solutions We Offer:
+
 - **AI & ML**: Intelligent agents, Generative AI, model training
 - **Web Development**: Scalable, modern websites tailored to your needs
 - **Software Development**: Custom apps from MVPs to full systems
@@ -44,12 +46,13 @@ Each solution is crafted for flexibility, performance, and business impact.
 ## 📖 Know Us Better
 
 Discover more on our site:
-- **About Us** – Our story, vision, and core values  
-- **Why Choose Us** – What makes us your ideal tech partner  
-- **Culture & Values** – Collaboration, ethics, and innovation in action  
-- **Our Journey** – Milestones and achievements  
-- **Careers** – Current openings and how to join us  
-- **Learning** – Courses and mentorship programs  
+
+- **About Us** – Our story, vision, and core values
+- **Why Choose Us** – What makes us your ideal tech partner
+- **Culture & Values** – Collaboration, ethics, and innovation in action
+- **Our Journey** – Milestones and achievements
+- **Careers** – Current openings and how to join us
+- **Learning** – Courses and mentorship programs
 
 And don’t miss our section on **Legal & Policies** for details on **Disclaimer**, **Terms & Conditions**, **Privacy**, and **Cookie** policies—crafted with transparency and trust in mind.
 
@@ -57,17 +60,17 @@ And don’t miss our section on **Legal & Policies** for details on **Disclaimer
 
 ## 🛠 Tech Stack
 
-| Languages & Frameworks | Databases & Cloud     | Tools & CI/CD              |
-|------------------------|------------------------|-----------------------------|
+| Languages & Frameworks                         | Databases & Cloud                           | Tools & CI/CD                                   |
+| ---------------------------------------------- | ------------------------------------------- | ----------------------------------------------- |
 | JavaScript, TypeScript, Python, React, Angular | MongoDB, PostgreSQL, MySQL, AWS, GCP, Azure | Docker, Kubernetes, GitHub Actions, Figma, Jira |
 
 ---
 
 ## 📬 Get in Touch
 
-- **Website**: [arp-techlabs.vercel.app](https://arp-techlabs.vercel.app)  
-- **Email**: `contact@arptechlabs.com`  
-- **Phone**: Available Mon–Fri, 10 AM – 6 PM IST *(check the site for details)*  
+- **Website**: [arp-techlabs.vercel.app](https://arp-techlabs.vercel.app)
+- **Email**: `arptechlabs@gmail.com`
+- **Phone**: Available Mon–Fri, 10 AM – 6 PM IST *(check the site for details)*
 - **LinkedIn**: *(Add your company’s LinkedIn URL)*
 
 ---
