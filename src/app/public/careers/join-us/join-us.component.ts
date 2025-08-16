@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SeoService } from '../../../services/SeoService.service';
+import { EmailService } from '../../../services/email.service';
+import Swal from 'sweetalert2'; // ✅ Import Swal
 
 @Component({
   selector: 'app-join-us',
@@ -11,8 +13,8 @@ import { SeoService } from '../../../services/SeoService.service';
   styleUrls: ['./join-us.component.scss'],
 })
 export class JoinUsComponent implements OnInit {
-  constructor(private seo: SeoService) {}
-  // Cookie Policy
+  constructor(private seo: SeoService, private emailService: EmailService) {}
+
   ngOnInit(): void {
     this.seo.updateSeo(
       'Join Us | ARP TechLabs',
@@ -21,7 +23,9 @@ export class JoinUsComponent implements OnInit {
       'Join ARP TechLabs, Careers, AI Jobs, Tech Jobs'
     );
   }
+
   searchText: string = '';
+
   roles = [
     {
       title: 'Frontend Developer',
@@ -49,7 +53,10 @@ export class JoinUsComponent implements OnInit {
 
   selectedRole: any = null;
   isModalOpen: boolean = false;
-  isDarkMode: boolean = false; // Toggle if you have dark mode switch logic
+  isDarkMode: boolean = false;
+
+  applicantName: string = '';
+  applicantEmail: string = '';
 
   filteredRoles() {
     return this.roles.filter((role) =>
@@ -60,14 +67,52 @@ export class JoinUsComponent implements OnInit {
   openModal(role: any) {
     this.selectedRole = role;
     this.isModalOpen = true;
+    this.applicantName = '';
+    this.applicantEmail = '';
   }
 
   closeModal() {
     this.isModalOpen = false;
   }
 
-  applyForRole() {
-    alert('Application submitted!');
+  async applyForRole() {
+    if (!this.applicantName || !this.applicantEmail) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Missing Info',
+        text: '⚠️ Please enter your name and email before applying.',
+      });
+      return;
+    }
+
+    try {
+      await this.emailService.sendMail(
+        'career',
+        this.applicantName,
+        this.applicantEmail,
+        this.selectedRole?.title,
+        `Application for ${this.selectedRole?.title}, Get ready with your resume - Our team will reach you shortly \n\nCandidate: ${this.applicantName}\nEmail: ${this.applicantEmail}\n\nRole Details:\n${this.selectedRole?.descriptionPoints.join(
+          '\n- '
+        )}`,
+        { careerType: 'join-us' }
+      );
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Application Sent!',
+        html: `🎉 We’ll reach you at <b>${this.applicantEmail}</b>.<br>
+        Get ready with your resume, <b>${this.applicantName}</b>!`,
+        confirmButtonText: 'Okay',
+      });
+    } catch (error) {
+      console.error('❌ Email send error:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops!',
+        text: 'Something went wrong while sending your application. Please try again later.',
+      });
+    }
+
     this.closeModal();
   }
 }

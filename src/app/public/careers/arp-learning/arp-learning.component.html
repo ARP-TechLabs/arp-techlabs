@@ -1,49 +1,54 @@
-<!-- COURSE CARDS -->
+<!-- INTRO SECTION -->
+<div class="container py-5 text-center">
+  <h2>Welcome to ARP Learning</h2>
+  <p class="lead">
+    Empowering learners with AI, software, and data science skills for the future.
+  </p>
+</div>
+
+<!-- COURSES SECTION -->
 <div class="container-fluid py-5 bg-light">
-    <div class="container">
-        <h3 class="text-center mb-4 section-title">Basic Courses to Kickstart Your Learning</h3>
-        <div class="row g-4 justify-content-center">
-            <div class="col-md-4 col-sm-6" *ngFor="let course of courses" (click)="openCourse(course)">
-                <div class="course-card p-4 text-center">
-                    <span class="course-icon">{{ course.icon }}</span>
-                    <h6>{{ course.title }}</h6>
-                    <p>{{ course.description }}</p>
-                </div>
-            </div>
+  <div class="container">
+    <h3 class="text-center mb-4 section-title">Basic Courses to Kickstart Your Learning</h3>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4 col-sm-6" *ngFor="let course of courses" (click)="openCourse(course)">
+        <div class="course-card p-4 text-center">
+          <span class="course-icon">{{ course.icon }}</span>
+          <h6>{{ course.title }}</h6>
+          <p>{{ course.description }}</p>
         </div>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- COUNSELLING SECTION -->
+<div class="container py-5">
+  <h3 class="text-center mb-4">Want a Counselling?</h3>
+  <form class="counselling-form" (ngSubmit)="submitCounselling()" #cForm="ngForm">
+    <div class="mb-3">
+      <input type="text" class="form-control" placeholder="Your Name" [(ngModel)]="counsellingName" name="name" required />
+    </div>
+    <div class="mb-3">
+      <input type="email" class="form-control" placeholder="Your Email" [(ngModel)]="counsellingEmail" name="email" required />
+    </div>
+    <div class="mb-3">
+      <input type="text" class="form-control" placeholder="Counselling Title" [(ngModel)]="counsellingTitle" name="title" required />
+    </div>
+    <div class="mb-3">
+      <textarea class="form-control" placeholder="Message" rows="4" [(ngModel)]="counsellingMessage" name="message" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Request Counselling</button>
+  </form>
 </div>
 
 <!-- DETAILED COURSE MODAL -->
-<!-- Course Card -->
-<div class="course-card" *ngFor="let course of courses">
-  <h3>{{ course.title }}</h3>
-  <p>{{ course.description }}</p>
-  <span class="duration">⏳ {{ course.duration }}</span>
-
-  <div class="tech-stack">
-    <span class="chip" *ngFor="let tech of course.stack">
-      {{ tech }}
-    </span>
-  </div>
-
-  <button class="enroll-btn" (click)="openCourse(course)">
-    View Details
-  </button>
-</div>
-
-
-<!-- Modal -->
-<div class="modal" 
-     [class.active]="showModal" 
-     (click)="onBackdropClick($event)">
+<div class="modal" [class.active]="showModal" (click)="onBackdropClick($event)">
   <div class="modal-content">
     <button class="modal-close" (click)="closeModal()">×</button>
 
     <h3>{{ selectedCourse?.title }}</h3>
-
     <div class="modal-body">
-      <!-- LEFT SECTION -->
       <div class="left-section">
         <p class="course-desc">{{ selectedCourse?.description }}</p>
         <span class="duration">Duration: {{ selectedCourse?.duration }}</span>
@@ -55,18 +60,18 @@
         </div>
       </div>
 
-      <!-- RIGHT SECTION -->
       <div class="right-section">
-        <div class="course-timeline">
-          <ul>
-            <li *ngFor="let item of selectedCourse?.contents">
-              {{ item }}
-            </li>
-          </ul>
-        </div>
+        <ul>
+          <li *ngFor="let item of selectedCourse?.contents">{{ item }}</li>
+        </ul>
       </div>
     </div>
 
-    <button class="enroll-btn">Enroll Now</button>
+    <!-- Enroll Form -->
+    <div class="enroll-form mt-3">
+      <input type="text" class="form-control mb-2" placeholder="Your Name" [(ngModel)]="enrollName" name="enrollName" />
+      <input type="email" class="form-control mb-2" placeholder="Your Email" [(ngModel)]="enrollEmail" name="enrollEmail" />
+      <button class="btn btn-success w-100" (click)="enrollCourse()">Enroll Now</button>
+    </div>
   </div>
 </div>
