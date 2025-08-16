@@ -18,11 +18,7 @@ interface Message {
 export class AiAgentComponent implements OnInit {
   userMessage = '';
   messages: Message[] = [];
-  suggestions: string[] = [
-    'What services does ARP offer?',
-    'Tell me about ARP’s mission.',
-    'What are your AI solutions?',
-  ];
+  suggestions: string[] = [];
 
   isPaused = false;
   isTyping = false;
@@ -33,6 +29,13 @@ export class AiAgentComponent implements OnInit {
       text: 'Hello 👋 I’m your ARP AI Assistant. Ask me anything about ARP TechLabs, our services, or who we are!',
       sender: 'agent',
     });
+
+    // Default top 3 suggestions
+    this.suggestions = [
+      'What services does ARP offer?',
+      'Tell me about ARP’s mission.',
+      'What are your AI solutions?',
+    ];
   }
 
   sendMessage() {
@@ -43,7 +46,6 @@ export class AiAgentComponent implements OnInit {
     this.userMessage = '';
     this.isTyping = true;
 
-    // Typing animation simulation
     setTimeout(() => {
       const response = this.generateResponse(userMsg);
 
@@ -80,76 +82,111 @@ export class AiAgentComponent implements OnInit {
   generateResponse(message: string): string {
     const lower = message.toLowerCase();
     const keywordRouteMap = [
+      // === Company Info ===
       {
         keywords: ['about', 'company'],
-        response: `ARP TechLabs is a tech-driven LLP, focused on innovation and real-world problem-solving through AI and software. <a href="/about-arp" target="_blank">Learn more about our company</a>.`,
-      },
-      {
-        keywords: ['why', 'benefit', 'advantage'],
-        response: `Choosing ARP TechLabs means access to AI-powered development, a collaborative culture, and scalable, future-ready tech solutions. <a href="/why-arp" target="_blank">See why clients choose us</a>.`,
-      },
-      {
-        keywords: ['culture', 'value'],
-        response: `Our work culture thrives on creativity, continuous learning, and shared values that align with client success. <a href="/culture-values" target="_blank">Explore our culture and values</a>.`,
+        response: `ARP TechLabs is a software-driven startup LLP, focused on AI, web, and data solutions. We innovate to solve real-world challenges. <a href="/about-arp" target="_blank">Learn more</a>.`,
+        suggestions: ['What is ARP’s mission?', 'Show me ARP’s journey.', 'What services does ARP offer?']
       },
       {
         keywords: ['mission', 'vision'],
-        response: `At ARP TechLabs, our mission is to create meaningful impact through technology. We envision a future where innovation is accessible to all. <a href="/mission-vision" target="_blank">Discover our mission and vision</a>.`,
+        response: `Our mission is to create meaningful impact through intelligent technology. Vision: to shape tomorrow through innovation. <a href="/mission-vision" target="_blank">Read our mission</a>.`,
+        suggestions: ['Tell me about ARP values.', 'What services do you provide?', 'What is your culture?']
+      },
+      {
+        keywords: ['culture', 'value'],
+        response: `Our culture thrives on innovation, collaboration, and continuous learning. Values: client success, curiosity, and global impact. <a href="/culture-values" target="_blank">Explore culture</a>.`,
+        suggestions: ['What is ARP’s mission?', 'What services do you offer?', 'Show testimonials']
       },
       {
         keywords: ['timeline', 'journey'],
-        response: `From ideation to execution, our journey reflects the milestones and growth of ARP TechLabs. <a href="/timeline" target="_blank">Check out our timeline</a>.`,
+        response: `From ideation to AI-driven solutions, our journey reflects growth and innovation milestones. <a href="/timeline" target="_blank">See timeline</a>.`,
+        suggestions: ['Tell me about ARP’s mission.', 'What AI solutions do you have?', 'Show me testimonials.']
       },
       {
         keywords: ['testimonial', 'review'],
-        response: `Hear directly from our clients and partners about their experiences working with ARP TechLabs. <a href="/testimonial" target="_blank">Read testimonials</a>.`,
+        response: `Hear what clients and partners say about ARP TechLabs. <a href="/testimonial" target="_blank">Read testimonials</a>.`,
+        suggestions: ['What services do you offer?', 'Show company mission.', 'Tell me about your culture.']
       },
       {
-        keywords: ['ai agent', 'ai solution','aiml','ml','machine learning','artificial learning', 'chatbot'],
-        response: `We design AI solutions including chatbots and generative models that align with business goals. <a href="/aiml" target="_blank">Explore our AI offerings</a>.`,
+        keywords: ['why', 'benefit', 'advantage'],
+        response: `Why ARP? Because we provide AI-powered, scalable, and globally competitive solutions. <a href="/why-arp" target="_blank">See why us</a>.`,
+        suggestions: ['Tell me about ARP mission.', 'What AI services do you have?', 'Show culture values.']
+      },
+
+      // === Services ===
+      {
+        keywords: ['ai agent', 'ai solution', 'aiml', 'ml', 'machine learning', 'chatbot'],
+        response: `We design AI/ML solutions including chatbots, OCR, explainable AI, and business-driven models. <a href="/aiml" target="_blank">Explore AI</a>.`,
+        suggestions: ['Do you offer Generative AI?', 'Tell me about Web Development.', 'What is your mission?']
       },
       {
         keywords: ['genai', 'generative ai'],
-        response: `Our Generative AI solutions help automate creativity—from content to code—tailored for enterprise needs. <a href="/gen-ai" target="_blank">Learn about our GenAI capabilities</a>.`,
+        response: `Generative AI solutions: content automation, AI assistants, code generation, enterprise creativity. <a href="/gen-ai" target="_blank">Explore GenAI</a>.`,
+        suggestions: ['What AI/ML services do you offer?', 'Tell me about Data Science.', 'What’s your vision?']
       },
       {
         keywords: ['web'],
-        response: `We build high-performance websites and web apps using the latest frameworks and scalable architecture. <a href="/web" target="_blank">View our web development services</a>.`,
+        response: `We build websites & web apps using MEAN, MERN, .NET, Laravel, WordPress. <a href="/web" target="_blank">View web services</a>.`,
+        suggestions: ['Tell me about Software Development.', 'Show Data Analytics services.', 'What is ARP culture?']
       },
       {
         keywords: ['software'],
-        response: `Our team builds software solutions that automate workflows and enhance efficiency. <a href="/software" target="_blank">Check our software development stack</a>.`,
+        response: `Custom software & automation solutions: ERP, stock management, APIs, scalable platforms. <a href="/software" target="_blank">Explore software</a>.`,
+        suggestions: ['Tell me about Product Development.', 'What database services do you offer?', 'Show ARP values.']
       },
       {
         keywords: ['product'],
-        response: `We offer product development as a service (PaaS), from MVPs to full-scale platforms. <a href="/paas" target="_blank">See how we develop digital products</a>.`,
+        response: `We provide Product-as-a-Service (PaaS), MVPs, SaaS platforms, and enterprise-grade software. <a href="/paas" target="_blank">Explore PaaS</a>.`,
+        suggestions: ['Show me Software Development.', 'What are your Web solutions?', 'Show Data Science services.']
       },
       {
         keywords: ['data science'],
-        response: `Our data science services turn raw data into business intelligence using ML, predictive models, and analytics. <a href="/data-science" target="_blank">Explore our data science offerings</a>.`,
+        response: `Data Science: predictive analytics, machine learning pipelines, business intelligence. <a href="/data-science" target="_blank">View Data Science</a>.`,
+        suggestions: ['What about Data Analytics?', 'Show me AI solutions.', 'Tell me about your mission.']
       },
       {
         keywords: ['data analytics'],
-        response: `Unlock insights and make data-driven decisions with our advanced analytics tools. <a href="/data-analytics" target="_blank">Learn more about our analytics services</a>.`,
+        response: `Advanced analytics & dashboards to drive decisions and insights. <a href="/data-analytics" target="_blank">View Analytics</a>.`,
+        suggestions: ['Show Data Science services.', 'Tell me about Web Development.', 'What’s your culture?']
       },
       {
         keywords: ['database', 'db'],
-        response: `We provide robust database solutions, including SQL and NoSQL support, optimization, and architecture. <a href="/db-services" target="_blank">Discover our DB services</a>.`,
+        response: `Database solutions: SQL & NoSQL, optimization, architecture, automation with stored procedures. <a href="/db-services" target="_blank">View DB services</a>.`,
+        suggestions: ['Show me Software Development.', 'What is your mission?', 'Tell me about AI/ML.']
+      },
+
+      // === Careers & Collab ===
+      {
+        keywords: ['career', 'job', 'internship'],
+        response: `We offer roles & internships in AI, Web, Data, and Software. <a href="/careers" target="_blank">Explore careers</a>.`,
+        suggestions: ['What services do you provide?', 'Tell me about ARP values.', 'Show me Data Science.']
       },
       {
+        keywords: ['collab', 'partner', 'partnership'],
+        response: `We collaborate with global businesses for projects & innovation. <a href="/collaboration" target="_blank">Learn more</a>.`,
+        suggestions: ['Show me your services.', 'What is ARP’s mission?', 'Tell me about your culture.']
+      },
+
+      // === Contact ===
+      {
         keywords: ['contact', 'human', 'support'],
-        response: `We’re here to help. If you have queries beyond what the assistant can answer, feel free to <a href="/contact-us" target="_blank">connect with our team</a>.`,
+        response: `Need personalized help? <a href="/contact-us" target="_blank">Contact ARP TechLabs</a>.`,
+        suggestions: ['What services do you provide?', 'Show me ARP values.', 'What’s your vision?']
       },
     ];
 
     for (const item of keywordRouteMap) {
       for (const keyword of item.keywords) {
-        if (lower.includes(keyword)) return item.response;
+        if (lower.includes(keyword)) {
+          this.suggestions = item.suggestions; // update top 3
+          return item.response;
+        }
       }
     }
 
-    return `Thanks for your question. We provide real-time information about ARP TechLabs, our solutions, and corporate activities.<br><br>
-    It seems your query is beyond our AI assistant’s domain.<br><br>
-    For personalized assistance, please <a href="/contact-us" target="_blank">get in touch with our team</a>.`;
+    this.suggestions = ['What services does ARP offer?', 'Tell me about ARP’s mission.', 'What are your AI solutions?'];
+    return `Thanks for your query. I provide insights into ARP TechLabs, our services, and values.<br><br>
+    For more details, please <a href="/contact-us" target="_blank">contact our team</a>.`;
   }
 }
