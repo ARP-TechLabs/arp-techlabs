@@ -21,7 +21,6 @@ export class AiAgentComponent implements OnInit {
   suggestions: string[] = [
     'What services does ARP offer?',
     'Tell me about ARP’s mission.',
-    'Founders of ARP TechLabs?',
     'What are your AI solutions?',
   ];
 
@@ -82,8 +81,8 @@ export class AiAgentComponent implements OnInit {
     const lower = message.toLowerCase();
     const keywordRouteMap = [
       {
-        keywords: ['about', 'founder', 'company'],
-        response: `ARP TechLabs is a tech-driven LLP co-founded by Adnan M, Ritesh S, and Pankaj V, focused on innovation and real-world problem-solving through AI and software. <a href="/about-arp" target="_blank">Learn more about our company</a>.`,
+        keywords: ['about', 'company'],
+        response: `ARP TechLabs is a tech-driven LLP, focused on innovation and real-world problem-solving through AI and software. <a href="/about-arp" target="_blank">Learn more about our company</a>.`,
       },
       {
         keywords: ['why', 'benefit', 'advantage'],
