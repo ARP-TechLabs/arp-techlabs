@@ -2,7 +2,10 @@
 <section class="py-5 bg-primary text-white text-center">
   <div class="container">
     <h1 class="display-4 fw-bold">Product Development</h1>
-    <p class="lead">From ideation to deployment — we turn your product vision into powerful digital realities.</p>
+    <p class="lead">
+      From ideation to deployment — we turn your product vision into powerful
+      digital realities.
+    </p>
   </div>
 </section>
 
@@ -38,19 +41,28 @@
       <div class="col-md-4">
         <div class="bg-white rounded shadow-sm p-4 h-100">
           <h5 class="text-primary">Cross-platform Apps</h5>
-          <p>We use React Native, Flutter, and Ionic to create seamless Android, iOS, and web applications with shared codebases.</p>
+          <p>
+            We use React Native, Flutter, and Ionic to create seamless Android,
+            iOS, and web applications with shared codebases.
+          </p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="bg-white rounded shadow-sm p-4 h-100">
           <h5 class="text-primary">API-Centric Architectures</h5>
-          <p>Robust backend APIs with Node.js, FastAPI, and .NET for scalable communication with frontends and third-party systems.</p>
+          <p>
+            Robust backend APIs with Node.js, FastAPI, and .NET for scalable
+            communication with frontends and third-party systems.
+          </p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="bg-white rounded shadow-sm p-4 h-100">
           <h5 class="text-primary">Cloud Native Deployments</h5>
-          <p>Dockerized apps with CI/CD pipelines, deployed on AWS, Azure, or Vercel with monitoring and versioning support.</p>
+          <p>
+            Dockerized apps with CI/CD pipelines, deployed on AWS, Azure, or
+            Vercel with monitoring and versioning support.
+          </p>
         </div>
       </div>
     </div>
@@ -59,27 +71,37 @@
 <!-- Service Packages -->
 <section class="py-5 bg-white">
   <div class="container">
-    <h2 class="text-center mb-5 fw-bold">Product Development Service Packages</h2>
+    <h2 class="text-center mb-5 fw-bold">
+      Product Development Service Packages
+    </h2>
     <div class="row g-4 justify-content-center">
-
       <!-- Starter -->
       <div class="col-lg-4 col-md-6">
         <div class="pricing-card p-4 h-100">
-          <h4 class="text-primary fw-bold text-center mb-3">Product Development Starter</h4>
+          <h4 class="text-primary fw-bold text-center mb-3">
+            Product Development Starter
+          </h4>
           <div class="text-center mb-4">
-            <span class="stat-number" style="font-size: 2rem;">₹1.5L Onwards</span>
+            <span class="stat-number" style="font-size: 2rem"
+              >₹1.5L Onwards</span
+            >
             <p class="text-muted mb-0">Kickstart your product idea</p>
           </div>
           <ul class="list-unstyled">
-            <li class="mb-2"><span class="feature-check">✓</span>Product Ideation & Roadmap</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Basic Wireframes & UI Design</li>
-            <li class="mb-2"><span class="feature-check">✓</span>MVP Development</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Basic API Integrations</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Initial QA & Bug Fixing</li>
-            <li class="mb-2"><span class="feature-check">✓</span>1 Month Support Post Launch</li>
+            <li>✓ Product Ideation & Roadmap</li>
+            <li>✓ Basic Wireframes & UI Design</li>
+            <li>✓ MVP Development</li>
+            <li>✓ Basic API Integrations</li>
+            <li>✓ Initial QA & Bug Fixing</li>
+            <li>✓ 1 Month Support Post Launch</li>
           </ul>
           <div class="text-center mt-4">
-            <button class="btn btn-gradient px-4 py-2" routerLink="/contact-us">Get Started</button>
+            <button
+              class="btn btn-gradient px-4 py-2"
+              (click)="openEnquiry('Product Development Starter')"
+            >
+              Get Started
+            </button>
           </div>
         </div>
       </div>
@@ -90,22 +112,29 @@
           <div class="text-center mb-2">
             <span class="badge bg-primary">Most Popular</span>
           </div>
-          <h4 class="text-primary fw-bold text-center mb-3">Professional Product Development</h4>
+          <h4 class="text-primary fw-bold text-center mb-3">
+            Professional Product Development
+          </h4>
           <div class="text-center mb-4">
-            <span class="stat-number" style="font-size: 2rem;">₹3L Onwards</span>
+            <span class="stat-number" style="font-size: 2rem">₹3L Onwards</span>
             <p class="text-muted mb-0">Full-featured, scalable solutions</p>
           </div>
           <ul class="list-unstyled">
-            <li class="mb-2"><span class="feature-check">✓</span>Complete Product Design & Branding</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Full-stack Web or Mobile App Development</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Advanced API & Third-party Integrations</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Performance Optimization</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Cloud Deployment & CI/CD Setup</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Product Analytics Integration</li>
-            <li class="mb-2"><span class="feature-check">✓</span>6 Months Maintenance & Support</li>
+            <li>✓ Complete Product Design & Branding</li>
+            <li>✓ Full-stack Web or Mobile App Development</li>
+            <li>✓ Advanced API & Third-party Integrations</li>
+            <li>✓ Performance Optimization</li>
+            <li>✓ Cloud Deployment & CI/CD Setup</li>
+            <li>✓ Product Analytics Integration</li>
+            <li>✓ 6 Months Maintenance & Support</li>
           </ul>
           <div class="text-center mt-4">
-            <button class="btn btn-gradient px-4 py-2" routerLink="/contact-us">Choose Plan</button>
+            <button
+              class="btn btn-gradient px-4 py-2"
+              (click)="openEnquiry('Professional Product Development')"
+            >
+              Choose Plan
+            </button>
           </div>
         </div>
       </div>
@@ -113,29 +142,74 @@
       <!-- Enterprise -->
       <div class="col-lg-4 col-md-6">
         <div class="pricing-card p-4 h-100">
-          <h4 class="text-primary fw-bold text-center mb-3">Enterprise Product Development</h4>
+          <h4 class="text-primary fw-bold text-center mb-3">
+            Enterprise Product Development
+          </h4>
           <div class="text-center mb-4">
-            <span class="stat-number" style="font-size: 2rem;">₹8L Onwards</span>
-            <p class="text-muted mb-0">Custom, large-scale product innovation</p>
+            <span class="stat-number" style="font-size: 2rem">₹8L Onwards</span>
+            <p class="text-muted mb-0">
+              Custom, large-scale product innovation
+            </p>
           </div>
           <ul class="list-unstyled">
-            <li class="mb-2"><span class="feature-check">✓</span>Enterprise-grade Architecture Design</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Multi-platform Product Ecosystem</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Custom API & Integration Services</li>
-            <li class="mb-2"><span class="feature-check">✓</span>High Availability & Scalability Setup</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Comprehensive Security & Compliance</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Dedicated Development Team</li>
-            <li class="mb-2"><span class="feature-check">✓</span>12 Months Premium Support</li>
+            <li>✓ Enterprise-grade Architecture Design</li>
+            <li>✓ Multi-platform Product Ecosystem</li>
+            <li>✓ Custom API & Integration Services</li>
+            <li>✓ High Availability & Scalability Setup</li>
+            <li>✓ Comprehensive Security & Compliance</li>
+            <li>✓ Dedicated Development Team</li>
+            <li>✓ 12 Months Premium Support</li>
           </ul>
           <div class="text-center mt-4">
-            <button class="btn btn-gradient px-4 py-2" routerLink="/contact-us">Contact Sales</button>
+            <button
+              class="btn btn-gradient px-4 py-2"
+              (click)="openEnquiry('Enterprise Product Development')"
+            >
+              Contact Sales
+            </button>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
+
+<!-- Modal -->
+<div id="enquiryModal" class="modal" style="display: none">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-4">
+      <div class="modal-header">
+        <h5 class="modal-title">Enquiry for {{ selectedPlan }}</h5>
+        <button type="button" class="btn-close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="enquiryForm" (ngSubmit)="submitEnquiry()">
+          <div class="mb-3">
+            <label class="form-label">Your Name</label>
+            <input type="text" formControlName="name" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" formControlName="email" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea
+              rows="3"
+              formControlName="description"
+              class="form-control"
+            ></textarea>
+          </div>
+          <div class="text-end">
+            <button type="submit" class="btn btn-gradient px-4">
+              Send Enquiry
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Process -->
 <section class="py-5 bg-white">
@@ -144,49 +218,97 @@
     <div class="accordion" id="productProcessAccordion">
       <div class="accordion-item">
         <h2 class="accordion-header" id="productOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#devStep1" aria-expanded="true" aria-controls="devStep1">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#devStep1"
+            aria-expanded="true"
+            aria-controls="devStep1"
+          >
             1. Discovery & Roadmap
           </button>
         </h2>
-        <div id="devStep1" class="accordion-collapse collapse show" aria-labelledby="productOne">
+        <div
+          id="devStep1"
+          class="accordion-collapse collapse show"
+          aria-labelledby="productOne"
+        >
           <div class="accordion-body">
-            We align product goals with market needs, define user personas, and finalize a milestone-based execution plan.
+            We align product goals with market needs, define user personas, and
+            finalize a milestone-based execution plan.
           </div>
         </div>
       </div>
       <div class="accordion-item">
         <h2 class="accordion-header" id="productTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#devStep2" aria-expanded="false" aria-controls="devStep2">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#devStep2"
+            aria-expanded="false"
+            aria-controls="devStep2"
+          >
             2. MVP Development
           </button>
         </h2>
-        <div id="devStep2" class="accordion-collapse collapse" aria-labelledby="productTwo">
+        <div
+          id="devStep2"
+          class="accordion-collapse collapse"
+          aria-labelledby="productTwo"
+        >
           <div class="accordion-body">
-            Building out core functionalities with design-first and fail-fast strategy. We validate early and iterate rapidly.
+            Building out core functionalities with design-first and fail-fast
+            strategy. We validate early and iterate rapidly.
           </div>
         </div>
       </div>
       <div class="accordion-item">
         <h2 class="accordion-header" id="productThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#devStep3" aria-expanded="false" aria-controls="devStep3">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#devStep3"
+            aria-expanded="false"
+            aria-controls="devStep3"
+          >
             3. Testing & Feedback
           </button>
         </h2>
-        <div id="devStep3" class="accordion-collapse collapse" aria-labelledby="productThree">
+        <div
+          id="devStep3"
+          class="accordion-collapse collapse"
+          aria-labelledby="productThree"
+        >
           <div class="accordion-body">
-            Beta testing with real users, tracking KPIs and usage heatmaps, then optimizing before public release.
+            Beta testing with real users, tracking KPIs and usage heatmaps, then
+            optimizing before public release.
           </div>
         </div>
       </div>
       <div class="accordion-item">
         <h2 class="accordion-header" id="productFour">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#devStep4" aria-expanded="false" aria-controls="devStep4">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#devStep4"
+            aria-expanded="false"
+            aria-controls="devStep4"
+          >
             4. Launch & Scale
           </button>
         </h2>
-        <div id="devStep4" class="accordion-collapse collapse" aria-labelledby="productFour">
+        <div
+          id="devStep4"
+          class="accordion-collapse collapse"
+          aria-labelledby="productFour"
+        >
           <div class="accordion-body">
-            We provide full deployment, user onboarding flows, analytic dashboards, and long-term maintenance SLAs.
+            We provide full deployment, user onboarding flows, analytic
+            dashboards, and long-term maintenance SLAs.
           </div>
         </div>
       </div>
@@ -202,13 +324,21 @@
       <div class="col-md-6">
         <div class="bg-white p-4 border rounded h-100">
           <h5 class="text-success">KioskOS</h5>
-          <p>An offline-first kiosk OS for education and training, deployed across 300+ rural centers in India. Runs on Raspberry Pi and Android tabs.</p>
+          <p>
+            An offline-first kiosk OS for education and training, deployed
+            across 300+ rural centers in India. Runs on Raspberry Pi and Android
+            tabs.
+          </p>
         </div>
       </div>
       <div class="col-md-6">
         <div class="bg-white p-4 border rounded h-100">
           <h5 class="text-success">ShopSmart AI</h5>
-          <p>AI-powered marketplace product that uses NLP and price intelligence to optimize seller listings and boost conversions on platforms like Amazon.</p>
+          <p>
+            AI-powered marketplace product that uses NLP and price intelligence
+            to optimize seller listings and boost conversions on platforms like
+            Amazon.
+          </p>
         </div>
       </div>
     </div>
@@ -219,7 +349,11 @@
 <section class="container-fluid py-5 bg-light-green text-center">
   <div class="container">
     <h2 class="fw-bold mb-3 text-success">Have a Product Idea?</h2>
-    <p class="text-muted mb-4">Let’s take it from concept to code to customer with full-stack brilliance.</p>
-    <a routerLink="/contact-us" class="btn btn-primary btn-lg px-4 py-2">Start Building</a>
+    <p class="text-muted mb-4">
+      Let’s take it from concept to code to customer with full-stack brilliance.
+    </p>
+    <a routerLink="/contact-us" class="btn btn-primary btn-lg px-4 py-2"
+      >Start Building</a
+    >
   </div>
 </section>

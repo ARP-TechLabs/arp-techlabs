@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
-import { EmailService } from '../../../services/email.service';  // adjust path
+import { EmailService } from '../../../services/email.service'; 
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
   imports: [FormsModule],
   templateUrl: './contact-form.component.html',
-  styleUrl: './contact-form.component.scss'
+  styleUrl: './contact-form.component.scss',
 })
 export class ContactFormComponent {
   formData = {
     name: '',
     email: '',
-    project: '',   // mapped to "titleValue"
-    message: ''
+    project: '',
+    message: '',
   };
 
   constructor(private emailService: EmailService) {}
@@ -26,7 +26,7 @@ export class ContactFormComponent {
         'common',
         this.formData.name,
         this.formData.email,
-        this.formData.project,   // title/topic
+        this.formData.project,
         this.formData.message
       );
 
@@ -35,11 +35,10 @@ export class ContactFormComponent {
         icon: 'success',
         title: 'Your message has been sent!',
         showConfirmButton: false,
-        timer: 1500
+        timer: 1500,
       });
 
       this.formData = { name: '', email: '', project: '', message: '' };
-
     } catch (error: any) {
       console.error('Email sending failed:', error?.text || error);
       Swal.fire({

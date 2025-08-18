@@ -1,6 +1,10 @@
 <div class="container-fluid py-5">
   <div class="container">
-    <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px">
+    <div
+      class="text-center mx-auto pb-5 wow fadeIn"
+      data-wow-delay=".3s"
+      style="max-width: 600px"
+    >
       <h5 class="text-accent">Get In Touch</h5>
       <h1 class="mb-3 text-footer">Contact for any query</h1>
       <p class="mb-2 text-footer">
@@ -15,12 +19,21 @@
         <div class="col-md-6 col-lg-4">
           <div class="d-flex card p-3">
             <div
-              class="flex-shrink-0 btn-square bg-accent rounded-circle d-flex align-items-center justify-content-center icon-circle">
-              <img src="../../../../assets/icons/location.png" alt="location icon" style="width: 22px;" />
+              class="flex-shrink-0 btn-square bg-accent rounded-circle d-flex align-items-center justify-content-center icon-circle"
+            >
+              <img
+                src="../../../../assets/icons/location.png"
+                alt="location icon"
+                style="width: 22px"
+              />
             </div>
             <div class="ms-3">
               <h5 class="text-footer mb-1">Address</h5>
-              <a href="https://maps.app.goo.gl/8aLjGgDP63msSqZT6" target="_blank" class="text-footer">
+              <a
+                href="https://maps.app.goo.gl/8aLjGgDP63msSqZT6"
+                target="_blank"
+                class="text-footer"
+              >
                 ARP TechLabs, Jogeshwari, Mumbai
               </a>
             </div>
@@ -30,12 +43,15 @@
         <div class="col-md-6 col-lg-4">
           <div class="d-flex card p-3">
             <div
-              class="flex-shrink-0 btn-square bg-accent rounded-circle d-flex align-items-center justify-content-center icon-circle">
+              class="flex-shrink-0 btn-square bg-accent rounded-circle d-flex align-items-center justify-content-center icon-circle"
+            >
               📞
             </div>
             <div class="ms-3">
               <h5 class="text-footer mb-1">Call Us</h5>
-              <a href="tel:+91 7977232115" class="text-footer">+91 7977232115</a>
+              <a href="tel:+91 7977232115" class="text-footer"
+                >+91 7977232115</a
+              >
             </div>
           </div>
         </div>
@@ -43,12 +59,19 @@
         <div class="col-md-6 col-lg-4">
           <div class="d-flex card p-3">
             <div
-              class="flex-shrink-0 btn-square bg-accent rounded-circle d-flex align-items-center justify-content-center icon-circle">
-              <img src="../../../../assets/icons/gmail.png" alt="Gmail icon" style="width: 22px;" />
+              class="flex-shrink-0 btn-square bg-accent rounded-circle d-flex align-items-center justify-content-center icon-circle"
+            >
+              <img
+                src="../../../../assets/icons/gmail.png"
+                alt="Gmail icon"
+                style="width: 22px"
+              />
             </div>
             <div class="ms-3">
               <h5 class="text-footer mb-1">Email Us</h5>
-              <a href="mailto:arptechlabs@gmail.com" class="text-footer">arptechlabs&#64;gmail.com</a>
+              <a href="mailto:arptechlabs@gmail.com" class="text-footer"
+                >arptechlabs&#64;gmail.com</a
+              >
             </div>
           </div>
         </div>
@@ -61,39 +84,78 @@
             <div class="map-responsive h-100 rounded overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30152.658297093578!2d72.847021!3d19.147875!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7001cb7e3f5%3A0xd7b3b903510c39b!2sARP%20TechLabs!5e0!3m2!1sen!2sin!4v1755026185717!5m2!1sen!2sin"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
               <p>
-                <a href="https://maps.app.goo.gl/8aLjGgDP63msSqZT6" target="_blank" rel="noopener">
+                <a
+                  href="https://maps.app.goo.gl/8aLjGgDP63msSqZT6"
+                  target="_blank"
+                  rel="noopener"
+                >
                   View on Google Maps
                 </a>
               </p>
-
             </div>
           </div>
         </div>
 
-        <div class="col-lg-6">
-          <div class="card p-4 h-100 d-flex flex-column justify-content-between">
-            <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+        <div class="col-12 col-md-8 col-lg-6 mx-auto">
+          <div
+            class="card p-4 h-100 d-flex flex-column justify-content-between contact-card"
+          >
+            <form (ngSubmit)="submitForm()" #contactForm="ngForm" novalidate>
               <div class="mb-3">
-                <input type="text" class="form-control border-0 py-3" placeholder="Your Name" name="name"
-                  [(ngModel)]="formData.name" required />
+                <input
+                  type="text"
+                  class="form-control custom-input"
+                  placeholder="Your Name"
+                  name="name"
+                  [(ngModel)]="formData.name"
+                  required
+                />
               </div>
+
               <div class="mb-3">
-                <input type="email" class="form-control border-0 py-3" placeholder="Your Email" name="email"
-                  [(ngModel)]="formData.email" required />
+                <input
+                  type="email"
+                  class="form-control custom-input"
+                  placeholder="Your Email"
+                  name="email"
+                  [(ngModel)]="formData.email"
+                  required
+                />
               </div>
+
               <div class="mb-3">
-                <input type="text" class="form-control border-0 py-3" placeholder="Subject" name="project"
-                  [(ngModel)]="formData.project" />
+                <input
+                  type="text"
+                  class="form-control custom-input"
+                  placeholder="Subject"
+                  name="project"
+                  [(ngModel)]="formData.project"
+                />
               </div>
+
               <div class="mb-3">
-                <textarea class="form-control border-0 py-3" rows="5" placeholder="Message" name="message"
-                  [(ngModel)]="formData.message"></textarea>
+                <textarea
+                  class="form-control custom-input"
+                  rows="5"
+                  placeholder="Message"
+                  name="message"
+                  [(ngModel)]="formData.message"
+                ></textarea>
               </div>
-              <div>
-                <button class="btn btn-accent py-3 px-5" type="submit">
+
+              <div class="text-center text-md-start">
+                <button
+                  class="btn custom-btn py-3 px-5 w-100 w-md-auto"
+                  type="submit"
+                >
                   Send Message
                 </button>
               </div>

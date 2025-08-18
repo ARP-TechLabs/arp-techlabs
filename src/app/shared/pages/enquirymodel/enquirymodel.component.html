@@ -1,0 +1,40 @@
+<div class="modal-backdrop" *ngIf="isOpen">
+  <div class="modal">
+    <h2>{{ title }}</h2>
+
+    <form [formGroup]="enquiryForm" (ngSubmit)="submitEnquiry()">
+      <label>
+        Name:
+        <input
+          formControlName="name"
+          type="text"
+          placeholder="Enter your name"
+        />
+      </label>
+
+      <label>
+        Email:
+        <input
+          formControlName="email"
+          type="email"
+          placeholder="Enter your email"
+        />
+      </label>
+
+      <label>
+        Description:
+        <textarea
+          formControlName="description"
+          placeholder="Enter details"
+        ></textarea>
+      </label>
+
+      <div class="actions">
+        <button type="submit" [disabled]="enquiryForm.invalid">Send</button>
+        <button type="button" class="cancel-btn" (click)="closeModal()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

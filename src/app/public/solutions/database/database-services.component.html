@@ -2,7 +2,10 @@
 <section class="py-5 bg-primary text-white text-center">
   <div class="container">
     <h1 class="display-4 fw-bold">Database Services</h1>
-    <p class="lead">Reliable, secure, and optimized database solutions to power your applications and analytics.</p>
+    <p class="lead">
+      Reliable, secure, and optimized database solutions to power your
+      applications and analytics.
+    </p>
   </div>
 </section>
 
@@ -14,20 +17,28 @@
       <div class="col-md-4">
         <div class="bg-white p-4 rounded shadow-sm h-100">
           <h5 class="text-primary">Database Design</h5>
-          <p>Custom schema design for transactional & analytical systems with normalization & indexing best practices.
+          <p>
+            Custom schema design for transactional & analytical systems with
+            normalization & indexing best practices.
           </p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="bg-white p-4 rounded shadow-sm h-100">
           <h5 class="text-primary">Performance Optimization</h5>
-          <p>Slow queries? We'll optimize your queries, indexes, and structure for lightning-fast performance.</p>
+          <p>
+            Slow queries? We'll optimize your queries, indexes, and structure
+            for lightning-fast performance.
+          </p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="bg-white p-4 rounded shadow-sm h-100">
           <h5 class="text-primary">Backup & Security</h5>
-          <p>Automated backups, failover strategies, and role-based access to keep your data secure.</p>
+          <p>
+            Automated backups, failover strategies, and role-based access to
+            keep your data secure.
+          </p>
         </div>
       </div>
     </div>
@@ -38,25 +49,33 @@
   <div class="container">
     <h2 class="text-center mb-5 fw-bold">Database Service Packages</h2>
     <div class="row g-4 justify-content-center">
-
       <!-- Starter -->
       <div class="col-lg-4 col-md-6">
         <div class="pricing-card p-4 h-100">
-          <h4 class="text-primary fw-bold text-center mb-3">Database Starter</h4>
+          <h4 class="text-primary fw-bold text-center mb-3">
+            Database Starter
+          </h4>
           <div class="text-center mb-4">
-            <span class="stat-number" style="font-size: 2rem;">₹70k Onwards</span>
+            <span class="stat-number" style="font-size: 2rem"
+              >₹70k Onwards</span
+            >
             <p class="text-muted mb-0">Essential database setup</p>
           </div>
           <ul class="list-unstyled">
-            <li class="mb-2"><span class="feature-check">✓</span>Database Installation & Configuration</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Schema Design for Small Applications</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Basic Backup & Recovery Setup</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Performance Tuning (Basic Indexing)</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Security Configuration</li>
-            <li class="mb-2"><span class="feature-check">✓</span>1 Month Support</li>
+            <li class="mb-2">✓ Database Installation & Configuration</li>
+            <li class="mb-2">✓ Schema Design for Small Applications</li>
+            <li class="mb-2">✓ Basic Backup & Recovery Setup</li>
+            <li class="mb-2">✓ Performance Tuning (Basic Indexing)</li>
+            <li class="mb-2">✓ Security Configuration</li>
+            <li class="mb-2">✓ 1 Month Support</li>
           </ul>
           <div class="text-center mt-4">
-            <button class="btn btn-gradient px-4 py-2" routerLink="/contact-us">Get Started</button>
+            <button
+              class="btn btn-gradient px-4 py-2"
+              (click)="openModal('Database Starter')"
+            >
+              Get Started
+            </button>
           </div>
         </div>
       </div>
@@ -67,23 +86,30 @@
           <div class="text-center mb-2">
             <span class="badge bg-primary">Most Popular</span>
           </div>
-          <h4 class="text-primary fw-bold text-center mb-3">Professional Database Solutions</h4>
+          <h4 class="text-primary fw-bold text-center mb-3">
+            Professional Database Solutions
+          </h4>
           <div class="text-center mb-4">
-            <span class="stat-number" style="font-size: 2rem;">₹2L Onwards</span>
+            <span class="stat-number" style="font-size: 2rem">₹2L Onwards</span>
             <p class="text-muted mb-0">Optimized, secure, and scalable</p>
           </div>
           <ul class="list-unstyled">
-            <li class="mb-2"><span class="feature-check">✓</span>Advanced Database Design & Normalization</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Replication & High Availability Setup</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Automated Backup & Disaster Recovery</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Performance Optimization & Query Tuning</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Cloud Database Deployment</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Data Migration Services</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Comprehensive Security Hardening</li>
-            <li class="mb-2"><span class="feature-check">✓</span>6 Months Maintenance</li>
+            <li class="mb-2">✓ Advanced Database Design & Normalization</li>
+            <li class="mb-2">✓ Replication & High Availability Setup</li>
+            <li class="mb-2">✓ Automated Backup & Disaster Recovery</li>
+            <li class="mb-2">✓ Performance Optimization & Query Tuning</li>
+            <li class="mb-2">✓ Cloud Database Deployment</li>
+            <li class="mb-2">✓ Data Migration Services</li>
+            <li class="mb-2">✓ Comprehensive Security Hardening</li>
+            <li class="mb-2">✓ 6 Months Maintenance</li>
           </ul>
           <div class="text-center mt-4">
-            <button class="btn btn-gradient px-4 py-2" routerLink="/contact-us">Choose Plan</button>
+            <button
+              class="btn btn-gradient px-4 py-2"
+              (click)="openModal('Professional Database Solutions')"
+            >
+              Choose Plan
+            </button>
           </div>
         </div>
       </div>
@@ -91,30 +117,91 @@
       <!-- Enterprise -->
       <div class="col-lg-4 col-md-6">
         <div class="pricing-card p-4 h-100">
-          <h4 class="text-primary fw-bold text-center mb-3">Enterprise Database Management</h4>
+          <h4 class="text-primary fw-bold text-center mb-3">
+            Enterprise Database Management
+          </h4>
           <div class="text-center mb-4">
-            <span class="stat-number" style="font-size: 2rem;">₹5L Onwards</span>
-            <p class="text-muted mb-0">Mission-critical, high-volume solutions</p>
+            <span class="stat-number" style="font-size: 2rem">₹5L Onwards</span>
+            <p class="text-muted mb-0">
+              Mission-critical, high-volume solutions
+            </p>
           </div>
           <ul class="list-unstyled">
-            <li class="mb-2"><span class="feature-check">✓</span>Enterprise-grade Database Architecture</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Multi-cloud & Hybrid Database Solutions</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Distributed Database Systems</li>
-            <li class="mb-2"><span class="feature-check">✓</span>24/7 Monitoring & Incident Response</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Data Governance & Compliance (GDPR, HIPAA)</li>
-            <li class="mb-2"><span class="feature-check">✓</span>High-performance Infrastructure Setup</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Custom API & Integration Services</li>
-            <li class="mb-2"><span class="feature-check">✓</span>12 Months Premium Support</li>
+            <li class="mb-2">✓ Enterprise-grade Database Architecture</li>
+            <li class="mb-2">✓ Multi-cloud & Hybrid Database Solutions</li>
+            <li class="mb-2">✓ Distributed Database Systems</li>
+            <li class="mb-2">✓ 24/7 Monitoring & Incident Response</li>
+            <li class="mb-2">✓ Data Governance & Compliance (GDPR, HIPAA)</li>
+            <li class="mb-2">✓ High-performance Infrastructure Setup</li>
+            <li class="mb-2">✓ Custom API & Integration Services</li>
+            <li class="mb-2">✓ 12 Months Premium Support</li>
           </ul>
           <div class="text-center mt-4">
-            <button class="btn btn-gradient px-4 py-2" routerLink="/contact-us">Contact Sales</button>
+            <button
+              class="btn btn-gradient px-4 py-2"
+              (click)="openModal('Enterprise Database Management')"
+            >
+              Contact Sales
+            </button>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
+
+<!-- Enquiry Modal -->
+<div class="modal fade show d-block" *ngIf="showModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title">Enquire for {{ selectedPlan }}</h5>
+        <button type="button" class="btn-close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="enquiryForm" (ngSubmit)="submitEnquiry()">
+          <div class="mb-3">
+            <label>Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="name"
+              placeholder="Your Name"
+            />
+          </div>
+          <div class="mb-3">
+            <label>Email</label>
+            <input
+              type="email"
+              class="form-control"
+              formControlName="email"
+              placeholder="Your Email"
+            />
+          </div>
+          <div class="mb-3">
+            <label>Message</label>
+            <textarea
+              class="form-control"
+              formControlName="description"
+              rows="4"
+              placeholder="Your requirements"
+            ></textarea>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button
+              type="button"
+              class="btn btn-secondary me-2"
+              (click)="closeModal()"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Send Enquiry</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Tech Stack Cards -->
 <section class="py-5 bg-white">
@@ -124,25 +211,37 @@
       <div class="col-md-3">
         <div class="p-4 bg-light rounded shadow-sm h-100">
           <h6 class="text-primary">SQL Server</h6>
-          <p>For high-volume enterprise data solutions, reporting & stored procedure logic.</p>
+          <p>
+            For high-volume enterprise data solutions, reporting & stored
+            procedure logic.
+          </p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="p-4 bg-light rounded shadow-sm h-100">
           <h6 class="text-primary">PostgreSQL</h6>
-          <p>Advanced relational queries, GIS data support, and open-source flexibility.</p>
+          <p>
+            Advanced relational queries, GIS data support, and open-source
+            flexibility.
+          </p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="p-4 bg-light rounded shadow-sm h-100">
           <h6 class="text-primary">MongoDB</h6>
-          <p>Schema-less, high-availability NoSQL database for modern web & mobile apps.</p>
+          <p>
+            Schema-less, high-availability NoSQL database for modern web &
+            mobile apps.
+          </p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="p-4 bg-light rounded shadow-sm h-100">
           <h6 class="text-primary">Firebase</h6>
-          <p>Real-time DB for cloud-based apps with auto-scaling and offline sync.</p>
+          <p>
+            Real-time DB for cloud-based apps with auto-scaling and offline
+            sync.
+          </p>
         </div>
       </div>
     </div>
@@ -156,26 +255,37 @@
     <div class="accordion" id="dbUseCases">
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+          >
             ERP & Financial Systems
           </button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse show">
           <div class="accordion-body">
-            OLTP-based systems, normalization, multi-user concurrency, and reporting dashboards.
+            OLTP-based systems, normalization, multi-user concurrency, and
+            reporting dashboards.
           </div>
         </div>
       </div>
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+          >
             Analytics & Warehousing
           </button>
         </h2>
         <div id="collapseTwo" class="accordion-collapse collapse">
           <div class="accordion-body">
-            Snowflake schemas, ETL pipelines, and integration with BI tools like Power BI & Tableau.
+            Snowflake schemas, ETL pipelines, and integration with BI tools like
+            Power BI & Tableau.
           </div>
         </div>
       </div>
@@ -187,7 +297,12 @@
 <section class="container-fluid py-5 bg-success text-white text-center">
   <div class="container">
     <h2 class="fw-bold mb-3">Need Expert Database Support?</h2>
-    <p>Get your data systems streamlined, secured, and performance-optimized with ARP TechLabs.</p>
-    <a routerLink="/contact-us" class="btn btn-light btn-lg mt-3">Talk to Our Data Team</a>
+    <p>
+      Get your data systems streamlined, secured, and performance-optimized with
+      ARP TechLabs.
+    </p>
+    <a routerLink="/contact-us" class="btn btn-light btn-lg mt-3"
+      >Talk to Our Data Team</a
+    >
   </div>
 </section>

@@ -2,7 +2,10 @@
 <section class="py-5 bg-primary text-white text-center">
   <div class="container">
     <h1 class="display-4 fw-bold">Data Science Services</h1>
-    <p class="lead">Unlock insights from data with advanced analytics, machine learning, and AI integration.</p>
+    <p class="lead">
+      Unlock insights from data with advanced analytics, machine learning, and
+      AI integration.
+    </p>
   </div>
 </section>
 
@@ -31,26 +34,33 @@
   <div class="container">
     <h2 class="text-center mb-5 fw-bold">Data Science Service Packages</h2>
     <div class="row g-4 justify-content-center">
-
       <!-- Starter -->
       <div class="col-lg-4 col-md-6">
         <div class="pricing-card p-4 h-100">
-          <h4 class="text-primary fw-bold text-center mb-3">Data Science Starter</h4>
+          <h4 class="text-primary fw-bold text-center mb-3">
+            Data Science Starter
+          </h4>
           <div class="text-center mb-4">
-            <span class="stat-number" style="font-size: 2rem;">₹85k Onwards</span>
+            <span class="stat-number" style="font-size: 2rem"
+              >₹85k Onwards</span
+            >
             <p class="text-muted mb-0">Introductory project setup</p>
           </div>
           <ul class="list-unstyled">
-            <li class="mb-2"><span class="feature-check">✓</span>Basic Data Cleaning & Preprocessing</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Exploratory Data Analysis (EDA)</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Simple Predictive Model (Regression/Classification)
-            </li>
-            <li class="mb-2"><span class="feature-check">✓</span>Visualization Dashboard (Power BI/Tableau)</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Model Deployment (Basic API)</li>
-            <li class="mb-2"><span class="feature-check">✓</span>1 Month Post-deployment Support</li>
+            <li>✓ Basic Data Cleaning & Preprocessing</li>
+            <li>✓ Exploratory Data Analysis (EDA)</li>
+            <li>✓ Simple Predictive Model</li>
+            <li>✓ Visualization Dashboard</li>
+            <li>✓ Model Deployment (Basic API)</li>
+            <li>✓ 1 Month Post-deployment Support</li>
           </ul>
           <div class="text-center mt-4">
-            <button class="btn btn-gradient px-4 py-2" routerLink="/contact-us">Get Started</button>
+            <button
+              class="btn btn-gradient px-4 py-2"
+              (click)="openModal('Data Science Starter')"
+            >
+              Get Started
+            </button>
           </div>
         </div>
       </div>
@@ -61,23 +71,32 @@
           <div class="text-center mb-2">
             <span class="badge bg-primary">Most Popular</span>
           </div>
-          <h4 class="text-primary fw-bold text-center mb-3">Professional Data Science</h4>
+          <h4 class="text-primary fw-bold text-center mb-3">
+            Professional Data Science
+          </h4>
           <div class="text-center mb-4">
-            <span class="stat-number" style="font-size: 2rem;">₹2.5L Onwards</span>
+            <span class="stat-number" style="font-size: 2rem"
+              >₹2.5L Onwards</span
+            >
             <p class="text-muted mb-0">Full-scale AI solutions</p>
           </div>
           <ul class="list-unstyled">
-            <li class="mb-2"><span class="feature-check">✓</span>Advanced Machine Learning Models</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Feature Engineering & Optimization</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Natural Language Processing (NLP)</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Automated Model Monitoring</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Cloud-based Deployment</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Data Pipeline Automation</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Interactive BI Dashboards</li>
-            <li class="mb-2"><span class="feature-check">✓</span>6 Months Maintenance & Optimization</li>
+            <li>✓ Advanced Machine Learning Models</li>
+            <li>✓ Feature Engineering & Optimization</li>
+            <li>✓ NLP (Natural Language Processing)</li>
+            <li>✓ Automated Model Monitoring</li>
+            <li>✓ Cloud-based Deployment</li>
+            <li>✓ Data Pipeline Automation</li>
+            <li>✓ BI Dashboards</li>
+            <li>✓ 6 Months Maintenance</li>
           </ul>
           <div class="text-center mt-4">
-            <button class="btn btn-gradient px-4 py-2" routerLink="/contact-us">Choose Plan</button>
+            <button
+              class="btn btn-gradient px-4 py-2"
+              (click)="openModal('Professional Data Science')"
+            >
+              Choose Plan
+            </button>
           </div>
         </div>
       </div>
@@ -85,30 +104,75 @@
       <!-- Enterprise -->
       <div class="col-lg-4 col-md-6">
         <div class="pricing-card p-4 h-100">
-          <h4 class="text-primary fw-bold text-center mb-3">Enterprise Data Science</h4>
+          <h4 class="text-primary fw-bold text-center mb-3">
+            Enterprise Data Science
+          </h4>
           <div class="text-center mb-4">
-            <span class="stat-number" style="font-size: 2rem;">₹6L Onwards</span>
+            <span class="stat-number" style="font-size: 2rem">₹6L Onwards</span>
             <p class="text-muted mb-0">Tailored enterprise AI strategy</p>
           </div>
           <ul class="list-unstyled">
-            <li class="mb-2"><span class="feature-check">✓</span>Custom AI Solution Architecture</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Big Data Processing & Analysis</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Deep Learning (CNNs, RNNs, Transformers)</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Real-time AI-driven Decision Systems</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Data Governance & Compliance Setup</li>
-            <li class="mb-2"><span class="feature-check">✓</span>High-performance Cloud Infrastructure</li>
-            <li class="mb-2"><span class="feature-check">✓</span>Ongoing AI Model Training & Evolution</li>
-            <li class="mb-2"><span class="feature-check">✓</span>12 Months Premium Support</li>
+            <li>✓ Custom AI Solution Architecture</li>
+            <li>✓ Big Data Processing & Analysis</li>
+            <li>✓ Deep Learning (CNNs, RNNs, Transformers)</li>
+            <li>✓ Real-time Decision Systems</li>
+            <li>✓ Data Governance & Compliance</li>
+            <li>✓ High-performance Cloud Infrastructure</li>
+            <li>✓ Ongoing Model Training</li>
+            <li>✓ 12 Months Premium Support</li>
           </ul>
           <div class="text-center mt-4">
-            <button class="btn btn-gradient px-4 py-2" routerLink="/contact-us">Contact Sales</button>
+            <button
+              class="btn btn-gradient px-4 py-2"
+              (click)="openModal('Enterprise Data Science')"
+            >
+              Contact Sales
+            </button>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
+
+<!-- Popup Modal -->
+<div class="modal-backdrop" *ngIf="showModal">
+  <div class="modal-box">
+    <div class="modal-header d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">Enquiry - {{ selectedPlan }}</h5>
+      <button class="btn-close" (click)="closeModal()"></button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="enquiryForm" (ngSubmit)="submitEnquiry()">
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-control" formControlName="name" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" formControlName="email" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Message</label>
+          <textarea
+            class="form-control"
+            rows="3"
+            formControlName="description"
+          ></textarea>
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-gradient px-4 py-2" (click)="closeModal()">
+            Cancel
+          </button>
+          &nbsp;
+          <button type="submit" class="btn btn-gradient px-4 py-2">
+            Send Enquiry
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <!-- Tech Stacks -->
 <section class="py-5 bg-white">
@@ -139,13 +203,19 @@
       <div class="col-md-6">
         <div class="border p-4 rounded h-100">
           <h5 class="text-success">Crop Yield Prediction</h5>
-          <p>Analyzed satellite + weather data to forecast crop production with 90%+ accuracy for agri-tech clients.</p>
+          <p>
+            Analyzed satellite + weather data to forecast crop production with
+            90%+ accuracy for agri-tech clients.
+          </p>
         </div>
       </div>
       <div class="col-md-6">
         <div class="border p-4 rounded h-100">
           <h5 class="text-success">Healthcare Risk Scoring</h5>
-          <p>Developed ML models to identify at-risk patients early using medical histories and lab test patterns.</p>
+          <p>
+            Developed ML models to identify at-risk patients early using medical
+            histories and lab test patterns.
+          </p>
         </div>
       </div>
     </div>
@@ -155,9 +225,15 @@
 <!-- CTA -->
 <section class="container-fluid py-5 bg-light-green text-center">
   <div class="container">
-    <h2 class="fw-bold mb-3 text-success">Empower Your Data with Intelligence</h2>
-    <p class="text-muted mb-4">Talk to us to explore predictive models, data pipelines, and smart dashboards tailored to
-      your needs.</p>
-    <a routerLink="/contact-us" class="btn btn-primary btn-lg px-4 py-2">Start a Data Project</a>
+    <h2 class="fw-bold mb-3 text-success">
+      Empower Your Data with Intelligence
+    </h2>
+    <p class="text-muted mb-4">
+      Talk to us to explore predictive models, data pipelines, and smart
+      dashboards tailored to your needs.
+    </p>
+    <a routerLink="/contact-us" class="btn btn-primary btn-lg px-4 py-2"
+      >Start a Data Project</a
+    >
   </div>
 </section>
