@@ -98,7 +98,7 @@
           <div class="text-center mt-4">
             <button
               class="btn btn-gradient px-4 py-2"
-              (click)="openEnquiry('Product Development Starter')"
+              (click)="openModal('Product Development Starter')"
             >
               Get Started
             </button>
@@ -131,7 +131,7 @@
           <div class="text-center mt-4">
             <button
               class="btn btn-gradient px-4 py-2"
-              (click)="openEnquiry('Professional Product Development')"
+              (click)="openModal('Professional Product Development')"
             >
               Choose Plan
             </button>
@@ -163,7 +163,7 @@
           <div class="text-center mt-4">
             <button
               class="btn btn-gradient px-4 py-2"
-              (click)="openEnquiry('Enterprise Product Development')"
+              (click)="openModal('Enterprise Product Development')"
             >
               Contact Sales
             </button>
@@ -175,41 +175,13 @@
 </section>
 
 <!-- Modal -->
-<div id="enquiryModal" class="modal" style="display: none">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content p-4">
-      <div class="modal-header">
-        <h5 class="modal-title">Enquiry for {{ selectedPlan }}</h5>
-        <button type="button" class="btn-close" (click)="closeModal()"></button>
-      </div>
-      <div class="modal-body">
-        <form [formGroup]="enquiryForm" (ngSubmit)="submitEnquiry()">
-          <div class="mb-3">
-            <label class="form-label">Your Name</label>
-            <input type="text" formControlName="name" class="form-control" />
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="email" formControlName="email" class="form-control" />
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Message</label>
-            <textarea
-              rows="3"
-              formControlName="description"
-              class="form-control"
-            ></textarea>
-          </div>
-          <div class="text-end">
-            <button type="submit" class="btn btn-gradient px-4">
-              Send Enquiry
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+<app-enquirymodel
+  #enquiryModal
+  [title]="selectedPlan"
+  [subject]="selectedPlan"
+  [serviceName]="' Product Development Package'"
+>
+</app-enquirymodel>
 
 <!-- Process -->
 <section class="py-5 bg-white">

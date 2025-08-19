@@ -287,62 +287,14 @@
 </section>
 
 <!-- Modal -->
-<div
-  class="modal fade show"
-  tabindex="-1"
-  [ngClass]="{ 'd-block': showModal }"
-  style="background: rgba(0, 0, 0, 0.5)"
-  *ngIf="showModal"
+<app-enquirymodel
+  #enquiryModal
+  [title]="selectedPlan"
+  [subject]="selectedPlan"
+  [serviceName]="'AI/ML Package'"
 >
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content p-4 rounded-3 shadow-lg">
-      <div class="modal-header">
-        <h5 class="modal-title fw-bold">Enquiry - {{ selectedPlan }}</h5>
-        <button type="button" class="btn-close" (click)="closeModal()"></button>
-      </div>
+</app-enquirymodel>
 
-      <form [formGroup]="enquiryForm" (ngSubmit)="submitEnquiry()">
-        <div class="modal-body">
-          <div class="mb-3">
-            <label class="form-label fw-semibold">Name</label>
-            <input type="text" formControlName="name" class="form-control" />
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label fw-semibold">Email</label>
-            <input type="email" formControlName="email" class="form-control" />
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label fw-semibold">Description</label>
-            <textarea
-              formControlName="description"
-              class="form-control"
-              rows="3"
-            ></textarea>
-          </div>
-        </div>
-
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            (click)="closeModal()"
-          >
-            Cancel
-          </button>
-          <button
-            type="submit"
-            class="btn btn-gradient px-4"
-            [disabled]="enquiryForm.invalid"
-          >
-            Send
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
 
 <!-- Featured Projects -->
 <section class="py-5 bg-light">

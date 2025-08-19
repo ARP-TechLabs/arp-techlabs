@@ -151,57 +151,13 @@
 </section>
 
 <!-- Enquiry Modal -->
-<div class="modal fade show d-block" *ngIf="showModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content p-3">
-      <div class="modal-header">
-        <h5 class="modal-title">Enquire for {{ selectedPlan }}</h5>
-        <button type="button" class="btn-close" (click)="closeModal()"></button>
-      </div>
-      <div class="modal-body">
-        <form [formGroup]="enquiryForm" (ngSubmit)="submitEnquiry()">
-          <div class="mb-3">
-            <label>Name</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="name"
-              placeholder="Your Name"
-            />
-          </div>
-          <div class="mb-3">
-            <label>Email</label>
-            <input
-              type="email"
-              class="form-control"
-              formControlName="email"
-              placeholder="Your Email"
-            />
-          </div>
-          <div class="mb-3">
-            <label>Message</label>
-            <textarea
-              class="form-control"
-              formControlName="description"
-              rows="4"
-              placeholder="Your requirements"
-            ></textarea>
-          </div>
-          <div class="d-flex justify-content-end">
-            <button
-              type="button"
-              class="btn btn-secondary me-2"
-              (click)="closeModal()"
-            >
-              Cancel
-            </button>
-            <button type="submit" class="btn btn-primary">Send Enquiry</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+<app-enquirymodel
+  #enquiryModal
+  [title]="selectedPlan"
+  [subject]="selectedPlan"
+  [serviceName]="'Database Package'"
+>
+</app-enquirymodel>
 
 <!-- Tech Stack Cards -->
 <section class="py-5 bg-white">

@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { HeaderComponent } from '../../components/header/header.component';
-import { BackTopComponent } from '../../components/backTop/back-top/back-top.component';
-import { FooterComponent } from '../../components/footer/footer.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SeoService } from '../../../services/SeoService.service';
 import { CommonModule } from '@angular/common';
 import {
@@ -13,23 +10,18 @@ import {
 
 import Swal from 'sweetalert2';
 import { EmailService } from '../../../services/email.service';
+import { EnquirymodelComponent } from '../../../shared/pages/enquirymodel/enquirymodel.component';
 
 @Component({
   selector: 'app-gen-ai',
   standalone: true,
-  imports: [
-    HeaderComponent,
-    BackTopComponent,
-    FooterComponent,
-    CommonModule,
-    ReactiveFormsModule,
-  ],
+  imports: [CommonModule, ReactiveFormsModule, EnquirymodelComponent],
   templateUrl: './gen-ai.component.html',
   styleUrls: ['./gen-ai.component.scss'],
 })
 export class GenAiComponent implements OnInit {
-  enquiryForm!: FormGroup;
-  selectedPlan: string = '';
+  selectedPlan = '';
+  @ViewChild('enquiryModal') enquiryModal!: EnquirymodelComponent;
 
   constructor(
     private seo: SeoService,
@@ -44,57 +36,10 @@ export class GenAiComponent implements OnInit {
       'https://arp-techlabs.vercel.app/gen-ai',
       'Generative AI, AI Innovation, Creative AI Solutions'
     );
-
-    // Init Enquiry Form
-    this.enquiryForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      description: ['', Validators.required],
-    });
   }
 
   openModal(plan: string) {
     this.selectedPlan = plan;
-    (document.getElementById('enquiryModal') as HTMLElement).style.display =
-      'block';
-  }
-
-  closeModal() {
-    (document.getElementById('enquiryModal') as HTMLElement).style.display =
-      'none';
-  }
-
-  submitEnquiry() {
-    if (this.enquiryForm.valid) {
-      const { name, email, description } = this.enquiryForm.value;
-
-      this.emailService
-        .sendMail(
-          'service',
-          name,
-          email,
-          this.selectedPlan, // Subject = plan name
-          description,
-          { serviceName: 'Generative AI Package' }
-        )
-        .then(() => {
-          Swal.fire({
-            icon: 'success',
-            title: 'Enquiry Sent!',
-            text: '✅ Your enquiry has been sent successfully!',
-            confirmButtonColor: '#3085d6',
-          });
-          this.closeModal();
-          this.enquiryForm.reset();
-        })
-        .catch((err: any) => {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: '❌ Failed to send enquiry. Please try again later.',
-          });
-          console.error(err);
-        });
-    }
+    this.enquiryModal.openModal();
   }
 }

@@ -1,33 +1,32 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
-  ReactiveFormsModule,
   FormBuilder,
-  Validators,
   FormGroup,
+  ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
-import { EmailService } from '../../../services/email.service';
 import Swal from 'sweetalert2';
+import { EmailService } from '../../../services/email.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-enquirymodel',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './enquirymodel.component.html',
-  styleUrl: './enquirymodel.component.scss',
+  styleUrls: ['./enquirymodel.component.scss'],
 })
-export class EnquirymodelComponent implements OnInit {
-  // Dynamic values passed from parent
-  @Input() title: string = 'Send Enquiry';
+export class EnquirymodelComponent {
+  @Input() showModal = false;
+  @Input() title: string = '';
   @Input() subject: string = '';
   @Input() serviceName: string = '';
+  @Output() modalClosed = new EventEmitter<void>();
 
-  enquiryForm!: FormGroup;
-  isOpen = false;
+  enquiryForm: FormGroup;
+  loading = false;
 
-  constructor(private fb: FormBuilder, private emailService: EmailService) {}
-
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder, private emailService: EmailService) {
     this.enquiryForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -35,50 +34,51 @@ export class EnquirymodelComponent implements OnInit {
     });
   }
 
-  // Open modal
   openModal() {
-    this.isOpen = true;
+    this.showModal = true;
   }
 
-  // Close modal
   closeModal() {
-    this.isOpen = false;
+    this.showModal = false;
+    this.modalClosed.emit();
     this.enquiryForm.reset();
   }
 
-  // Submit enquiry
   submitEnquiry() {
-    if (this.enquiryForm.valid) {
-      const { name, email, description } = this.enquiryForm.value;
-
-      this.emailService
-        .sendMail('service', name!, email!, this.subject, description!, {
-          serviceName: this.serviceName,
-        })
-        .then(() => {
-          Swal.fire({
-            icon: 'success',
-            title: 'Enquiry Sent!',
-            text: '✅ Your enquiry has been sent successfully.',
-            confirmButtonColor: '#3085d6',
-          });
-          this.closeModal();
-        })
-        .catch((err) => {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops!',
-            text: '❌ Failed to send enquiry. Please try again later.',
-            confirmButtonColor: '#d33',
-          });
-          console.error(err);
-        });
-    } else {
+    if (this.enquiryForm.invalid) {
       Swal.fire({
         icon: 'warning',
         title: 'Form Incomplete',
         text: '⚠️ Please fill in all required fields.',
       });
+      return;
     }
+
+    this.loading = true;
+    const { name, email, description } = this.enquiryForm.value;
+
+    this.emailService
+      .sendMail('service', name, email, 'Enquiry Request', description, {
+        serviceName: this.serviceName,
+      })
+      .then(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Enquiry Sent!',
+          text: '✅ Your enquiry has been sent successfully.',
+        });
+        this.closeModal();
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops!',
+          text: '❌ Failed to send enquiry. Please try again later.',
+        });
+        console.error(err);
+      })
+      .finally(() => {
+        this.loading = false;
+      });
   }
 }

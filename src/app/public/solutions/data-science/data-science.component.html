@@ -136,43 +136,13 @@
 </section>
 
 <!-- Popup Modal -->
-<div class="modal-backdrop" *ngIf="showModal">
-  <div class="modal-box">
-    <div class="modal-header d-flex justify-content-between align-items-center">
-      <h5 class="mb-0">Enquiry - {{ selectedPlan }}</h5>
-      <button class="btn-close" (click)="closeModal()"></button>
-    </div>
-    <div class="modal-body">
-      <form [formGroup]="enquiryForm" (ngSubmit)="submitEnquiry()">
-        <div class="mb-3">
-          <label class="form-label">Name</label>
-          <input type="text" class="form-control" formControlName="name" />
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-control" formControlName="email" />
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Message</label>
-          <textarea
-            class="form-control"
-            rows="3"
-            formControlName="description"
-          ></textarea>
-        </div>
-        <div class="text-center">
-          <button type="button" class="btn btn-gradient px-4 py-2" (click)="closeModal()">
-            Cancel
-          </button>
-          &nbsp;
-          <button type="submit" class="btn btn-gradient px-4 py-2">
-            Send Enquiry
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+<app-enquirymodel
+  #enquiryModal
+  [title]="selectedPlan"
+  [subject]="selectedPlan"
+  [serviceName]="'Data Science Package'"
+>
+</app-enquirymodel>
 
 <!-- Tech Stacks -->
 <section class="py-5 bg-white">

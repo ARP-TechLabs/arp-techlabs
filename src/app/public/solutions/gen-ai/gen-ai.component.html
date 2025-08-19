@@ -192,56 +192,13 @@
 </section>
 
 <!-- Modal -->
-<div id="enquiryModal" class="modal" style="display: none">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content p-4">
-      <div class="modal-header">
-        <h5 class="modal-title">Enquire about {{ selectedPlan }}</h5>
-        <button type="button" class="btn-close" (click)="closeModal()"></button>
-      </div>
-      <div class="modal-body">
-        <form [formGroup]="enquiryForm" (ngSubmit)="submitEnquiry()">
-          <div class="mb-3">
-            <label class="form-label">Name</label>
-            <input
-              formControlName="name"
-              type="text"
-              class="form-control"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input
-              formControlName="email"
-              type="email"
-              class="form-control"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Message</label>
-            <textarea
-              formControlName="description"
-              rows="3"
-              class="form-control"
-              required
-            ></textarea>
-          </div>
-          <div class="text-center">
-            <button
-              type="submit"
-              class="btn btn-gradient px-4 py-2"
-              [disabled]="enquiryForm.invalid"
-            >
-              Send Enquiry
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+<app-enquirymodel
+  #enquiryModal
+  [title]="selectedPlan"
+  [subject]="selectedPlan"
+  [serviceName]="'GenAI Package'"
+>
+</app-enquirymodel>
 
 <!-- GenAI Projects -->
 <section class="py-5 bg-white">
