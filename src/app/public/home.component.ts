@@ -129,35 +129,15 @@ export class HomeComponent implements OnInit {
 
   blogs = [
     {
-      img: 'assets/img/blog-1.jpg',
+      img: 'assets/blog/aiChatSupportBlog.jpg',
       category: 'AI Solutions',
       author: 'ARP TechLabs',
-      date: '05 August 2025',
+      date: '20 August 2025',
       description:
         'How AI Agents are Revolutionizing Customer Support — A deep dive into building intelligent, context-aware chat agents for businesses using modern GenAI frameworks.',
-      link: 'https://medium.com/@arptechlabs/how-ai-agents-are-revolutionizing-customer-support-2025',
+      link: 'https://medium.com/@arptechlabs/how-ai-agents-are-changing-the-game-in-customer-support-dfe69f52c7d4',
       delay: '.3s',
-    },
-    {
-      img: 'assets/img/blog-2.jpg',
-      category: 'Web Development',
-      author: 'ARP TechLabs',
-      date: '29 July 2025',
-      description:
-        'Designing Scalable Web Apps with Angular & Node.js — Lessons from ARP TechLabs projects that served thousands of concurrent users without breaking performance.',
-      link: 'https://arptechlabs.hashnode.dev/designing-scalable-web-apps-angular-nodejs-2025',
-      delay: '.5s',
-    },
-    {
-      img: 'assets/img/blog-3.jpg',
-      category: 'Data Science',
-      author: 'ARP TechLabs',
-      date: '20 July 2025',
-      description:
-        'Turning Court Documents into Insights — Building a Legal Document Summarization System with NLP and Explainable AI for the Indian judiciary.',
-      link: 'https://medium.com/@arptechlabs/legal-document-summarization-nlp-explainable-ai-2025',
-      delay: '.7s',
-    },
+    }
   ];
 
   teamMembers = [
