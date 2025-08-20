@@ -17,6 +17,9 @@ interface ChatSession {
   lastTopic: string | null;
   lastStep: string | null;
   selected?: string | null;
+  // State for conversational email flow
+  emailName?: string | null;
+  emailAddress?: string | null;
 }
 
 interface PageIntent {
@@ -49,13 +52,12 @@ export class AiAgentComponent implements OnInit {
     lastTopic: null,
     lastStep: null,
     selected: null,
+    emailName: null,
+    emailAddress: null,
   };
 
-  // email prompt state
-  showEmailPrompt = false;
-  emailName = '';
-  emailAddress = '';
-  emailSending = false;
+  // Note: The previous top-level email state properties are removed
+  // as the process is now fully conversational and managed via session state.
 
   constructor(private emailService: EmailService) {}
 
@@ -106,6 +108,8 @@ export class AiAgentComponent implements OnInit {
       lastTopic: null,
       lastStep: null,
       selected: null,
+      emailName: null,
+      emailAddress: null,
     };
     this.saveSession();
 
@@ -115,7 +119,7 @@ export class AiAgentComponent implements OnInit {
   // ===== UI actions =====
   sendMessage() {
     const msg = (this.userMessage || '').trim();
-    if (!msg || this.showEmailPrompt) return;
+    if (!msg) return;
 
     this.addUserMessage(msg);
     const userMsg = msg;
@@ -124,6 +128,12 @@ export class AiAgentComponent implements OnInit {
 
     setTimeout(() => {
       const response = this.generateResponse(userMsg);
+      if (!response) {
+        // A response might be null if an async action (like email) was triggered
+        // The async action will handle its own messaging.
+        this.isTyping = false;
+        return;
+      }
 
       let displayText = '';
       let i = 0;
@@ -158,16 +168,13 @@ export class AiAgentComponent implements OnInit {
       this.resetToWelcome(); // don't wipe session id; only reset UX
       return;
     }
-    if (text === '📧 Mail this Chat') {
-      this.showEmailPrompt = true;
-      return;
-    }
+    // Let "Mail this Chat" flow through the normal sendMessage handler
     this.userMessage = text;
     this.sendMessage();
   }
 
   // ===== Brain / NLU-lite =====
-  generateResponse(message: string): string {
+  generateResponse(message: string): string | null {
     const lower = message.toLowerCase();
 
     // --- Global quick intents
@@ -182,9 +189,46 @@ export class AiAgentComponent implements OnInit {
       this.resetToWelcome();
       return '👍 Back to the main chat. What would you like to explore?';
     }
-    if (this.matches(lower, ['mail this chat', 'email chat', 'send chat'])) {
-      this.showEmailPrompt = true;
-      return `Great — I’ll prep the email. Please enter your name and email below.`;
+
+    // --- EMAIL FLOW (New and Conversational) ---
+    if (this.matches(lower, ['mail this chat', 'email chat', 'send chat']) && this.session.lastTopic !== 'email-chat') {
+      this.session.lastTopic = 'email-chat';
+      this.session.lastStep = 'waiting-name'; // Start by asking for the name
+      this.saveSession();
+      this.suggestions = []; // No suggestions during this focused flow
+      return `Of course. To whom should I address the email? Please provide your full name.`;
+    }
+
+    if (this.session.lastTopic === 'email-chat') {
+      // Step 1: We were waiting for the name, now we have it.
+      if (this.session.lastStep === 'waiting-name') {
+        this.session.emailName = message.trim();
+        this.session.lastStep = 'waiting-email';
+        this.saveSession();
+        this.suggestions = [];
+        return `Got it, ${this.session.emailName}. Now, what's the best email address to send it to?`;
+      }
+
+      // Step 2: We were waiting for the email. Now we have it, let's send.
+      if (this.session.lastStep === 'waiting-email') {
+        // Basic email validation
+        if (!/.+@.+\..+/.test(message.trim())) {
+          return "That doesn't look like a valid email address. Could you please provide a correct one?";
+        }
+
+        this.session.emailAddress = message.trim();
+        this.session.lastStep = 'sending';
+        this.saveSession();
+        this.suggestions = [];
+
+        // Trigger the async email sending process.
+        // This will add its own messages to the chat history.
+        this.sendChatByEmail();
+
+        // Return an immediate response while the email sends in the background.
+        return `Perfect. I'm sending the chat transcript to ${this.session.emailAddress} now. Please wait a moment...`;
+      }
+      return null; // Return null to indicate an async action is in progress.
     }
 
     // --- Direct Page Intents (new) ---
@@ -872,14 +916,6 @@ export class AiAgentComponent implements OnInit {
         title: 'ARP for Learning',
         link: R.careers.learning,
         patterns: [/learning/, /course(s)?/, /bootcamp/, /academy/],
-        description: `Hands-on learning paths in AI, web, and data. Build real projects, ship demos`,
-        suggestions: ['courses', 'bootcamps', 'academy'],
-      },
-      {
-        key: 'learning',
-        title: 'ARP for Learning',
-        link: R.careers.learning,
-        patterns: [/learning/, /course(s)?/, /bootcamp/, /academy/],
         description: `Hands-on learning paths in AI, web, and data. Build real projects, ship demos, and get mentored by senior engineers.`,
         suggestions: ['🙌 Join Us', '🤝 Collaboration', '🌐 Solutions Hub'],
       },
@@ -966,6 +1002,8 @@ export class AiAgentComponent implements OnInit {
     this.session.lastTopic = null;
     this.session.lastStep = null;
     this.session.selected = null;
+    this.session.emailName = null;
+    this.session.emailAddress = null;
     this.saveSession();
   }
 
@@ -980,6 +1018,63 @@ export class AiAgentComponent implements OnInit {
   private addUserMessage(text: string) {
     this.messages.push({ text, sender: 'user', timestamp: Date.now() });
     this.persistMessages();
+  }
+
+  private addAgentMessage(text: string) {
+    this.messages.push({ text, sender: 'agent', timestamp: Date.now() });
+    this.persistMessages();
+  }
+
+  private stripHtml(html: string): string {
+    const tempDiv = document.createElement('div');
+    // Convert <br> tags to newline characters for better email formatting
+    tempDiv.innerHTML = html.replace(/<br\s*\/?>/gi, '\n');
+    return tempDiv.textContent || tempDiv.innerText || '';
+  }
+
+  private async sendChatByEmail() {
+    const name = this.session.emailName;
+    const email = this.session.emailAddress;
+
+    if (!name || !email) {
+      this.addAgentMessage("Something went wrong, as I'm missing your name or email. Let's start over.");
+      this.resetContext();
+      return;
+    }
+
+    // 1. Format the entire chat history for the email body
+    const chatHistory = this.messages
+      .map(msg => `[${msg.sender.toUpperCase()}] (${new Date(msg.timestamp!).toLocaleString()})\n${this.stripHtml(msg.text)}`)
+      .join('\n\n------------------------------------\n\n');
+
+    const emailBody = `Hello ${name},\n\nHere is the transcript of your chat session with the ARP AI Assistant as requested.\n\n------------------------------------\n\n${chatHistory}`;
+
+    try {
+      // 2. Call the email service
+      await this.emailService.sendMail(
+        'common',
+        name,
+        email,
+        'Your ARP TechLabs AI Chat Transcript', // titleValue
+        emailBody // description
+      );
+
+      // 3. Add a success message to the chat
+      this.addAgentMessage(`✅ Success! The chat transcript has been sent to ${email}. Let me know if there's anything else I can help with.`);
+
+    } catch (error) {
+      // 4. Add an error message to the chat
+      console.error('Email sending failed:', error);
+      this.addAgentMessage(`❌ Oops! Something went wrong and I couldn't send the email. Please try again later or contact us directly at <a href="mailto:connect@arptechlabs.com">connect@arptechlabs.com</a>.`);
+    } finally {
+      // 5. Reset the context and restore default suggestions
+      this.resetContext();
+      this.suggestions = this.withGlobal([
+        '🌐 ARP Solutions',
+        '🚀 Mission & Vision',
+        '📈 Case Studies',
+      ]);
+    }
   }
 
   // ===== Suggestion Logic =====
@@ -1008,5 +1103,4 @@ export class AiAgentComponent implements OnInit {
   private shuffle<T>(arr: T[]): T[] {
     return [...arr].sort(() => Math.random() - 0.5);
   }
-  
 }
