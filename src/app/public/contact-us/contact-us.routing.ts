@@ -5,6 +5,7 @@ import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 import { CookiePolicyComponent } from './cookie-policy/cookie-policy.component';
+import { BlogComponent } from './blog/blog.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'privacy-policy', component: PrivacyPolicyComponent, data: { title: 'Privacy Policy | ARP TechLabs' } },
   { path: 'terms-conditions', component: TermsConditionsComponent, data: { title: 'Terms & Conditions | ARP TechLabs' } },
   { path: 'cookie-policy', component: CookiePolicyComponent, data: { title: 'Cookie Policy | ARP TechLabs' } },
+  { path: 'blog', component: BlogComponent, data: { title: 'Blogs | ARP TechLabs' } },
 ];
 
 @NgModule({

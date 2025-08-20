@@ -1,0 +1,20 @@
+.blog-card {
+  background-color: #ffffff; /* 70% white */
+  border-left: 4px solid #007bff; /* Bootstrap Blue accent */
+}
+
+.badge.bg-accent {
+  background-color: #007bff; /* 25% Bootstrap Blue */
+  color: #fff;
+}
+
+.btn-accent {
+  background-color: #28a745; /* 5% light green */
+  color: #fff;
+  border-radius: 6px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-accent:hover {
+  background-color: #218838;
+}

@@ -129,7 +129,7 @@ export class HomeComponent implements OnInit {
 
   blogs = [
     {
-      img: 'assets/blog/aiChatSupportBlog.jpg',
+      img: 'assets/blogs/aiChatSupportBlog.jpg',
       category: 'AI Solutions',
       author: 'ARP TechLabs',
       date: '20 August 2025',
