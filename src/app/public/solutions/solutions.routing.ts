@@ -8,6 +8,7 @@ import { ProductDevelopmentComponent } from './product-development/product-devel
 import { DataScienceComponent } from './data-science/data-science.component';
 import { DataAnalyticsComponent } from './data-analytics/data-analytics.component';
 import { DatabaseServicesComponent } from './database/database-services.component';
+import { SolutionsComponent } from './solutions/solutions.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'data-science', component: DataScienceComponent ,data: { title: 'Data Science | Solutions' }},
   { path: 'data-analytics', component: DataAnalyticsComponent ,data: { title: 'Data Analytics | Solutions' }},
   { path: 'db-services', component: DatabaseServicesComponent ,data: { title: 'DB Services | Solutions' }},
+  { path: '', component: SolutionsComponent ,data: { title: 'Solutions | ARP Techlabs' }},
 ];
 
 @NgModule({

@@ -1,0 +1,24 @@
+<section class="solutions-container">
+    <div class="blog-header text-center text-white d-flex align-items-center justify-content-center"
+        style="background: linear-gradient(rgba(166, 201, 253, 0.8), rgba(46, 130, 255, 0.8)), url('assets/blogs/blog-bg.jpg') center/cover no-repeat; height: 300px;">
+        <div class="header">
+            <h2>Our Solutions</h2>
+            <p>
+                Explore ARP TechLabs’ comprehensive solutions — from AI innovation to
+                scalable software and data-driven insights.
+            </p>
+        </div>
+    </div>
+
+    <div class="solutions-grid">
+        <div *ngFor="let service of services" class="solution-card" [style.animationDelay]="service.delay"
+            [routerLink]="service.route" routerLinkActive="active">
+            <div class="icon">
+                <i [class]="service.icon"></i>
+            </div>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+            <span class="learn-more">Learn More →</span>
+        </div>
+    </div>
+</section>
