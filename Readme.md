@@ -1,6 +1,6 @@
-# ARP TechLabs Official Repository
+# ARP TechLabs 
 
-Welcome to the official code repository of **ARP TechLabs** – Shaping tomorrow through intelligent solutions.
+Welcome to the official code repository of **ARP TechLabs** – Lines of Code, Waves of Change.
 
 🔗 Live Website: [https://arp-techlabs.vercel.app/](https://arp-techlabs.vercel.app/)
 
